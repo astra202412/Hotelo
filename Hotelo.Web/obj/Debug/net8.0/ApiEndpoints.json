@@ -1,0 +1,1466 @@
+[
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.AdminApiController",
+    "Method": "UpdateAccess",
+    "RelativePath": "api/v1/admin/access",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Hotelo.Core.DTOs.Admin.UpdateUserAccessDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.AdminApiController",
+    "Method": "GetMatrix",
+    "RelativePath": "api/v1/admin/access-matrix",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.AdminApiController",
+    "Method": "GetFunctions",
+    "RelativePath": "api/v1/admin/functions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.AdminApiController",
+    "Method": "CreateFunction",
+    "RelativePath": "api/v1/admin/functions",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Hotelo.Core.DTOs.Admin.CreateJobFunctionDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.AdminApiController",
+    "Method": "DeleteFunction",
+    "RelativePath": "api/v1/admin/functions/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.AdminApiController",
+    "Method": "GetModules",
+    "RelativePath": "api/v1/admin/modules",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.AdminApiController",
+    "Method": "GetUserFunctions",
+    "RelativePath": "api/v1/admin/user-functions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.AdminApiController",
+    "Method": "AssignFunction",
+    "RelativePath": "api/v1/admin/user-functions",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Hotelo.Web.Areas.Api.Controllers.AssignFunctionDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.AdminApiController",
+    "Method": "RemoveFunction",
+    "RelativePath": "api/v1/admin/user-functions/{userId}/{functionId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "functionId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.BackupApiController",
+    "Method": "Create",
+    "RelativePath": "api/v1/backup/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.BackupApiController",
+    "Method": "GetList",
+    "RelativePath": "api/v1/backup/list",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.BackupApiController",
+    "Method": "Restore",
+    "RelativePath": "api/v1/backup/restore",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "backupFile",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.BellDeskApiController",
+    "Method": "GetDashboard",
+    "RelativePath": "api/v1/belldesk/dashboard",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.BellDeskApiController",
+    "Method": "CreateLuggage",
+    "RelativePath": "api/v1/belldesk/luggage",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Hotelo.Core.DTOs.BellDesk.CreateLuggageDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.BellDeskApiController",
+    "Method": "HandleLuggage",
+    "RelativePath": "api/v1/belldesk/luggage/{id}/handle",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.BellDeskApiController",
+    "Method": "CreateService",
+    "RelativePath": "api/v1/belldesk/services",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Hotelo.Core.DTOs.BellDesk.CreateGuestServiceDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.BellDeskApiController",
+    "Method": "CompleteService",
+    "RelativePath": "api/v1/belldesk/services/{id}/complete",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.CommercialApiController",
+    "Method": "GetCompanies",
+    "RelativePath": "api/v1/commercial/companies",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.CommercialApiController",
+    "Method": "CreateCompany",
+    "RelativePath": "api/v1/commercial/companies",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Hotelo.Core.DTOs.Commercial.CreateCompanyDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.CommercialApiController",
+    "Method": "GetCompany",
+    "RelativePath": "api/v1/commercial/companies/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.CommercialApiController",
+    "Method": "DeleteCompany",
+    "RelativePath": "api/v1/commercial/companies/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.CommercialApiController",
+    "Method": "GetContracts",
+    "RelativePath": "api/v1/commercial/contracts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.CommercialApiController",
+    "Method": "CreateContract",
+    "RelativePath": "api/v1/commercial/contracts",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Hotelo.Core.DTOs.Commercial.CreateContractDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.CommercialApiController",
+    "Method": "GetDashboard",
+    "RelativePath": "api/v1/commercial/dashboard",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.DashboardApiController",
+    "Method": "GetGlobal",
+    "RelativePath": "api/v1/dashboard",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.DashboardApiController",
+    "Method": "GetKpis",
+    "RelativePath": "api/v1/dashboard/kpis",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.ExportApiController",
+    "Method": "FinancesExcel",
+    "RelativePath": "api/v1/export/finances/excel",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "from",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "to",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.ExportApiController",
+    "Method": "GuestsExcel",
+    "RelativePath": "api/v1/export/guests/excel",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.ExportApiController",
+    "Method": "InvoicePdf",
+    "RelativePath": "api/v1/export/invoice/{id}/pdf",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.ExportApiController",
+    "Method": "ReservationsExcel",
+    "RelativePath": "api/v1/export/reservations/excel",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "from",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "to",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.ExportApiController",
+    "Method": "RoomsExcel",
+    "RelativePath": "api/v1/export/rooms/excel",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.GuestsApiController",
+    "Method": "GetAll",
+    "RelativePath": "api/v1/guests",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.GuestsApiController",
+    "Method": "Create",
+    "RelativePath": "api/v1/guests",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Hotelo.Core.DTOs.Guest.CreateGuestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.GuestsApiController",
+    "Method": "GetById",
+    "RelativePath": "api/v1/guests/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.GuestsApiController",
+    "Method": "Update",
+    "RelativePath": "api/v1/guests/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "Hotelo.Core.DTOs.Guest.UpdateGuestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.GuestsApiController",
+    "Method": "Delete",
+    "RelativePath": "api/v1/guests/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.GuestsApiController",
+    "Method": "Search",
+    "RelativePath": "api/v1/guests/search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "term",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.HousekeepingApiController",
+    "Method": "GetDashboard",
+    "RelativePath": "api/v1/housekeeping/dashboard",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.HousekeepingApiController",
+    "Method": "GetMaintenance",
+    "RelativePath": "api/v1/housekeeping/maintenance",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.HousekeepingApiController",
+    "Method": "CreateMaintenance",
+    "RelativePath": "api/v1/housekeeping/maintenance",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Hotelo.Core.DTOs.Housekeeping.CreateMaintenanceDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.HousekeepingApiController",
+    "Method": "CloseMaintenance",
+    "RelativePath": "api/v1/housekeeping/maintenance/{id}/close",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "resolution",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.HousekeepingApiController",
+    "Method": "GetTasks",
+    "RelativePath": "api/v1/housekeeping/tasks",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.HousekeepingApiController",
+    "Method": "CreateTask",
+    "RelativePath": "api/v1/housekeeping/tasks",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Hotelo.Core.DTOs.Housekeeping.CreateTaskDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.HousekeepingApiController",
+    "Method": "AssignTask",
+    "RelativePath": "api/v1/housekeeping/tasks/{id}/assign",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.HousekeepingApiController",
+    "Method": "CompleteTask",
+    "RelativePath": "api/v1/housekeeping/tasks/{id}/complete",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.HousekeepingApiController",
+    "Method": "StartTask",
+    "RelativePath": "api/v1/housekeeping/tasks/{id}/start",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.HRApiController",
+    "Method": "GetDashboard",
+    "RelativePath": "api/v1/hr/dashboard",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.HRApiController",
+    "Method": "GetDepartments",
+    "RelativePath": "api/v1/hr/departments",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.HRApiController",
+    "Method": "CreateDepartment",
+    "RelativePath": "api/v1/hr/departments",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Hotelo.Core.DTOs.HR.CreateDepartmentDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.HRApiController",
+    "Method": "GetEmployees",
+    "RelativePath": "api/v1/hr/employees",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.HRApiController",
+    "Method": "CreateEmployee",
+    "RelativePath": "api/v1/hr/employees",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Hotelo.Core.DTOs.HR.CreateEmployeeDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.HRApiController",
+    "Method": "GetEmployee",
+    "RelativePath": "api/v1/hr/employees/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.HRApiController",
+    "Method": "UpdateEmployee",
+    "RelativePath": "api/v1/hr/employees/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "Hotelo.Core.DTOs.HR.UpdateEmployeeDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.HRApiController",
+    "Method": "DeleteEmployee",
+    "RelativePath": "api/v1/hr/employees/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.InvoicesApiController",
+    "Method": "GetAll",
+    "RelativePath": "api/v1/invoices",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.InvoicesApiController",
+    "Method": "GetById",
+    "RelativePath": "api/v1/invoices/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.InvoicesApiController",
+    "Method": "GetDashboard",
+    "RelativePath": "api/v1/invoices/dashboard",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.InvoicesApiController",
+    "Method": "Generate",
+    "RelativePath": "api/v1/invoices/generate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Hotelo.Core.DTOs.Finances.CreateInvoiceDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.InvoicesApiController",
+    "Method": "RegisterPayment",
+    "RelativePath": "api/v1/invoices/payment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Hotelo.Core.DTOs.Finances.RegisterPaymentDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.InvoicesApiController",
+    "Method": "GetByReservation",
+    "RelativePath": "api/v1/invoices/reservation/{reservationId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reservationId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.InvoicesApiController",
+    "Method": "GetUnpaid",
+    "RelativePath": "api/v1/invoices/unpaid",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.PackagesApiController",
+    "Method": "GetAll",
+    "RelativePath": "api/v1/packages",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.PackagesApiController",
+    "Method": "Create",
+    "RelativePath": "api/v1/packages",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Hotelo.Core.DTOs.Package.CreatePackageDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.PackagesApiController",
+    "Method": "GetById",
+    "RelativePath": "api/v1/packages/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.PackagesApiController",
+    "Method": "Update",
+    "RelativePath": "api/v1/packages/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "Hotelo.Core.DTOs.Package.UpdatePackageDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.PackagesApiController",
+    "Method": "Delete",
+    "RelativePath": "api/v1/packages/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.PackagesApiController",
+    "Method": "GetActive",
+    "RelativePath": "api/v1/packages/active",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.ReportsApiController",
+    "Method": "GetDirectionReport",
+    "RelativePath": "api/v1/reports/direction",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "year",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "month",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.ReservationsApiController",
+    "Method": "GetAll",
+    "RelativePath": "api/v1/reservations",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.ReservationsApiController",
+    "Method": "Create",
+    "RelativePath": "api/v1/reservations",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Hotelo.Core.DTOs.Reservation.CreateReservationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.ReservationsApiController",
+    "Method": "GetById",
+    "RelativePath": "api/v1/reservations/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.ReservationsApiController",
+    "Method": "Update",
+    "RelativePath": "api/v1/reservations/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "Hotelo.Core.DTOs.Reservation.UpdateReservationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.ReservationsApiController",
+    "Method": "Cancel",
+    "RelativePath": "api/v1/reservations/{id}/cancel",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "reason",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.ReservationsApiController",
+    "Method": "CheckIn",
+    "RelativePath": "api/v1/reservations/{id}/checkin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.ReservationsApiController",
+    "Method": "CheckOut",
+    "RelativePath": "api/v1/reservations/{id}/checkout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.ReservationsApiController",
+    "Method": "TodayArrivals",
+    "RelativePath": "api/v1/reservations/arrivals/today",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.ReservationsApiController",
+    "Method": "CheckAvailability",
+    "RelativePath": "api/v1/reservations/availability",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roomId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "checkIn",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "checkOut",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.ReservationsApiController",
+    "Method": "TodayDepartures",
+    "RelativePath": "api/v1/reservations/departures/today",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.RoomsApiController",
+    "Method": "GetAll",
+    "RelativePath": "api/v1/rooms",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.RoomsApiController",
+    "Method": "Create",
+    "RelativePath": "api/v1/rooms",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Hotelo.Core.DTOs.Room.CreateRoomDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.RoomsApiController",
+    "Method": "GetById",
+    "RelativePath": "api/v1/rooms/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.RoomsApiController",
+    "Method": "Update",
+    "RelativePath": "api/v1/rooms/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "Hotelo.Core.DTOs.Room.UpdateRoomDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.RoomsApiController",
+    "Method": "Delete",
+    "RelativePath": "api/v1/rooms/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.RoomsApiController",
+    "Method": "GetAvailability",
+    "RelativePath": "api/v1/rooms/{id}/availability",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.RoomsApiController",
+    "Method": "UpdateStatus",
+    "RelativePath": "api/v1/rooms/{id}/status",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "Hotelo.Core.DTOs.Room.UpdateRoomStatusDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.RoomsApiController",
+    "Method": "GetDashboard",
+    "RelativePath": "api/v1/rooms/dashboard",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.RoomsApiController",
+    "Method": "GetPlan",
+    "RelativePath": "api/v1/rooms/plan",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.TechniqueApiController",
+    "Method": "Create",
+    "RelativePath": "api/v1/technique",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Hotelo.Core.DTOs.Technique.CreateTechDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.TechniqueApiController",
+    "Method": "Close",
+    "RelativePath": "api/v1/technique/{id}/close",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "Hotelo.Web.Areas.Api.Controllers.CloseInterventionDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.TechniqueApiController",
+    "Method": "Start",
+    "RelativePath": "api/v1/technique/{id}/start",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.TechniqueApiController",
+    "Method": "GetDashboard",
+    "RelativePath": "api/v1/technique/dashboard",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.UsersApiController",
+    "Method": "GetAll",
+    "RelativePath": "api/v1/users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.UsersApiController",
+    "Method": "Create",
+    "RelativePath": "api/v1/users",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Hotelo.Core.DTOs.Identity.CreateUserDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.UsersApiController",
+    "Method": "GetById",
+    "RelativePath": "api/v1/users/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.UsersApiController",
+    "Method": "Update",
+    "RelativePath": "api/v1/users/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "Hotelo.Core.DTOs.Identity.UpdateUserDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.UsersApiController",
+    "Method": "Delete",
+    "RelativePath": "api/v1/users/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.UsersApiController",
+    "Method": "AssignRole",
+    "RelativePath": "api/v1/users/{id}/role",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "role",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.UsersApiController",
+    "Method": "ChangePassword",
+    "RelativePath": "api/v1/users/change-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Hotelo.Core.DTOs.Identity.ChangePasswordDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hotelo.Web.Areas.Api.Controllers.UsersApiController",
+    "Method": "GetDashboard",
+    "RelativePath": "api/v1/users/dashboard",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
