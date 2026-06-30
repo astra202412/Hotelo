@@ -1,0 +1,943 @@
+2026-06-17 01:56:32.274 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-17 01:56:48.134 +02:00 [ERR] Erreur initialisation DB
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerDatabaseCreator.<>c__DisplayClass20_0.<<ExistsAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerDatabaseCreator.<>c__DisplayClass20_0.<<ExistsAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerDatabaseCreator.<>c__DisplayClass20_0.<<ExistsAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabaseCreator.EnsureCreatedAsync(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabaseCreator.EnsureCreatedAsync(CancellationToken cancellationToken)
+   at Program.<Main>$(String[] args) in C:\Projects\Hotelo\Hotelo.Web\Program.cs:line 46
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2026-06-17 01:56:49.156 +02:00 [INF] Start installing Hangfire SQL objects...
+2026-06-17 01:56:49.170 +02:00 [WRN] An exception occurred while trying to perform the migration. Retrying...
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 365
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[T](DbConnection dedicatedConnection, Func`2 func) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 256
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection(DbConnection dedicatedConnection, Action`1 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 243
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 424
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2026-06-17 01:56:49.201 +02:00 [WRN] An exception occurred while trying to perform the migration. Retrying...
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 365
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[T](DbConnection dedicatedConnection, Func`2 func) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 256
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection(DbConnection dedicatedConnection, Action`1 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 243
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 424
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2026-06-17 01:56:49.213 +02:00 [WRN] An exception occurred while trying to perform the migration.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 365
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[T](DbConnection dedicatedConnection, Func`2 func) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 256
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection(DbConnection dedicatedConnection, Action`1 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 243
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 424
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2026-06-17 01:56:49.226 +02:00 [WRN] Was unable to perform the Hangfire schema migration due to an exception. Ignore this message unless you've just installed or upgraded Hangfire.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 365
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[T](DbConnection dedicatedConnection, Func`2 func) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 256
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection(DbConnection dedicatedConnection, Action`1 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 243
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 424
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2026-06-17 01:56:49.237 +02:00 [ERR] Was unable to use the TryAutoDetectSchemaDependentOptions option due to an exception.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 365
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[T](DbConnection dedicatedConnection, Func`2 func) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 256
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection(DbConnection dedicatedConnection, Action`1 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 243
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 455
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2026-06-17 01:58:48.960 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-17 01:58:52.024 +02:00 [INF] Start installing Hangfire SQL objects...
+2026-06-17 01:58:52.404 +02:00 [INF] Hangfire SQL objects installed.
+2026-06-17 01:58:53.271 +02:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: ASTRA\SQLEXPRESS@hoteloDB'
+2026-06-17 01:58:53.275 +02:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-06-17 01:58:53.278 +02:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-06-17 01:58:53.319 +02:00 [INF] Server astra:10160:8b5bdda3 successfully announced in 18,299 ms
+2026-06-17 01:58:53.325 +02:00 [INF] Server astra:10160:8b5bdda3 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-06-17 01:58:53.339 +02:00 [INF] 1 servers were removed due to timeout
+2026-06-17 01:58:53.341 +02:00 [INF] Server astra:10160:8b5bdda3 all the dispatchers started
+2026-06-17 01:59:03.522 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-17 01:59:03.535 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-17 01:59:03.640 +02:00 [INF] REQ GET /Account/Login [Anonyme]
+2026-06-17 01:59:03.917 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 01:59:07.222 +02:00 [INF] REQ POST /Account/Login [Anonyme]
+2026-06-17 01:59:07.943 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-17 01:59:07.988 +02:00 [INF] REQ GET /Dashboard [Anonyme]
+2026-06-17 01:59:09.291 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 01:59:09.649 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 01:59:12.467 +02:00 [INF] REQ GET /FrontOffice [Anonyme]
+2026-06-17 01:59:12.576 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 01:59:12.627 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 02:00:35.941 +02:00 [INF] REQ GET /FrontOffice/Home/Details/3 [Anonyme]
+2026-06-17 02:00:38.954 +02:00 [INF] REQ GET /FrontOffice/Home/Edit/3 [Anonyme]
+2026-06-17 02:00:38.978 +02:00 [ERR] The view 'Edit' was not found. Searched locations: ["/Areas/FrontOffice/Views/Home/Edit.cshtml","/Areas/FrontOffice/Views/Shared/Edit.cshtml","/Views/Shared/Edit.cshtml","/Pages/Shared/Edit.cshtml"]
+2026-06-17 02:00:39.001 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The view 'Edit' was not found. The following locations were searched:
+/Areas/FrontOffice/Views/Home/Edit.cshtml
+/Areas/FrontOffice/Views/Shared/Edit.cshtml
+/Views/Shared/Edit.cshtml
+/Pages/Shared/Edit.cshtml
+   at Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable`1 originalLocations)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Hotelo.Web.Middlewares.RequestLoggingMiddleware.InvokeAsync(HttpContext context) in C:\Projects\Hotelo\Hotelo.Web\Middlewares\RequestLoggingMiddleware.cs:line 20
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-06-17 02:00:43.084 +02:00 [INF] REQ GET /FrontOffice [Anonyme]
+2026-06-17 02:00:43.165 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 02:00:43.195 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 02:00:45.382 +02:00 [INF] REQ GET /FrontOffice/Home/Details/3 [Anonyme]
+2026-06-17 02:00:47.591 +02:00 [INF] REQ POST /FrontOffice/Home/UpdateStatus [Anonyme]
+2026-06-17 02:00:47.920 +02:00 [INF] REQ GET /FrontOffice [Anonyme]
+2026-06-17 02:00:47.987 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 02:00:48.015 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 02:00:48.016 +02:00 [INF] REQ GET /favicon.ico [Anonyme]
+2026-06-17 02:00:51.362 +02:00 [INF] REQ GET /FrontOffice/Home/Details/8 [Anonyme]
+2026-06-17 02:00:53.232 +02:00 [INF] REQ POST /FrontOffice/Home/UpdateStatus [Anonyme]
+2026-06-17 02:00:53.268 +02:00 [INF] REQ GET /FrontOffice [Anonyme]
+2026-06-17 02:00:53.349 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 02:00:53.382 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 02:00:58.001 +02:00 [INF] REQ GET /FrontOffice/Home/Details/5 [Anonyme]
+2026-06-17 02:01:00.236 +02:00 [INF] REQ POST /FrontOffice/Home/UpdateStatus [Anonyme]
+2026-06-17 02:01:00.269 +02:00 [INF] REQ GET /FrontOffice [Anonyme]
+2026-06-17 02:01:00.341 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 02:01:00.374 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 02:01:03.650 +02:00 [INF] REQ GET /FrontOffice/Home/Details/13 [Anonyme]
+2026-06-17 02:01:05.119 +02:00 [INF] REQ POST /FrontOffice/Home/UpdateStatus [Anonyme]
+2026-06-17 02:01:05.206 +02:00 [INF] REQ GET /FrontOffice [Anonyme]
+2026-06-17 02:01:05.358 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 02:01:05.422 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 02:01:08.955 +02:00 [INF] REQ GET /FrontOffice/Home/Details/13 [Anonyme]
+2026-06-17 02:01:10.939 +02:00 [INF] REQ GET /FrontOffice/Home/Edit/13 [Anonyme]
+2026-06-17 02:01:10.948 +02:00 [ERR] The view 'Edit' was not found. Searched locations: ["/Areas/FrontOffice/Views/Home/Edit.cshtml","/Areas/FrontOffice/Views/Shared/Edit.cshtml","/Views/Shared/Edit.cshtml","/Pages/Shared/Edit.cshtml"]
+2026-06-17 02:01:10.960 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The view 'Edit' was not found. The following locations were searched:
+/Areas/FrontOffice/Views/Home/Edit.cshtml
+/Areas/FrontOffice/Views/Shared/Edit.cshtml
+/Views/Shared/Edit.cshtml
+/Pages/Shared/Edit.cshtml
+   at Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable`1 originalLocations)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Hotelo.Web.Middlewares.RequestLoggingMiddleware.InvokeAsync(HttpContext context) in C:\Projects\Hotelo\Hotelo.Web\Middlewares\RequestLoggingMiddleware.cs:line 20
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-06-17 02:01:27.140 +02:00 [INF] REQ GET /FrontOffice [Anonyme]
+2026-06-17 02:01:27.209 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 02:01:27.238 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 02:01:29.855 +02:00 [INF] REQ GET /FrontOffice/Home/Details/3 [Anonyme]
+2026-06-17 02:02:12.505 +02:00 [INF] REQ GET /Reservation/Packages [Anonyme]
+2026-06-17 02:02:12.579 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 02:02:12.582 +02:00 [INF] REQ GET /api/v1/packages [Anonyme]
+2026-06-17 02:02:12.621 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 02:04:12.291 +02:00 [INF] REQ GET /Reservation [Anonyme]
+2026-06-17 02:04:12.396 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 02:04:12.455 +02:00 [INF] REQ GET /api/v1/reservations [Anonyme]
+2026-06-17 02:04:12.475 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 02:04:12.579 +02:00 [INF] REQ GET /api/v1/reservations/arrivals/today [Anonyme]
+2026-06-17 02:04:12.676 +02:00 [INF] REQ GET /api/v1/reservations/departures/today [Anonyme]
+2026-06-17 02:06:05.787 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 02:06:05.804 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 02:06:07.645 +02:00 [INF] REQ GET /Finances [Anonyme]
+2026-06-17 02:06:07.744 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 02:06:07.784 +02:00 [INF] REQ GET /api/v1/invoices/dashboard [Anonyme]
+2026-06-17 02:06:07.791 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 02:06:07.823 +02:00 [INF] REQ GET /api/v1/invoices [Anonyme]
+2026-06-17 02:06:07.882 +02:00 [INF] REQ GET /api/v1/reservations [Anonyme]
+2026-06-17 02:06:22.378 +02:00 [INF] REQ GET /Housekeeping [Anonyme]
+2026-06-17 02:06:22.450 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 02:06:22.453 +02:00 [INF] REQ GET /api/v1/housekeeping/dashboard [Anonyme]
+2026-06-17 02:06:22.484 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 02:06:25.254 +02:00 [INF] REQ GET /HR [Anonyme]
+2026-06-17 02:06:25.346 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 02:06:25.349 +02:00 [INF] REQ GET /api/v1/hr/dashboard [Anonyme]
+2026-06-17 02:06:25.393 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 02:07:51.225 +02:00 [INF] REQ GET /Commercial [Anonyme]
+2026-06-17 02:07:51.306 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 02:07:51.309 +02:00 [INF] REQ GET /api/v1/commercial/dashboard [Anonyme]
+2026-06-17 02:07:51.351 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 02:07:56.551 +02:00 [INF] REQ GET /Technique [Anonyme]
+2026-06-17 02:07:56.650 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 02:07:56.667 +02:00 [INF] REQ GET /api/v1/technique/dashboard [Anonyme]
+2026-06-17 02:07:56.696 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 02:07:58.226 +02:00 [INF] REQ GET /Commercial [Anonyme]
+2026-06-17 02:07:58.341 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 02:07:58.343 +02:00 [INF] REQ GET /api/v1/commercial/dashboard [Anonyme]
+2026-06-17 02:07:58.388 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 02:08:08.123 +02:00 [INF] REQ GET /Admin/Access [Anonyme]
+2026-06-17 02:08:08.223 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 02:08:08.326 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 02:09:39.071 +02:00 [INF] REQ GET /Commercial [Anonyme]
+2026-06-17 02:09:39.147 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 02:09:39.148 +02:00 [INF] REQ GET /api/v1/commercial/dashboard [Anonyme]
+2026-06-17 02:09:39.185 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 02:09:50.482 +02:00 [INF] REQ GET /FrontOffice [Anonyme]
+2026-06-17 02:09:50.555 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 02:09:50.584 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 02:09:53.766 +02:00 [INF] REQ GET /Reservation [Anonyme]
+2026-06-17 02:09:53.840 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 02:09:53.843 +02:00 [INF] REQ GET /api/v1/reservations [Anonyme]
+2026-06-17 02:09:53.875 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 02:09:53.876 +02:00 [INF] REQ GET /api/v1/reservations/arrivals/today [Anonyme]
+2026-06-17 02:09:53.898 +02:00 [INF] REQ GET /api/v1/reservations/departures/today [Anonyme]
+2026-06-17 02:12:14.245 +02:00 [INF] REQ GET /Reservation/Packages [Anonyme]
+2026-06-17 02:12:14.312 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 02:12:14.315 +02:00 [INF] REQ GET /api/v1/packages [Anonyme]
+2026-06-17 02:12:14.338 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 02:12:22.555 +02:00 [INF] REQ GET /Commercial [Anonyme]
+2026-06-17 02:12:22.661 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 02:12:22.697 +02:00 [INF] REQ GET /api/v1/commercial/dashboard [Anonyme]
+2026-06-17 02:12:22.717 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 02:12:23.865 +02:00 [INF] REQ GET /Commercial [Anonyme]
+2026-06-17 02:12:23.979 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 02:12:24.013 +02:00 [INF] REQ GET /api/v1/commercial/dashboard [Anonyme]
+2026-06-17 02:12:24.032 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 02:13:47.590 +02:00 [INF] REQ GET /Finances [Anonyme]
+2026-06-17 02:13:47.692 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 02:13:47.720 +02:00 [INF] REQ GET /api/v1/invoices/dashboard [Anonyme]
+2026-06-17 02:13:47.737 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 02:13:47.763 +02:00 [INF] REQ GET /api/v1/invoices [Anonyme]
+2026-06-17 02:13:47.790 +02:00 [INF] REQ GET /api/v1/reservations [Anonyme]
+2026-06-17 02:14:00.950 +02:00 [INF] REQ GET /api/v1/export/invoice/2/pdf [Anonyme]
+2026-06-17 02:16:59.634 +02:00 [INF] REQ GET /Reservation [Anonyme]
+2026-06-17 02:16:59.773 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 02:16:59.823 +02:00 [INF] REQ GET /api/v1/reservations [Anonyme]
+2026-06-17 02:16:59.849 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 02:16:59.867 +02:00 [INF] REQ GET /api/v1/reservations/arrivals/today [Anonyme]
+2026-06-17 02:16:59.905 +02:00 [INF] REQ GET /api/v1/reservations/departures/today [Anonyme]
+2026-06-17 02:18:29.176 +02:00 [INF] REQ GET /Commercial [Anonyme]
+2026-06-17 02:18:29.246 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 02:18:29.248 +02:00 [INF] REQ GET /api/v1/commercial/dashboard [Anonyme]
+2026-06-17 02:18:29.276 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 02:18:36.831 +02:00 [INF] REQ GET /Reports [Anonyme]
+2026-06-17 02:18:37.098 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 02:18:37.231 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 02:18:40.919 +02:00 [INF] REQ GET /Admin/Backup [Anonyme]
+2026-06-17 02:18:41.011 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 02:18:41.043 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 02:18:51.134 +02:00 [INF] REQ GET /Admin/Access [Anonyme]
+2026-06-17 02:18:51.196 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 02:18:51.228 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 02:19:12.152 +02:00 [INF] REQ GET /Housekeeping [Anonyme]
+2026-06-17 02:19:12.252 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 02:19:12.274 +02:00 [INF] REQ GET /api/v1/housekeeping/dashboard [Anonyme]
+2026-06-17 02:19:12.283 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 02:19:15.027 +02:00 [INF] REQ GET /HR [Anonyme]
+2026-06-17 02:19:15.112 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 02:19:15.115 +02:00 [INF] REQ GET /api/v1/hr/dashboard [Anonyme]
+2026-06-17 02:19:15.139 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 02:19:22.262 +02:00 [INF] REQ GET /Admin/Access [Anonyme]
+2026-06-17 02:19:22.333 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 02:19:22.363 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-17 02:40:22.728 +02:00 [INF] Server astra:10160:8b5bdda3 caught stopping signal...
+2026-06-17 02:40:22.824 +02:00 [INF] Server astra:10160:8b5bdda3 All dispatchers stopped
+2026-06-17 02:40:22.845 +02:00 [INF] Server astra:10160:8b5bdda3 successfully reported itself as stopped in 9,2349 ms
+2026-06-17 02:40:22.851 +02:00 [INF] Server astra:10160:8b5bdda3 has been stopped in total 116,4358 ms
+2026-06-17 13:58:06.740 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-17 13:58:10.956 +02:00 [ERR] Failed executing DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppModules] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-06-17 13:58:11.072 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Hotelo.Infrastructure.Data.HoteloDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AppModules'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:b4d43233-241f-4760-9146-2a5ba90fc04f
+Error Number:208,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AppModules'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:b4d43233-241f-4760-9146-2a5ba90fc04f
+Error Number:208,State:1,Class:16
+2026-06-17 13:58:11.319 +02:00 [ERR] Erreur initialisation DB
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AppModules'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Hotelo.Infrastructure.Data.SeedData.AdminSeed.SeedAsync(HoteloDbContext context) in C:\Projects\Hotelo\Hotelo.Infrastructure\Data\SeedData\AdminSeed.cs:line 12
+   at Program.<Main>$(String[] args) in C:\Projects\Hotelo\Hotelo.Web\Program.cs:line 56
+ClientConnectionId:b4d43233-241f-4760-9146-2a5ba90fc04f
+Error Number:208,State:1,Class:16
+2026-06-17 13:58:12.392 +02:00 [INF] Start installing Hangfire SQL objects...
+2026-06-17 13:58:13.103 +02:00 [INF] Hangfire SQL objects installed.
+2026-06-17 13:58:15.559 +02:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: ASTRA\SQLEXPRESS@hoteloDB'
+2026-06-17 13:58:15.600 +02:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-06-17 13:58:15.618 +02:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-06-17 13:58:15.728 +02:00 [INF] Server astra:1112:9e1e917c successfully announced in 27,7568 ms
+2026-06-17 13:58:15.770 +02:00 [INF] Server astra:1112:9e1e917c is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-06-17 13:58:15.963 +02:00 [INF] Server astra:1112:9e1e917c all the dispatchers started
+2026-06-17 13:58:17.055 +02:00 [INF] Backup cree : hoteloDB_backup_20260617_135816.bak
+2026-06-17 13:58:17.083 +02:00 [INF] Backup automatique reussi : hoteloDB_backup_20260617_135816.bak
+2026-06-17 13:58:18.214 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-17 13:58:18.493 +02:00 [INF] REQ GET /Account/Login [Anonyme]
+2026-06-17 13:58:19.068 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 13:58:28.908 +02:00 [INF] REQ GET /Admin/Departments [Anonyme]
+2026-06-17 13:58:28.980 +02:00 [INF] REQ GET /Account/Login [Anonyme]
+2026-06-17 13:58:29.280 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 13:58:29.903 +02:00 [INF] REQ GET /Admin/Departments [Anonyme]
+2026-06-17 13:58:29.970 +02:00 [INF] REQ GET /Account/Login [Anonyme]
+2026-06-17 13:58:30.179 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 14:03:57.686 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-17 14:03:59.913 +02:00 [ERR] Failed executing DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppModules] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-06-17 14:03:59.961 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Hotelo.Infrastructure.Data.HoteloDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AppModules'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:bbffbed1-9b65-4542-83b4-dce8e0c63462
+Error Number:208,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AppModules'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:bbffbed1-9b65-4542-83b4-dce8e0c63462
+Error Number:208,State:1,Class:16
+2026-06-17 14:04:00.182 +02:00 [ERR] Erreur initialisation DB
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AppModules'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Hotelo.Infrastructure.Data.SeedData.AdminSeed.SeedAsync(HoteloDbContext context) in C:\Projects\Hotelo\Hotelo.Infrastructure\Data\SeedData\AdminSeed.cs:line 12
+   at Program.<Main>$(String[] args) in C:\Projects\Hotelo\Hotelo.Web\Program.cs:line 56
+ClientConnectionId:bbffbed1-9b65-4542-83b4-dce8e0c63462
+Error Number:208,State:1,Class:16
+2026-06-17 14:04:00.266 +02:00 [INF] Start installing Hangfire SQL objects...
+2026-06-17 14:04:00.667 +02:00 [INF] Hangfire SQL objects installed.
+2026-06-17 14:04:02.026 +02:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: ASTRA\SQLEXPRESS@hoteloDB'
+2026-06-17 14:04:02.052 +02:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-06-17 14:04:02.055 +02:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-06-17 14:04:02.126 +02:00 [INF] Server astra:8084:369d77ed successfully announced in 32,9842 ms
+2026-06-17 14:04:02.137 +02:00 [INF] Server astra:8084:369d77ed is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-06-17 14:04:02.207 +02:00 [INF] 1 servers were removed due to timeout
+2026-06-17 14:04:02.346 +02:00 [INF] Server astra:8084:369d77ed all the dispatchers started
+2026-06-17 14:04:03.889 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-17 14:04:04.197 +02:00 [INF] REQ GET /Account/Login [Anonyme]
+2026-06-17 14:04:04.749 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 14:04:12.468 +02:00 [INF] REQ POST /Account/Login [Anonyme]
+2026-06-17 14:04:13.435 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 14:04:24.918 +02:00 [INF] REQ POST /Account/Login [Anonyme]
+2026-06-17 14:04:25.580 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 14:04:55.615 +02:00 [INF] REQ POST /Account/Login [Anonyme]
+2026-06-17 14:04:56.587 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-17 14:04:56.826 +02:00 [INF] REQ GET /Dashboard [Anonyme]
+2026-06-17 14:04:58.666 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 14:04:59.085 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-17 14:05:04.856 +02:00 [INF] REQ GET /Admin/Departments [Anonyme]
+2026-06-17 14:05:05.064 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Hotelo.Core.Interfaces.Services.IAdminService' while attempting to activate 'Hotelo.Web.Areas.Admin.Controllers.DepartmentsController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method924(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Hotelo.Web.Middlewares.RequestLoggingMiddleware.InvokeAsync(HttpContext context) in C:\Projects\Hotelo\Hotelo.Web\Middlewares\RequestLoggingMiddleware.cs:line 20
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-06-17 14:05:10.191 +02:00 [INF] REQ GET /Dashboard [Anonyme]
+2026-06-17 14:05:10.360 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 14:05:10.498 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-17 14:05:14.659 +02:00 [INF] REQ GET /Admin/Access [Anonyme]
+2026-06-17 14:05:14.898 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 14:05:14.976 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-17 14:05:19.241 +02:00 [INF] REQ GET /Admin/Departments [Anonyme]
+2026-06-17 14:05:19.330 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Hotelo.Core.Interfaces.Services.IAdminService' while attempting to activate 'Hotelo.Web.Areas.Admin.Controllers.DepartmentsController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method924(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Hotelo.Web.Middlewares.RequestLoggingMiddleware.InvokeAsync(HttpContext context) in C:\Projects\Hotelo\Hotelo.Web\Middlewares\RequestLoggingMiddleware.cs:line 20
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-06-17 14:05:21.405 +02:00 [INF] REQ GET /Admin/Access [Anonyme]
+2026-06-17 14:05:21.657 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 14:05:21.736 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-17 14:05:30.426 +02:00 [INF] REQ GET /FrontOffice [Anonyme]
+2026-06-17 14:05:30.741 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 14:05:30.773 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-17 20:20:33.995 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-17 20:20:36.988 +02:00 [ERR] Failed executing DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppModules] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-06-17 20:20:37.030 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Hotelo.Infrastructure.Data.HoteloDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AppModules'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:4d842b57-095e-47f5-afc2-8982caca547f
+Error Number:208,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AppModules'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:4d842b57-095e-47f5-afc2-8982caca547f
+Error Number:208,State:1,Class:16
+2026-06-17 20:20:37.233 +02:00 [ERR] Erreur initialisation DB
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AppModules'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Hotelo.Infrastructure.Data.SeedData.AdminSeed.SeedAsync(HoteloDbContext context) in C:\Projects\Hotelo\Hotelo.Infrastructure\Data\SeedData\AdminSeed.cs:line 12
+   at Program.<Main>$(String[] args) in C:\Projects\Hotelo\Hotelo.Web\Program.cs:line 56
+ClientConnectionId:4d842b57-095e-47f5-afc2-8982caca547f
+Error Number:208,State:1,Class:16
+2026-06-17 20:20:38.294 +02:00 [INF] Start installing Hangfire SQL objects...
+2026-06-17 20:20:38.582 +02:00 [INF] Hangfire SQL objects installed.
+2026-06-17 20:20:39.957 +02:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: ASTRA\SQLEXPRESS@hoteloDB'
+2026-06-17 20:20:39.959 +02:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-06-17 20:20:39.961 +02:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-06-17 20:20:40.015 +02:00 [INF] Server astra:2224:77af7fe7 successfully announced in 21,5782 ms
+2026-06-17 20:20:40.023 +02:00 [INF] Server astra:2224:77af7fe7 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-06-17 20:20:40.047 +02:00 [INF] 1 servers were removed due to timeout
+2026-06-17 20:20:40.149 +02:00 [INF] Server astra:2224:77af7fe7 all the dispatchers started
+2026-06-17 20:20:42.623 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-17 20:20:42.894 +02:00 [INF] REQ GET /Account/Login [Anonyme]
+2026-06-17 20:20:43.464 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 20:20:45.971 +02:00 [INF] REQ POST /Account/Login [Anonyme]
+2026-06-17 20:20:46.620 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-17 20:20:46.810 +02:00 [INF] REQ GET /Dashboard [Anonyme]
+2026-06-17 20:20:47.872 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 20:20:48.054 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-17 20:20:51.359 +02:00 [INF] REQ GET /Admin/UserAccess [Anonyme]
+2026-06-17 20:20:51.472 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 20:20:51.474 +02:00 [INF] REQ GET /api/v1/admin/access-matrix [Anonyme]
+2026-06-17 20:20:51.548 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-17 20:20:51.553 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Hotelo.Core.Interfaces.Services.IAdminService' while attempting to activate 'Hotelo.Web.Areas.Api.Controllers.AdminApiController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method845(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Hotelo.Web.Middlewares.RequestLoggingMiddleware.InvokeAsync(HttpContext context) in C:\Projects\Hotelo\Hotelo.Web\Middlewares\RequestLoggingMiddleware.cs:line 20
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-06-17 20:21:05.040 +02:00 [INF] REQ GET /Admin/Access [Anonyme]
+2026-06-17 20:21:05.169 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 20:21:05.275 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-17 20:21:06.853 +02:00 [INF] REQ GET /Admin [Anonyme]
+2026-06-17 20:21:07.075 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 20:21:07.078 +02:00 [INF] REQ GET /api/v1/users/dashboard [Anonyme]
+2026-06-17 20:21:07.160 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-17 20:21:27.589 +02:00 [INF] REQ GET /Admin/Departments [Anonyme]
+2026-06-17 20:21:27.720 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Hotelo.Core.Interfaces.Services.IAdminService' while attempting to activate 'Hotelo.Web.Areas.Admin.Controllers.DepartmentsController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method875(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Hotelo.Web.Middlewares.RequestLoggingMiddleware.InvokeAsync(HttpContext context) in C:\Projects\Hotelo\Hotelo.Web\Middlewares\RequestLoggingMiddleware.cs:line 20
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-06-17 20:40:45.712 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-17 20:40:47.688 +02:00 [ERR] Failed executing DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppModules] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-06-17 20:40:47.720 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Hotelo.Infrastructure.Data.HoteloDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AppModules'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:2f6c6277-4528-43ab-9a12-fd9e614f53c3
+Error Number:208,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AppModules'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:2f6c6277-4528-43ab-9a12-fd9e614f53c3
+Error Number:208,State:1,Class:16
+2026-06-17 20:40:47.963 +02:00 [ERR] Erreur initialisation DB
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AppModules'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method221(Closure, QueryContext)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at Hotelo.Infrastructure.Data.SeedData.AdminSeed.SeedAsync(HoteloDbContext context) in C:\Projects\Hotelo\Hotelo.Infrastructure\Data\SeedData\AdminSeed.cs:line 11
+   at Program.<Main>$(String[] args) in C:\Projects\Hotelo\Hotelo.Web\Program.cs:line 56
+ClientConnectionId:2f6c6277-4528-43ab-9a12-fd9e614f53c3
+Error Number:208,State:1,Class:16
+2026-06-17 20:40:48.439 +02:00 [INF] Start installing Hangfire SQL objects...
+2026-06-17 20:40:48.647 +02:00 [INF] Hangfire SQL objects installed.
+2026-06-17 20:40:49.535 +02:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: ASTRA\SQLEXPRESS@hoteloDB'
+2026-06-17 20:40:49.539 +02:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-06-17 20:40:49.542 +02:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-06-17 20:40:49.617 +02:00 [INF] Server astra:5372:4686e744 successfully announced in 39,8249 ms
+2026-06-17 20:40:49.626 +02:00 [INF] Server astra:5372:4686e744 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-06-17 20:40:49.654 +02:00 [INF] 1 servers were removed due to timeout
+2026-06-17 20:40:49.736 +02:00 [INF] Server astra:5372:4686e744 all the dispatchers started
+2026-06-17 20:40:50.291 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-17 20:40:50.557 +02:00 [INF] REQ GET /Account/Login [Anonyme]
+2026-06-17 20:40:51.001 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 20:40:55.023 +02:00 [INF] REQ POST /Account/Login [Anonyme]
+2026-06-17 20:40:55.554 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-17 20:40:55.632 +02:00 [INF] REQ GET /Dashboard [Anonyme]
+2026-06-17 20:40:56.639 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 20:40:56.797 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-17 20:41:01.106 +02:00 [INF] REQ GET /Admin/UserAccess [Anonyme]
+2026-06-17 20:41:01.243 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 20:41:01.244 +02:00 [INF] REQ GET /api/v1/admin/access-matrix [Anonyme]
+2026-06-17 20:41:01.299 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-17 20:41:01.335 +02:00 [ERR] Failed executing DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Code], [a].[Description], [a].[Icon], [a].[Name], [a].[SortOrder]
+FROM [AppModules] AS [a]
+ORDER BY [a].[SortOrder]
+2026-06-17 20:41:01.345 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Hotelo.Infrastructure.Data.HoteloDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AppModules'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:52dd9ad4-10b4-4bf0-85e2-bae446712790
+Error Number:208,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AppModules'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:52dd9ad4-10b4-4bf0-85e2-bae446712790
+Error Number:208,State:1,Class:16
+2026-06-17 20:41:01.674 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AppModules'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Hotelo.Infrastructure.Services.AdminService.GetAccessMatrixAsync() in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\AdminService.cs:line 66
+   at Hotelo.Web.Areas.Api.Controllers.AdminApiController.GetMatrix() in C:\Projects\Hotelo\Hotelo.Web\Areas\Api\Controllers\AdminApiController.cs:line 42
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Hotelo.Web.Middlewares.RequestLoggingMiddleware.InvokeAsync(HttpContext context) in C:\Projects\Hotelo\Hotelo.Web\Middlewares\RequestLoggingMiddleware.cs:line 20
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:52dd9ad4-10b4-4bf0-85e2-bae446712790
+Error Number:208,State:1,Class:16
+2026-06-17 20:41:12.661 +02:00 [INF] REQ GET /Admin/Access [Anonyme]
+2026-06-17 20:41:12.906 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-17 20:41:12.957 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-17 20:41:18.928 +02:00 [INF] REQ GET /Admin/Departments [Anonyme]
+2026-06-17 20:41:19.095 +02:00 [ERR] Failed executing DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [j].[Id], [j].[Name], [j].[Description], [j].[DepartmentId], [d].[Name] AS [DepartmentName], [j].[IsActive], (
+    SELECT COUNT(*)
+    FROM [UserJobFunctions] AS [u]
+    WHERE [u].[JobFunctionId] = [j].[Id]) AS [UsersCount]
+FROM [JobFunctions] AS [j]
+INNER JOIN [Departments] AS [d] ON [j].[DepartmentId] = [d].[Id]
+ORDER BY [d].[Name], [j].[Name]
+2026-06-17 20:41:19.103 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Hotelo.Infrastructure.Data.HoteloDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'JobFunctions'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:08493b47-aa32-49fa-954e-0b4d2bdb1658
+Error Number:208,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'JobFunctions'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:08493b47-aa32-49fa-954e-0b4d2bdb1658
+Error Number:208,State:1,Class:16
+2026-06-17 20:41:19.302 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'JobFunctions'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Hotelo.Infrastructure.Services.AdminService.GetAllFunctionsAsync() in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\AdminService.cs:line 16
+   at Hotelo.Web.Areas.Admin.Controllers.DepartmentsController.Index() in C:\Projects\Hotelo\Hotelo.Web\Areas\Admin\Controllers\DepartmentsController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Hotelo.Web.Middlewares.RequestLoggingMiddleware.InvokeAsync(HttpContext context) in C:\Projects\Hotelo\Hotelo.Web\Middlewares\RequestLoggingMiddleware.cs:line 20
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:08493b47-aa32-49fa-954e-0b4d2bdb1658
+Error Number:208,State:1,Class:16

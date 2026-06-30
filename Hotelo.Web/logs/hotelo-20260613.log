@@ -1,0 +1,162 @@
+2026-06-13 12:52:05.159 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-13 12:52:11.109 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-13 12:52:11.120 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-13 12:52:11.269 +02:00 [INF] REQ GET /Account/Login [Anonyme]
+2026-06-13 12:52:11.623 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-13 12:52:14.620 +02:00 [INF] REQ POST /Account/Login [Anonyme]
+2026-06-13 12:52:15.051 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-13 12:52:15.081 +02:00 [INF] REQ GET /Dashboard [Anonyme]
+2026-06-13 12:52:16.350 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-13 12:52:16.534 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-13 12:52:19.161 +02:00 [INF] REQ GET /Reports [Anonyme]
+2026-06-13 12:52:19.650 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-13 12:52:19.829 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-13 21:50:57.981 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-13 21:51:01.568 +02:00 [INF] Start installing Hangfire SQL objects...
+2026-06-13 21:51:02.436 +02:00 [INF] Hangfire SQL objects installed.
+2026-06-13 21:51:03.499 +02:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: ASTRA\SQLEXPRESS@hoteloDB'
+2026-06-13 21:51:03.501 +02:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-06-13 21:51:03.504 +02:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-06-13 21:51:03.566 +02:00 [INF] Server astra:13700:b0f1c731 successfully announced in 23,4318 ms
+2026-06-13 21:51:03.575 +02:00 [INF] Server astra:13700:b0f1c731 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-06-13 21:51:03.656 +02:00 [INF] Server astra:13700:b0f1c731 all the dispatchers started
+2026-06-13 21:51:22.287 +02:00 [INF] REQ GET /Admin/Backup [Anonyme]
+2026-06-13 21:51:22.344 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-13 21:51:22.499 +02:00 [INF] REQ GET /Account/Login [Anonyme]
+2026-06-13 21:51:22.919 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-13 21:51:24.663 +02:00 [INF] REQ POST /Account/Login [Anonyme]
+2026-06-13 21:51:25.167 +02:00 [INF] REQ GET /Admin/Backup [Anonyme]
+2026-06-13 21:51:25.400 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-13 21:51:25.494 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-13 21:51:29.680 +02:00 [INF] REQ POST /api/v1/backup/create [Anonyme]
+2026-06-13 21:51:29.736 +02:00 [ERR] Erreur lors du backup
+Microsoft.Data.SqlClient.SqlException (0x80131904): BACKUP DATABASE WITH COMPRESSION is not supported on Express Edition (64-bit).
+BACKUP DATABASE is terminating abnormally.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__210_1(IAsyncResult result)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Hotelo.Infrastructure.Services.BackupService.CreateBackupAsync() in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 38
+   at Hotelo.Infrastructure.Services.BackupService.CreateBackupAsync() in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 41
+   at Hotelo.Infrastructure.Services.BackupService.CreateBackupAsync() in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 41
+ClientConnectionId:7ab2b8ff-0bf7-46e8-ab3a-7d5eb95ff677
+Error Number:1844,State:1,Class:16
+2026-06-13 21:51:46.248 +02:00 [INF] REQ POST /api/v1/backup/create [Anonyme]
+2026-06-13 21:51:46.281 +02:00 [ERR] Erreur lors du backup
+Microsoft.Data.SqlClient.SqlException (0x80131904): BACKUP DATABASE WITH COMPRESSION is not supported on Express Edition (64-bit).
+BACKUP DATABASE is terminating abnormally.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__210_1(IAsyncResult result)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Hotelo.Infrastructure.Services.BackupService.CreateBackupAsync() in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 38
+   at Hotelo.Infrastructure.Services.BackupService.CreateBackupAsync() in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 41
+   at Hotelo.Infrastructure.Services.BackupService.CreateBackupAsync() in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 41
+ClientConnectionId:3f065854-4098-44c7-bf81-4d989e3bed87
+Error Number:1844,State:1,Class:16
+2026-06-13 21:51:52.257 +02:00 [INF] REQ POST /api/v1/backup/create [Anonyme]
+2026-06-13 21:51:52.279 +02:00 [ERR] Erreur lors du backup
+Microsoft.Data.SqlClient.SqlException (0x80131904): BACKUP DATABASE WITH COMPRESSION is not supported on Express Edition (64-bit).
+BACKUP DATABASE is terminating abnormally.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__210_1(IAsyncResult result)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Hotelo.Infrastructure.Services.BackupService.CreateBackupAsync() in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 38
+   at Hotelo.Infrastructure.Services.BackupService.CreateBackupAsync() in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 41
+   at Hotelo.Infrastructure.Services.BackupService.CreateBackupAsync() in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 41
+ClientConnectionId:7ab2b8ff-0bf7-46e8-ab3a-7d5eb95ff677
+Error Number:1844,State:1,Class:16
+2026-06-13 21:51:54.307 +02:00 [INF] REQ POST /api/v1/backup/create [Anonyme]
+2026-06-13 21:51:54.333 +02:00 [ERR] Erreur lors du backup
+Microsoft.Data.SqlClient.SqlException (0x80131904): BACKUP DATABASE WITH COMPRESSION is not supported on Express Edition (64-bit).
+BACKUP DATABASE is terminating abnormally.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__210_1(IAsyncResult result)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Hotelo.Infrastructure.Services.BackupService.CreateBackupAsync() in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 38
+   at Hotelo.Infrastructure.Services.BackupService.CreateBackupAsync() in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 41
+   at Hotelo.Infrastructure.Services.BackupService.CreateBackupAsync() in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 41
+ClientConnectionId:7ab2b8ff-0bf7-46e8-ab3a-7d5eb95ff677
+Error Number:1844,State:1,Class:16
+2026-06-13 21:51:59.937 +02:00 [INF] REQ POST /api/v1/backup/create [Anonyme]
+2026-06-13 21:51:59.960 +02:00 [ERR] Erreur lors du backup
+Microsoft.Data.SqlClient.SqlException (0x80131904): BACKUP DATABASE WITH COMPRESSION is not supported on Express Edition (64-bit).
+BACKUP DATABASE is terminating abnormally.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__210_1(IAsyncResult result)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Hotelo.Infrastructure.Services.BackupService.CreateBackupAsync() in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 38
+   at Hotelo.Infrastructure.Services.BackupService.CreateBackupAsync() in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 41
+   at Hotelo.Infrastructure.Services.BackupService.CreateBackupAsync() in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 41
+ClientConnectionId:7ab2b8ff-0bf7-46e8-ab3a-7d5eb95ff677
+Error Number:1844,State:1,Class:16
+2026-06-13 21:52:03.315 +02:00 [INF] REQ GET /hangfire [Anonyme]
+2026-06-13 21:52:03.590 +02:00 [INF] REQ GET /hangfire/css181401884325434 [Anonyme]
+2026-06-13 21:52:03.590 +02:00 [INF] REQ GET /hangfire/css-dark1814029358526 [Anonyme]
+2026-06-13 21:52:03.604 +02:00 [INF] REQ GET /hangfire/js181401704393706 [Anonyme]
+2026-06-13 21:52:03.762 +02:00 [INF] REQ GET /hangfire/fonts/glyphicons-halflings-regular/woff2 [Anonyme]
+2026-06-13 21:52:06.156 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-13 21:52:08.254 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-13 21:52:10.305 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-13 21:52:12.380 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-13 21:52:13.200 +02:00 [INF] REQ GET /hangfire [Anonyme]
+2026-06-13 21:52:13.287 +02:00 [INF] REQ GET /hangfire/css181401884325434 [Anonyme]
+2026-06-13 21:52:13.288 +02:00 [INF] REQ GET /hangfire/css-dark1814029358526 [Anonyme]
+2026-06-13 21:52:13.293 +02:00 [INF] REQ GET /hangfire/js181401704393706 [Anonyme]
+2026-06-13 21:52:13.336 +02:00 [INF] REQ GET /hangfire/fonts/glyphicons-halflings-regular/woff2 [Anonyme]
+2026-06-13 21:52:15.414 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-13 21:52:17.466 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-13 21:52:19.514 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-13 21:52:21.548 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-13 21:52:23.619 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-13 21:52:25.686 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-13 21:52:27.741 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-13 21:52:29.754 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-13 21:52:29.779 +02:00 [INF] REQ GET /Dashboard [Anonyme]
+2026-06-13 21:52:29.782 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-13 21:52:30.952 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-13 21:52:31.170 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-13 21:56:12.897 +02:00 [WRN] Stopping the server due to DomainUnload or ProcessExit event...
+2026-06-13 21:56:12.901 +02:00 [INF] Server astra:13700:b0f1c731 caught stopping signal...
+2026-06-13 21:56:12.906 +02:00 [INF] Server astra:13700:b0f1c731 caught stopped signal...
+2026-06-13 21:56:12.909 +02:00 [INF] Server astra:13700:b0f1c731 All dispatchers stopped
+2026-06-13 21:56:12.910 +02:00 [WRN] Server astra:13700:b0f1c731 caught shutdown signal...
+2026-06-13 21:56:12.925 +02:00 [INF] Server astra:13700:b0f1c731 successfully reported itself as stopped in 10,0231 ms
+2026-06-13 21:56:12.928 +02:00 [INF] Server astra:13700:b0f1c731 has been stopped in total 21,5872 ms

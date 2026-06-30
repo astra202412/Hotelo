@@ -1,0 +1,331 @@
+2026-06-18 11:01:28.330 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-18 11:01:29.125 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-18 11:04:30.921 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-18 11:05:30.098 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-18 11:05:32.729 +02:00 [INF] Start installing Hangfire SQL objects...
+2026-06-18 11:05:33.233 +02:00 [INF] Hangfire SQL objects installed.
+2026-06-18 11:05:34.315 +02:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: ASTRA\SQLEXPRESS@hoteloDB'
+2026-06-18 11:05:34.319 +02:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-06-18 11:05:34.321 +02:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-06-18 11:05:34.389 +02:00 [INF] Server astra:20276:79f14033 successfully announced in 35,318 ms
+2026-06-18 11:05:34.402 +02:00 [INF] Server astra:20276:79f14033 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-06-18 11:05:34.431 +02:00 [INF] 1 servers were removed due to timeout
+2026-06-18 11:05:34.737 +02:00 [INF] Server astra:20276:79f14033 all the dispatchers started
+2026-06-18 11:05:37.551 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-18 11:05:37.927 +02:00 [INF] REQ GET /Account/Login [Anonyme]
+2026-06-18 11:05:38.965 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 11:05:42.334 +02:00 [INF] REQ POST /Account/Login [Anonyme]
+2026-06-18 11:05:43.235 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-18 11:05:43.401 +02:00 [INF] REQ GET /Dashboard [Anonyme]
+2026-06-18 11:05:46.232 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 11:05:46.429 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 11:05:51.566 +02:00 [INF] REQ GET /Admin/Departments [Anonyme]
+2026-06-18 11:05:53.716 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 11:05:53.788 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 11:06:11.382 +02:00 [INF] REQ GET /Admin/UserAccess [Anonyme]
+2026-06-18 11:06:11.535 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 11:06:11.535 +02:00 [INF] REQ GET /api/v1/admin/access-matrix [Anonyme]
+2026-06-18 11:06:11.600 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 11:06:13.719 +02:00 [INF] REQ GET /api/v1/admin/user-functions [Anonyme]
+2026-06-18 11:06:13.719 +02:00 [INF] REQ GET /api/v1/users [Anonyme]
+2026-06-18 11:09:01.074 +02:00 [INF] REQ GET /Admin/Access [Anonyme]
+2026-06-18 11:09:01.420 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 11:09:01.518 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 11:10:34.551 +02:00 [INF] 1 servers were removed due to timeout
+2026-06-18 11:11:33.557 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-18 11:11:36.563 +02:00 [INF] Start installing Hangfire SQL objects...
+2026-06-18 11:11:36.933 +02:00 [INF] Hangfire SQL objects installed.
+2026-06-18 11:11:38.455 +02:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: ASTRA\SQLEXPRESS@hoteloDB'
+2026-06-18 11:11:38.459 +02:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-06-18 11:11:38.462 +02:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-06-18 11:11:38.541 +02:00 [INF] Server astra:17456:fe57e171 successfully announced in 34,1272 ms
+2026-06-18 11:11:38.551 +02:00 [INF] Server astra:17456:fe57e171 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-06-18 11:11:38.697 +02:00 [INF] Server astra:17456:fe57e171 all the dispatchers started
+2026-06-18 11:11:39.944 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-18 11:11:40.183 +02:00 [INF] REQ GET /Account/Login [Anonyme]
+2026-06-18 11:11:40.682 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 11:11:42.607 +02:00 [INF] REQ POST /Account/Login [Anonyme]
+2026-06-18 11:11:43.646 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-18 11:11:43.825 +02:00 [INF] REQ GET /Dashboard [Anonyme]
+2026-06-18 11:11:45.604 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 11:11:45.828 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 11:11:47.365 +02:00 [INF] REQ GET /Admin/Access [Anonyme]
+2026-06-18 11:11:47.517 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 11:11:47.628 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 11:11:49.771 +02:00 [INF] REQ GET /Admin/UserAccess [Anonyme]
+2026-06-18 11:11:50.281 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 11:11:50.338 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 11:12:53.623 +02:00 [INF] REQ GET /Admin/Departments [Anonyme]
+2026-06-18 11:12:54.022 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 11:12:54.069 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 11:16:38.618 +02:00 [INF] 1 servers were removed due to timeout
+2026-06-18 11:35:12.158 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-18 11:35:13.813 +02:00 [INF] Start installing Hangfire SQL objects...
+2026-06-18 11:35:14.205 +02:00 [INF] Hangfire SQL objects installed.
+2026-06-18 11:35:15.034 +02:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: ASTRA\SQLEXPRESS@hoteloDB'
+2026-06-18 11:35:15.036 +02:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-06-18 11:35:15.039 +02:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-06-18 11:35:15.084 +02:00 [INF] Server astra:21336:9e675323 successfully announced in 17,5908 ms
+2026-06-18 11:35:15.094 +02:00 [INF] Server astra:21336:9e675323 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-06-18 11:35:15.203 +02:00 [INF] Server astra:21336:9e675323 all the dispatchers started
+2026-06-18 11:35:16.906 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-18 11:35:17.133 +02:00 [INF] REQ GET /Account/Login [Anonyme]
+2026-06-18 11:35:17.631 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 11:35:20.375 +02:00 [INF] REQ POST /Account/Login [Anonyme]
+2026-06-18 11:35:20.765 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-18 11:35:20.839 +02:00 [INF] REQ GET /Dashboard [Anonyme]
+2026-06-18 11:35:21.881 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 11:35:22.041 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 11:35:24.506 +02:00 [INF] REQ GET /HR [Anonyme]
+2026-06-18 11:35:24.607 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 11:35:24.611 +02:00 [INF] REQ GET /api/v1/hr/dashboard [Anonyme]
+2026-06-18 11:35:24.646 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 11:35:29.749 +02:00 [INF] REQ GET /Admin/Departments [Anonyme]
+2026-06-18 11:35:30.019 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 11:35:30.074 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 11:35:41.929 +02:00 [INF] REQ GET /Admin/Departments/GetById/6 [Anonyme]
+2026-06-18 11:35:46.852 +02:00 [INF] REQ POST /Admin/Departments/Update/6 [Anonyme]
+2026-06-18 11:35:47.824 +02:00 [INF] REQ GET /Admin/Departments [Anonyme]
+2026-06-18 11:35:47.942 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 11:35:47.972 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 11:35:57.166 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-18 11:35:58.968 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-18 11:35:59.165 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-18 11:36:09.449 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-18 11:36:20.261 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-18 11:36:23.318 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-18 11:36:24.826 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-18 11:36:26.261 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-18 11:36:28.057 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-18 11:36:35.176 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-18 11:36:35.400 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-18 11:37:41.519 +02:00 [INF] REQ POST /Admin/Departments/CreateFunction [Anonyme]
+2026-06-18 11:37:41.861 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-18 11:37:51.604 +02:00 [INF] REQ GET /Admin/UserAccess [Anonyme]
+2026-06-18 11:37:51.915 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 11:37:51.941 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 11:37:58.123 +02:00 [INF] REQ GET /Admin/Access [Anonyme]
+2026-06-18 11:37:58.238 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 11:37:58.296 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 11:38:00.829 +02:00 [INF] REQ GET /Admin/UserAccess [Anonyme]
+2026-06-18 11:38:00.947 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 11:38:00.998 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 11:38:09.253 +02:00 [INF] REQ GET /Admin/UserAccess [Anonyme]
+2026-06-18 11:38:09.382 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 11:38:09.447 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 11:38:10.892 +02:00 [INF] REQ GET /Admin/UserAccess [Anonyme]
+2026-06-18 11:38:11.131 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 11:38:11.180 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 11:38:17.853 +02:00 [INF] REQ GET /HR [Anonyme]
+2026-06-18 11:38:17.977 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 11:38:17.978 +02:00 [INF] REQ GET /api/v1/hr/dashboard [Anonyme]
+2026-06-18 11:38:18.034 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 11:38:50.807 +02:00 [INF] REQ GET /Admin/Access [Anonyme]
+2026-06-18 11:38:50.917 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 11:38:50.969 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 11:38:52.514 +02:00 [INF] REQ GET /Admin/Backup [Anonyme]
+2026-06-18 11:38:52.752 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 11:38:52.776 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 11:38:55.101 +02:00 [INF] REQ GET /Admin/UserAccess [Anonyme]
+2026-06-18 11:38:55.258 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 11:38:55.311 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 11:39:33.199 +02:00 [INF] REQ GET /Admin/Departments [Anonyme]
+2026-06-18 11:39:33.397 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 11:39:33.439 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 11:39:37.050 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-18 11:39:54.681 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-18 11:40:10.958 +02:00 [INF] REQ GET /Admin/UserAccess [Anonyme]
+2026-06-18 11:40:11.086 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 11:40:11.141 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 11:40:15.143 +02:00 [INF] 1 servers were removed due to timeout
+2026-06-18 11:40:29.424 +02:00 [INF] REQ GET /Admin/Departments [Anonyme]
+2026-06-18 11:40:29.577 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 11:40:29.622 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 11:40:45.647 +02:00 [INF] REQ GET /HR [Anonyme]
+2026-06-18 11:40:45.754 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 11:40:45.755 +02:00 [INF] REQ GET /api/v1/hr/dashboard [Anonyme]
+2026-06-18 11:40:45.794 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 11:41:03.753 +02:00 [INF] REQ GET /Admin/Departments [Anonyme]
+2026-06-18 11:41:03.967 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 11:41:03.999 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 11:41:22.879 +02:00 [INF] REQ GET /HR [Anonyme]
+2026-06-18 11:41:22.982 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 11:41:22.982 +02:00 [INF] REQ GET /api/v1/hr/dashboard [Anonyme]
+2026-06-18 11:41:23.028 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 18:15:53.436 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-18 18:16:10.107 +02:00 [ERR] Erreur initialisation DB
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerDatabaseCreator.<>c__DisplayClass20_0.<<ExistsAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerDatabaseCreator.<>c__DisplayClass20_0.<<ExistsAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerDatabaseCreator.<>c__DisplayClass20_0.<<ExistsAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabaseCreator.EnsureCreatedAsync(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabaseCreator.EnsureCreatedAsync(CancellationToken cancellationToken)
+   at Program.<Main>$(String[] args) in C:\Projects\Hotelo\Hotelo.Web\Program.cs:line 47
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2026-06-18 18:16:11.475 +02:00 [INF] Start installing Hangfire SQL objects...
+2026-06-18 18:16:11.487 +02:00 [WRN] An exception occurred while trying to perform the migration. Retrying...
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 365
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[T](DbConnection dedicatedConnection, Func`2 func) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 256
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection(DbConnection dedicatedConnection, Action`1 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 243
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 424
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2026-06-18 18:16:11.530 +02:00 [WRN] An exception occurred while trying to perform the migration. Retrying...
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 365
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[T](DbConnection dedicatedConnection, Func`2 func) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 256
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection(DbConnection dedicatedConnection, Action`1 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 243
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 424
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2026-06-18 18:16:11.545 +02:00 [WRN] An exception occurred while trying to perform the migration.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 365
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[T](DbConnection dedicatedConnection, Func`2 func) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 256
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection(DbConnection dedicatedConnection, Action`1 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 243
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 424
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2026-06-18 18:16:11.557 +02:00 [WRN] Was unable to perform the Hangfire schema migration due to an exception. Ignore this message unless you've just installed or upgraded Hangfire.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 365
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[T](DbConnection dedicatedConnection, Func`2 func) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 256
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection(DbConnection dedicatedConnection, Action`1 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 243
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 424
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2026-06-18 18:16:11.569 +02:00 [ERR] Was unable to use the TryAutoDetectSchemaDependentOptions option due to an exception.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 365
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[T](DbConnection dedicatedConnection, Func`2 func) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 256
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection(DbConnection dedicatedConnection, Action`1 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 243
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 455
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2026-06-18 18:17:30.610 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-18 18:17:33.984 +02:00 [INF] Start installing Hangfire SQL objects...
+2026-06-18 18:17:34.577 +02:00 [INF] Hangfire SQL objects installed.
+2026-06-18 18:17:36.215 +02:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: ASTRA\SQLEXPRESS@hoteloDB'
+2026-06-18 18:17:36.217 +02:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-06-18 18:17:36.219 +02:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-06-18 18:17:36.281 +02:00 [INF] Server astra:9292:8b24eeeb successfully announced in 25,6345 ms
+2026-06-18 18:17:36.291 +02:00 [INF] Server astra:9292:8b24eeeb is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-06-18 18:17:36.325 +02:00 [INF] 1 servers were removed due to timeout
+2026-06-18 18:17:36.506 +02:00 [INF] Server astra:9292:8b24eeeb all the dispatchers started
+2026-06-18 18:17:37.917 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-18 18:17:38.293 +02:00 [INF] REQ GET /Account/Login [Anonyme]
+2026-06-18 18:17:39.154 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 18:17:40.680 +02:00 [INF] REQ POST /Account/Login [Anonyme]
+2026-06-18 18:17:41.595 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-18 18:17:41.843 +02:00 [INF] REQ GET /Dashboard [Anonyme]
+2026-06-18 18:17:43.786 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 18:17:44.028 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 18:17:48.221 +02:00 [INF] REQ GET /Admin/Departments [Anonyme]
+2026-06-18 18:17:48.988 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 18:17:49.053 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 18:17:52.302 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-18 18:17:54.593 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-18 18:17:56.149 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-18 18:17:58.238 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-18 18:18:01.210 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-18 18:18:03.246 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-18 18:18:05.466 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-18 18:18:17.602 +02:00 [INF] REQ GET /Admin/UserAccess [Anonyme]
+2026-06-18 18:18:18.119 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 18:18:18.219 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 18:18:34.923 +02:00 [INF] REQ GET /HR [Anonyme]
+2026-06-18 18:18:35.061 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 18:18:35.072 +02:00 [INF] REQ GET /api/v1/hr/dashboard [Anonyme]
+2026-06-18 18:18:35.108 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 18:18:51.353 +02:00 [INF] REQ GET /Admin/UserAccess [Anonyme]
+2026-06-18 18:18:51.584 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 18:18:51.626 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 18:18:58.892 +02:00 [INF] REQ GET /Admin/Access [Anonyme]
+2026-06-18 18:18:59.059 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 18:18:59.160 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 18:19:03.425 +02:00 [INF] REQ GET /Admin [Anonyme]
+2026-06-18 18:19:03.574 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 18:19:03.601 +02:00 [INF] REQ GET /api/v1/users/dashboard [Anonyme]
+2026-06-18 18:19:03.624 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-18 18:24:52.889 +02:00 [INF] REQ GET /Admin/Access [Anonyme]
+2026-06-18 18:24:53.147 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-18 18:24:53.251 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]

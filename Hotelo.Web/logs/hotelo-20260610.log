@@ -1,0 +1,93 @@
+2026-06-10 18:12:08.331 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-10 18:12:15.525 +02:00 [INF] REQ GET /Admin/Access [Anonyme]
+2026-06-10 18:12:15.535 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-10 18:12:15.660 +02:00 [INF] REQ GET /Account/Login [Anonyme]
+2026-06-10 18:12:16.095 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-10 18:12:17.770 +02:00 [INF] REQ POST /Account/Login [Anonyme]
+2026-06-10 18:12:18.057 +02:00 [INF] REQ GET /Admin/Access [Anonyme]
+2026-06-10 18:12:18.069 +02:00 [ERR] The view 'Index' was not found. Searched locations: ["/Areas/Admin/Views/Access/Index.cshtml","/Areas/Admin/Views/Shared/Index.cshtml","/Views/Shared/Index.cshtml","/Pages/Shared/Index.cshtml"]
+2026-06-10 18:12:18.083 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The view 'Index' was not found. The following locations were searched:
+/Areas/Admin/Views/Access/Index.cshtml
+/Areas/Admin/Views/Shared/Index.cshtml
+/Views/Shared/Index.cshtml
+/Pages/Shared/Index.cshtml
+   at Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable`1 originalLocations)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Hotelo.Web.Middlewares.RequestLoggingMiddleware.InvokeAsync(HttpContext context) in C:\Projects\Hotelo\Hotelo.Web\Middlewares\RequestLoggingMiddleware.cs:line 20
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-06-10 18:12:21.187 +02:00 [INF] REQ GET /Account/Login [Anonyme]
+2026-06-10 18:12:21.257 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-10 18:12:21.424 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-10 18:12:23.332 +02:00 [INF] REQ POST /Account/Login [Anonyme]
+2026-06-10 18:12:23.619 +02:00 [INF] REQ GET /Admin/Access [Anonyme]
+2026-06-10 18:12:23.623 +02:00 [ERR] The view 'Index' was not found. Searched locations: ["/Areas/Admin/Views/Access/Index.cshtml","/Areas/Admin/Views/Shared/Index.cshtml","/Views/Shared/Index.cshtml","/Pages/Shared/Index.cshtml"]
+2026-06-10 18:12:23.629 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The view 'Index' was not found. The following locations were searched:
+/Areas/Admin/Views/Access/Index.cshtml
+/Areas/Admin/Views/Shared/Index.cshtml
+/Views/Shared/Index.cshtml
+/Pages/Shared/Index.cshtml
+   at Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable`1 originalLocations)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Hotelo.Web.Middlewares.RequestLoggingMiddleware.InvokeAsync(HttpContext context) in C:\Projects\Hotelo\Hotelo.Web\Middlewares\RequestLoggingMiddleware.cs:line 20
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-06-10 18:12:25.502 +02:00 [INF] REQ GET /Account/Login [Anonyme]
+2026-06-10 18:12:25.594 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-10 18:12:25.626 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-10 18:12:33.499 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-10 18:12:33.519 +02:00 [INF] REQ GET /Dashboard [Anonyme]
+2026-06-10 18:12:34.519 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-10 18:12:34.674 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-10 18:12:37.902 +02:00 [INF] REQ POST /Account/Logout [Anonyme]
+2026-06-10 18:12:40.537 +02:00 [INF] REQ GET /Dashboard [Anonyme]
+2026-06-10 18:12:40.635 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-10 18:12:40.838 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-10 18:12:45.801 +02:00 [INF] REQ GET /Finances [Anonyme]
+2026-06-10 18:12:45.887 +02:00 [INF] REQ GET /api/v1/invoices/dashboard [Anonyme]
+2026-06-10 18:12:45.890 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-10 18:12:45.927 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-10 18:12:45.960 +02:00 [INF] REQ GET /api/v1/invoices [Anonyme]
+2026-06-10 18:12:46.010 +02:00 [INF] REQ GET /api/v1/reservations [Anonyme]
+2026-06-10 18:13:05.741 +02:00 [INF] REQ POST /api/v1/invoices/generate [Anonyme]
+2026-06-10 18:13:06.040 +02:00 [INF] REQ GET /api/v1/invoices/dashboard [Anonyme]
+2026-06-10 18:13:06.064 +02:00 [INF] REQ GET /api/v1/invoices [Anonyme]
+2026-06-10 18:13:06.086 +02:00 [INF] REQ GET /api/v1/reservations [Anonyme]
+2026-06-10 18:13:18.944 +02:00 [INF] REQ GET /Commercial [Anonyme]
+2026-06-10 18:13:19.019 +02:00 [INF] REQ GET /api/v1/commercial/dashboard [Anonyme]
+2026-06-10 18:13:19.022 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-10 18:13:19.048 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]

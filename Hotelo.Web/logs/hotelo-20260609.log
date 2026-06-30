@@ -1,0 +1,168 @@
+2026-06-09 10:02:16.851 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-09 10:02:17.484 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-09 10:02:35.264 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-09 10:02:43.105 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-09 10:02:57.118 +02:00 [INF] REQ GET /BellDesk [Anonyme]
+2026-06-09 10:02:57.133 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 10:02:57.252 +02:00 [INF] REQ GET /Account/Login [Anonyme]
+2026-06-09 10:02:57.700 +02:00 [INF] REQ GET /favicon.ico [Anonyme]
+2026-06-09 10:03:00.211 +02:00 [INF] REQ POST /Account/Login [Anonyme]
+2026-06-09 10:03:00.742 +02:00 [INF] REQ GET /BellDesk [Anonyme]
+2026-06-09 10:03:00.872 +02:00 [INF] REQ GET /api/v1/belldesk/dashboard [Anonyme]
+2026-06-09 10:03:50.109 +02:00 [INF] REQ GET /Technique [Anonyme]
+2026-06-09 10:03:50.237 +02:00 [INF] REQ GET /api/v1/technique/dashboard [Anonyme]
+2026-06-09 10:04:14.732 +02:00 [INF] REQ GET /BellDesk [Anonyme]
+2026-06-09 10:04:14.828 +02:00 [INF] REQ GET /api/v1/belldesk/dashboard [Anonyme]
+2026-06-09 10:04:17.127 +02:00 [INF] REQ GET /Technique [Anonyme]
+2026-06-09 10:04:17.306 +02:00 [INF] REQ GET /api/v1/technique/dashboard [Anonyme]
+2026-06-09 10:04:18.167 +02:00 [INF] REQ GET /Commercial [Anonyme]
+2026-06-09 10:04:18.284 +02:00 [INF] REQ GET /api/v1/commercial/dashboard [Anonyme]
+2026-06-09 10:04:19.083 +02:00 [INF] REQ GET /HR [Anonyme]
+2026-06-09 10:04:19.229 +02:00 [INF] REQ GET /api/v1/hr/dashboard [Anonyme]
+2026-06-09 10:04:22.883 +02:00 [INF] REQ GET /Housekeeping [Anonyme]
+2026-06-09 10:04:23.025 +02:00 [INF] REQ GET /api/v1/housekeeping/dashboard [Anonyme]
+2026-06-09 10:04:28.416 +02:00 [INF] REQ GET /Finances [Anonyme]
+2026-06-09 10:04:28.666 +02:00 [INF] REQ GET /api/v1/invoices/dashboard [Anonyme]
+2026-06-09 10:04:29.428 +02:00 [INF] REQ GET /api/v1/invoices [Anonyme]
+2026-06-09 10:04:49.462 +02:00 [INF] REQ GET /api/v1/belldesk/dashboard [Anonyme]
+2026-06-09 10:05:04.811 +02:00 [INF] REQ GET /api/v1/technique/dashboard [Anonyme]
+2026-06-09 10:10:44.817 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-09 10:11:10.827 +02:00 [INF] REQ GET /Admin [Anonyme]
+2026-06-09 10:11:10.852 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 10:11:11.137 +02:00 [INF] REQ GET /api/v1/users/dashboard [Anonyme]
+2026-06-09 10:11:49.229 +02:00 [INF] REQ POST /api/v1/users [Anonyme]
+2026-06-09 10:11:50.064 +02:00 [INF] REQ GET /api/v1/users/dashboard [Anonyme]
+2026-06-09 10:12:17.028 +02:00 [INF] REQ POST /api/v1/users/change-password [Anonyme]
+2026-06-09 10:12:25.293 +02:00 [INF] REQ POST /Admin/Account/Logout [Anonyme]
+2026-06-09 10:12:33.736 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-09 10:12:33.774 +02:00 [INF] REQ GET /Dashboard [Anonyme]
+2026-06-09 10:12:52.840 +02:00 [INF] REQ GET /FrontOffice [Anonyme]
+2026-06-09 10:12:58.765 +02:00 [INF] REQ GET /FrontOffice/Home/Details/1 [Anonyme]
+2026-06-09 10:13:04.063 +02:00 [INF] REQ POST /FrontOffice/Home/UpdateStatus [Anonyme]
+2026-06-09 10:13:04.276 +02:00 [INF] REQ GET /FrontOffice [Anonyme]
+2026-06-09 10:13:10.157 +02:00 [INF] REQ GET /FrontOffice/Home/Details/6 [Anonyme]
+2026-06-09 10:13:13.102 +02:00 [INF] REQ POST /FrontOffice/Home/UpdateStatus [Anonyme]
+2026-06-09 10:13:13.226 +02:00 [INF] REQ GET /FrontOffice [Anonyme]
+2026-06-09 10:13:16.765 +02:00 [INF] REQ GET /FrontOffice/Home/Details/1 [Anonyme]
+2026-06-09 10:13:18.965 +02:00 [INF] REQ POST /FrontOffice/Home/UpdateStatus [Anonyme]
+2026-06-09 10:13:19.053 +02:00 [INF] REQ GET /FrontOffice [Anonyme]
+2026-06-09 10:13:30.312 +02:00 [INF] REQ GET /Reservation [Anonyme]
+2026-06-09 10:13:30.496 +02:00 [INF] REQ GET /api/v1/reservations [Anonyme]
+2026-06-09 10:13:30.617 +02:00 [INF] REQ GET /api/v1/reservations/arrivals/today [Anonyme]
+2026-06-09 10:13:30.663 +02:00 [INF] REQ GET /api/v1/reservations/departures/today [Anonyme]
+2026-06-09 10:13:37.528 +02:00 [INF] REQ GET /api/v1/reservations/5 [Anonyme]
+2026-06-09 10:13:46.288 +02:00 [INF] REQ POST /api/v1/reservations/5/checkin [Anonyme]
+2026-06-09 10:13:46.439 +02:00 [INF] REQ GET /api/v1/reservations [Anonyme]
+2026-06-09 10:13:46.472 +02:00 [INF] REQ GET /api/v1/reservations/arrivals/today [Anonyme]
+2026-06-09 10:13:46.505 +02:00 [INF] REQ GET /api/v1/reservations/departures/today [Anonyme]
+2026-06-09 10:13:50.155 +02:00 [INF] REQ GET /api/v1/reservations/3 [Anonyme]
+2026-06-09 10:14:01.569 +02:00 [INF] REQ GET /Housekeeping [Anonyme]
+2026-06-09 10:14:01.670 +02:00 [INF] REQ GET /api/v1/housekeeping/dashboard [Anonyme]
+2026-06-09 10:14:20.466 +02:00 [INF] REQ POST /api/v1/housekeeping/tasks [Anonyme]
+2026-06-09 10:14:20.664 +02:00 [INF] REQ GET /api/v1/housekeeping/dashboard [Anonyme]
+2026-06-09 10:14:27.707 +02:00 [INF] REQ POST /api/v1/housekeeping/tasks/1/start [Anonyme]
+2026-06-09 10:14:27.786 +02:00 [INF] REQ GET /api/v1/housekeeping/dashboard [Anonyme]
+2026-06-09 10:14:30.225 +02:00 [INF] REQ POST /api/v1/housekeeping/tasks/1/complete [Anonyme]
+2026-06-09 10:14:30.292 +02:00 [INF] REQ GET /api/v1/housekeeping/dashboard [Anonyme]
+2026-06-09 10:14:39.317 +02:00 [INF] REQ GET /Finances [Anonyme]
+2026-06-09 10:14:39.465 +02:00 [INF] REQ GET /api/v1/invoices/dashboard [Anonyme]
+2026-06-09 10:14:39.571 +02:00 [INF] REQ GET /api/v1/invoices [Anonyme]
+2026-06-09 10:14:59.008 +02:00 [INF] REQ GET /Admin [Anonyme]
+2026-06-09 10:14:59.120 +02:00 [INF] REQ GET /api/v1/users/dashboard [Anonyme]
+2026-06-09 15:12:34.204 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-09 15:13:29.482 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-09 15:13:29.499 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 15:13:29.641 +02:00 [INF] REQ GET /Account/Login [Anonyme]
+2026-06-09 15:13:32.607 +02:00 [INF] REQ POST /Account/Login [Anonyme]
+2026-06-09 15:13:33.037 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-09 15:13:33.072 +02:00 [INF] REQ GET /Dashboard [Anonyme]
+2026-06-09 15:13:35.792 +02:00 [INF] REQ GET /Finances [Anonyme]
+2026-06-09 15:13:35.907 +02:00 [INF] REQ GET /api/v1/invoices/dashboard [Anonyme]
+2026-06-09 15:13:36.027 +02:00 [INF] REQ GET /api/v1/invoices [Anonyme]
+2026-06-09 15:13:39.911 +02:00 [INF] REQ GET /api/v1/export/finances/excel [Anonyme]
+2026-06-09 15:14:01.915 +02:00 [INF] REQ GET /Reservation [Anonyme]
+2026-06-09 15:14:02.026 +02:00 [INF] REQ GET /api/v1/reservations [Anonyme]
+2026-06-09 15:14:02.114 +02:00 [INF] REQ GET /api/v1/reservations/arrivals/today [Anonyme]
+2026-06-09 15:14:02.166 +02:00 [INF] REQ GET /api/v1/reservations/departures/today [Anonyme]
+2026-06-09 15:14:04.805 +02:00 [INF] REQ GET /api/v1/export/reservations/excel [Anonyme]
+2026-06-09 15:19:59.226 +02:00 [INF] REQ GET /Finances [Anonyme]
+2026-06-09 15:19:59.384 +02:00 [INF] REQ GET /api/v1/invoices/dashboard [Anonyme]
+2026-06-09 15:19:59.739 +02:00 [INF] REQ GET /api/v1/invoices [Anonyme]
+2026-06-09 15:20:05.620 +02:00 [INF] REQ GET /Reservation [Anonyme]
+2026-06-09 15:20:05.749 +02:00 [INF] REQ GET /api/v1/reservations [Anonyme]
+2026-06-09 15:20:05.850 +02:00 [INF] REQ GET /api/v1/reservations/arrivals/today [Anonyme]
+2026-06-09 15:20:05.927 +02:00 [INF] REQ GET /api/v1/reservations/departures/today [Anonyme]
+2026-06-09 15:20:10.697 +02:00 [INF] REQ GET /api/v1/reservations/3 [Anonyme]
+2026-06-09 15:20:17.630 +02:00 [INF] REQ POST /api/v1/reservations/3/checkin [Anonyme]
+2026-06-09 15:20:17.949 +02:00 [INF] REQ GET /api/v1/reservations [Anonyme]
+2026-06-09 15:20:17.982 +02:00 [INF] REQ GET /api/v1/reservations/arrivals/today [Anonyme]
+2026-06-09 15:20:18.012 +02:00 [INF] REQ GET /api/v1/reservations/departures/today [Anonyme]
+2026-06-09 15:20:22.533 +02:00 [INF] REQ GET /Finances [Anonyme]
+2026-06-09 15:20:22.669 +02:00 [INF] REQ GET /api/v1/invoices/dashboard [Anonyme]
+2026-06-09 15:20:22.756 +02:00 [INF] REQ GET /api/v1/invoices [Anonyme]
+2026-06-09 15:20:26.245 +02:00 [INF] REQ GET /Reservation [Anonyme]
+2026-06-09 15:20:26.374 +02:00 [INF] REQ GET /api/v1/reservations [Anonyme]
+2026-06-09 15:20:26.441 +02:00 [INF] REQ GET /api/v1/reservations/arrivals/today [Anonyme]
+2026-06-09 15:20:26.488 +02:00 [INF] REQ GET /api/v1/reservations/departures/today [Anonyme]
+2026-06-09 15:25:01.938 +02:00 [INF] REQ GET /Housekeeping [Anonyme]
+2026-06-09 15:25:02.194 +02:00 [INF] REQ GET /api/v1/housekeeping/dashboard [Anonyme]
+2026-06-09 15:25:31.365 +02:00 [INF] REQ GET /Finances [Anonyme]
+2026-06-09 15:25:31.463 +02:00 [INF] REQ GET /api/v1/invoices/dashboard [Anonyme]
+2026-06-09 15:25:31.519 +02:00 [INF] REQ GET /api/v1/invoices [Anonyme]
+2026-06-09 15:25:34.151 +02:00 [INF] REQ GET /Reservation [Anonyme]
+2026-06-09 15:25:34.305 +02:00 [INF] REQ GET /api/v1/reservations [Anonyme]
+2026-06-09 15:25:34.374 +02:00 [INF] REQ GET /api/v1/reservations/arrivals/today [Anonyme]
+2026-06-09 15:25:34.421 +02:00 [INF] REQ GET /api/v1/reservations/departures/today [Anonyme]
+2026-06-09 15:25:36.220 +02:00 [INF] REQ GET /FrontOffice [Anonyme]
+2026-06-09 15:25:39.718 +02:00 [INF] REQ GET /FrontOffice/Home/Details/4 [Anonyme]
+2026-06-09 15:25:42.352 +02:00 [INF] REQ GET /FrontOffice/Home/Edit/4 [Anonyme]
+2026-06-09 15:25:42.402 +02:00 [ERR] The view 'Edit' was not found. Searched locations: ["/Areas/FrontOffice/Views/Home/Edit.cshtml","/Areas/FrontOffice/Views/Shared/Edit.cshtml","/Views/Shared/Edit.cshtml","/Pages/Shared/Edit.cshtml"]
+2026-06-09 15:25:42.478 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The view 'Edit' was not found. The following locations were searched:
+/Areas/FrontOffice/Views/Home/Edit.cshtml
+/Areas/FrontOffice/Views/Shared/Edit.cshtml
+/Views/Shared/Edit.cshtml
+/Pages/Shared/Edit.cshtml
+   at Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable`1 originalLocations)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Hotelo.Web.Middlewares.RequestLoggingMiddleware.InvokeAsync(HttpContext context) in C:\Projects\Hotelo\Hotelo.Web\Middlewares\RequestLoggingMiddleware.cs:line 20
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-06-09 21:18:25.100 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-09 21:26:40.582 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-09 21:43:35.921 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-09 21:43:42.798 +02:00 [INF] REQ GET /Reservation [Anonyme]
+2026-06-09 21:43:42.811 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 21:43:42.928 +02:00 [INF] REQ GET /Account/Login [Anonyme]
+2026-06-09 21:43:43.856 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-09 21:43:46.168 +02:00 [INF] REQ POST /Account/Login [Anonyme]
+2026-06-09 21:43:46.672 +02:00 [INF] REQ GET /Reservation [Anonyme]
+2026-06-09 21:43:46.996 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-09 21:43:47.061 +02:00 [INF] REQ GET /api/v1/reservations [Anonyme]
+2026-06-09 21:43:47.074 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-09 21:43:47.943 +02:00 [INF] REQ GET /api/v1/reservations/arrivals/today [Anonyme]
+2026-06-09 21:43:48.110 +02:00 [INF] REQ GET /api/v1/reservations/departures/today [Anonyme]
+2026-06-09 21:43:55.173 +02:00 [INF] REQ GET /Reservation [Anonyme]
+2026-06-09 21:43:55.424 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-09 21:43:55.570 +02:00 [INF] REQ GET /api/v1/reservations [Anonyme]
+2026-06-09 21:43:55.628 +02:00 [INF] REQ GET /api/v1/reservations/arrivals/today [Anonyme]
+2026-06-09 21:43:55.655 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-09 21:43:55.663 +02:00 [INF] REQ GET /api/v1/reservations/departures/today [Anonyme]
+2026-06-09 21:44:38.515 +02:00 [INF] REQ POST /api/v1/reservations/3/checkin [Anonyme]
+2026-06-09 21:44:41.970 +02:00 [INF] REQ POST /api/v1/reservations/3/checkin [Anonyme]
+2026-06-09 21:44:43.787 +02:00 [INF] REQ POST /api/v1/reservations/3/checkin [Anonyme]

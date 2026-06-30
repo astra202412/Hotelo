@@ -1,0 +1,385 @@
+2026-06-15 02:01:39.708 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-15 02:01:44.649 +02:00 [INF] Start installing Hangfire SQL objects...
+2026-06-15 02:01:45.375 +02:00 [INF] Hangfire SQL objects installed.
+2026-06-15 02:01:48.108 +02:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: ASTRA\SQLEXPRESS@hoteloDB'
+2026-06-15 02:01:48.110 +02:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-06-15 02:01:48.113 +02:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-06-15 02:01:48.213 +02:00 [INF] Server astra:3520:92c7310f successfully announced in 22,9473 ms
+2026-06-15 02:01:48.223 +02:00 [INF] Server astra:3520:92c7310f is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-06-15 02:01:48.394 +02:00 [INF] Server astra:3520:92c7310f all the dispatchers started
+2026-06-15 02:01:50.185 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-15 02:01:50.614 +02:00 [INF] REQ GET /Account/Login [Anonyme]
+2026-06-15 02:01:51.299 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:03:42.196 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-15 02:03:44.028 +02:00 [INF] Start installing Hangfire SQL objects...
+2026-06-15 02:03:44.303 +02:00 [INF] Hangfire SQL objects installed.
+2026-06-15 02:03:44.924 +02:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: ASTRA\SQLEXPRESS@hoteloDB'
+2026-06-15 02:03:44.927 +02:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-06-15 02:03:44.931 +02:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-06-15 02:03:45.013 +02:00 [INF] Server astra:2272:536dfcdf successfully announced in 57,0014 ms
+2026-06-15 02:03:45.021 +02:00 [INF] Server astra:2272:536dfcdf is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-06-15 02:03:45.038 +02:00 [INF] Server astra:2272:536dfcdf all the dispatchers started
+2026-06-15 02:03:52.908 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-15 02:03:52.916 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-15 02:03:53.007 +02:00 [INF] REQ GET /Account/Login [Anonyme]
+2026-06-15 02:03:55.182 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:04:02.926 +02:00 [INF] REQ POST /Account/Login [Anonyme]
+2026-06-15 02:04:03.419 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-15 02:04:03.444 +02:00 [INF] REQ GET /Dashboard [Anonyme]
+2026-06-15 02:04:04.850 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:04:05.069 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-15 02:04:10.801 +02:00 [INF] REQ GET /FrontOffice [Anonyme]
+2026-06-15 02:04:10.913 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:04:10.965 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-15 02:04:16.468 +02:00 [INF] REQ GET /Reservation/Packages [Anonyme]
+2026-06-15 02:04:16.539 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:04:16.554 +02:00 [INF] REQ GET /api/v1/packages [Anonyme]
+2026-06-15 02:04:16.579 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-15 02:04:27.330 +02:00 [INF] REQ GET /Reservation [Anonyme]
+2026-06-15 02:04:27.402 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:04:27.406 +02:00 [INF] REQ GET /api/v1/reservations [Anonyme]
+2026-06-15 02:04:27.433 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-15 02:04:27.471 +02:00 [INF] REQ GET /api/v1/reservations/arrivals/today [Anonyme]
+2026-06-15 02:04:27.499 +02:00 [INF] REQ GET /api/v1/reservations/departures/today [Anonyme]
+2026-06-15 02:04:30.254 +02:00 [INF] REQ GET /Finances [Anonyme]
+2026-06-15 02:04:30.324 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:04:30.338 +02:00 [INF] REQ GET /api/v1/invoices/dashboard [Anonyme]
+2026-06-15 02:04:30.356 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-15 02:04:30.386 +02:00 [INF] REQ GET /api/v1/invoices [Anonyme]
+2026-06-15 02:04:30.433 +02:00 [INF] REQ GET /api/v1/reservations [Anonyme]
+2026-06-15 02:04:32.748 +02:00 [INF] REQ GET /Housekeeping [Anonyme]
+2026-06-15 02:04:32.827 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:04:32.853 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-15 02:04:32.866 +02:00 [INF] REQ GET /api/v1/housekeeping/dashboard [Anonyme]
+2026-06-15 02:04:36.542 +02:00 [INF] REQ GET /HR [Anonyme]
+2026-06-15 02:04:36.611 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:04:36.613 +02:00 [INF] REQ GET /api/v1/hr/dashboard [Anonyme]
+2026-06-15 02:04:36.633 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-15 02:04:39.575 +02:00 [INF] REQ GET /Commercial [Anonyme]
+2026-06-15 02:04:39.647 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:04:39.650 +02:00 [INF] REQ GET /api/v1/commercial/dashboard [Anonyme]
+2026-06-15 02:04:39.681 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-15 02:04:41.588 +02:00 [INF] REQ GET /Technique [Anonyme]
+2026-06-15 02:04:41.664 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:04:41.666 +02:00 [INF] REQ GET /api/v1/technique/dashboard [Anonyme]
+2026-06-15 02:04:41.696 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-15 02:04:43.432 +02:00 [INF] REQ GET /BellDesk [Anonyme]
+2026-06-15 02:04:43.515 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:04:43.517 +02:00 [INF] REQ GET /api/v1/belldesk/dashboard [Anonyme]
+2026-06-15 02:04:43.544 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-15 02:04:46.030 +02:00 [INF] REQ GET /Reports [Anonyme]
+2026-06-15 02:04:46.519 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:04:46.687 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-15 02:04:52.385 +02:00 [INF] REQ GET /Admin/Backup [Anonyme]
+2026-06-15 02:04:52.474 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:04:52.511 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-15 02:04:56.474 +02:00 [INF] REQ GET /Admin/Access [Anonyme]
+2026-06-15 02:04:56.549 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:04:56.599 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-15 02:05:02.050 +02:00 [INF] REQ GET /Admin [Anonyme]
+2026-06-15 02:05:02.126 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:05:02.161 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-15 02:05:02.165 +02:00 [INF] REQ GET /api/v1/users/dashboard [Anonyme]
+2026-06-15 02:05:22.106 +02:00 [INF] REQ GET /Admin/Backup [Anonyme]
+2026-06-15 02:05:22.188 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:05:22.217 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-15 02:05:27.598 +02:00 [INF] REQ GET /hangfire [Anonyme]
+2026-06-15 02:05:27.918 +02:00 [INF] REQ GET /hangfire/css18140315346241 [Anonyme]
+2026-06-15 02:05:27.920 +02:00 [INF] REQ GET /hangfire/css-dark181401600123562 [Anonyme]
+2026-06-15 02:05:27.920 +02:00 [INF] REQ GET /hangfire/js18140267350420 [Anonyme]
+2026-06-15 02:05:28.021 +02:00 [INF] REQ GET /hangfire/fonts/glyphicons-halflings-regular/woff2 [Anonyme]
+2026-06-15 02:05:30.152 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:05:32.233 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:05:34.265 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:05:36.300 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:05:38.360 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:05:40.389 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:05:42.429 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:05:44.480 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:05:46.513 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:05:47.953 +02:00 [INF] REQ GET /hangfire [Anonyme]
+2026-06-15 02:05:48.018 +02:00 [INF] REQ GET /hangfire/css-dark181401600123562 [Anonyme]
+2026-06-15 02:05:48.019 +02:00 [INF] REQ GET /hangfire/css18140315346241 [Anonyme]
+2026-06-15 02:05:48.020 +02:00 [INF] REQ GET /hangfire/js18140267350420 [Anonyme]
+2026-06-15 02:05:48.058 +02:00 [INF] REQ GET /hangfire/fonts/glyphicons-halflings-regular/woff2 [Anonyme]
+2026-06-15 02:05:49.794 +02:00 [INF] REQ GET /hangfire [Anonyme]
+2026-06-15 02:05:49.855 +02:00 [INF] REQ GET /hangfire/css-dark181401600123562 [Anonyme]
+2026-06-15 02:05:49.855 +02:00 [INF] REQ GET /hangfire/css18140315346241 [Anonyme]
+2026-06-15 02:05:49.856 +02:00 [INF] REQ GET /hangfire/js18140267350420 [Anonyme]
+2026-06-15 02:05:49.890 +02:00 [INF] REQ GET /hangfire/fonts/glyphicons-halflings-regular/woff2 [Anonyme]
+2026-06-15 02:05:51.964 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:05:54.018 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:05:56.109 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:05:59.102 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:06:02.089 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:06:05.102 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:06:05.176 +02:00 [INF] REQ POST /api/v1/backup/restore [Anonyme]
+2026-06-15 02:06:08.088 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:06:08.097 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Login failed for user 'ASTRA\Hichem'.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 365
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[T](DbConnection dedicatedConnection, Func`2 func) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 256
+   at Hangfire.SqlServer.SqlServerMonitoringApi.UseConnection[T](Func`2 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerMonitoringApi.cs:line 557
+   at Hangfire.SqlServer.SqlServerMonitoringApi.GetStatistics() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerMonitoringApi.cs:line 459
+   at Hangfire.Dashboard.RazorPage.<Assign>b__51_0() in C:\projects\hangfire-525\src\Hangfire.Core\Dashboard\RazorPage.cs:line 124
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Hangfire.Dashboard.DashboardMetrics.<>c.<.cctor>b__1_0(RazorPage page) in C:\projects\hangfire-525\src\Hangfire.Core\Dashboard\DashboardMetrics.cs:line 67
+   at Hangfire.Dashboard.JsonStats.Dispatch(DashboardContext context) in C:\projects\hangfire-525\src\Hangfire.Core\Dashboard\JsonStats.cs:line 38
+   at Hangfire.Dashboard.AspNetCoreDashboardMiddleware.Invoke(HttpContext httpContext) in C:\projects\hangfire-525\src\Hangfire.AspNetCore\Dashboard\AspNetCoreDashboardMiddleware.cs:line 99
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.InvokeCore(HttpContext context, PathString matchedPath, PathString remainingPath)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Hotelo.Web.Middlewares.RequestLoggingMiddleware.InvokeAsync(HttpContext context) in C:\Projects\Hotelo\Hotelo.Web\Middlewares\RequestLoggingMiddleware.cs:line 20
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:fef944c7-01c7-4e04-bb71-b33aa543dda9
+Error Number:18456,State:1,Class:14
+2026-06-15 02:06:08.239 +02:00 [ERR] Erreur lors de la restauration
+Microsoft.Data.SqlClient.SqlException (0x80131904): RESTORE cannot process database 'hoteloDB' because it is in use by this session. It is recommended that the master database be used when performing this operation.
+RESTORE DATABASE is terminating abnormally.
+Nonqualified transactions are being rolled back. Estimated rollback completion: 0%.
+Nonqualified transactions are being rolled back. Estimated rollback completion: 100%.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__210_1(IAsyncResult result)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Hotelo.Infrastructure.Services.BackupService.RestoreBackupAsync(String backupFile) in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 80
+   at Hotelo.Infrastructure.Services.BackupService.RestoreBackupAsync(String backupFile) in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 83
+   at Hotelo.Infrastructure.Services.BackupService.RestoreBackupAsync(String backupFile) in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 83
+ClientConnectionId:bf2e535e-6b96-4652-9546-d6cdc836fa12
+Error Number:3102,State:1,Class:16
+2026-06-15 02:06:25.105 +02:00 [INF] REQ POST /api/v1/backup/create [Anonyme]
+2026-06-15 02:06:25.252 +02:00 [INF] Backup cree : hoteloDB_backup_20260615_020625.bak
+2026-06-15 02:06:27.307 +02:00 [INF] REQ GET /Admin/Backup [Anonyme]
+2026-06-15 02:06:27.524 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:06:27.574 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-15 02:06:31.151 +02:00 [INF] REQ POST /api/v1/backup/create [Anonyme]
+2026-06-15 02:06:31.305 +02:00 [INF] Backup cree : hoteloDB_backup_20260615_020631.bak
+2026-06-15 02:06:33.340 +02:00 [INF] REQ GET /Admin/Backup [Anonyme]
+2026-06-15 02:06:33.430 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:06:33.469 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-15 02:07:02.345 +02:00 [INF] REQ POST /api/v1/backup/restore [Anonyme]
+2026-06-15 02:07:02.538 +02:00 [ERR] Execution Worker is in the Failed state now due to an exception, execution will be retried no more than in 00:05:00
+Microsoft.Data.SqlClient.SqlException (0x80131904): Login failed for user 'ASTRA\Hichem'.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 365
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[T](DbConnection dedicatedConnection, Func`2 func) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 256
+   at Hangfire.SqlServer.SqlServerJobQueue.DequeueUsingSlidingInvisibilityTimeout(String[] queues, CancellationToken cancellationToken) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerJobQueue.cs:line 140
+   at Hangfire.SqlServer.SqlServerJobQueue.Dequeue(String[] queues, CancellationToken cancellationToken) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerJobQueue.cs:line 67
+   at Hangfire.SqlServer.SqlServerConnection.FetchNextJob(String[] queues, CancellationToken cancellationToken) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerConnection.cs:line 81
+   at Hangfire.Server.Worker.Execute(BackgroundProcessContext context) in C:\projects\hangfire-525\src\Hangfire.Core\Server\Worker.cs:line 102
+   at Hangfire.Server.BackgroundProcessDispatcherBuilder.ExecuteProcess(Guid executionId, Object state) in C:\projects\hangfire-525\src\Hangfire.Core\Server\BackgroundProcessDispatcherBuilder.cs:line 82
+   at Hangfire.Processing.BackgroundExecution.Run(Action`2 callback, Object state) in C:\projects\hangfire-525\src\Hangfire.Core\Processing\BackgroundExecution.cs:line 118
+ClientConnectionId:bcd64ff6-21dd-4b3f-b506-5d875b8c0bad
+Error Number:18456,State:1,Class:14
+2026-06-15 02:07:05.399 +02:00 [ERR] Erreur lors de la restauration
+Microsoft.Data.SqlClient.SqlException (0x80131904): RESTORE cannot process database 'hoteloDB' because it is in use by this session. It is recommended that the master database be used when performing this operation.
+RESTORE DATABASE is terminating abnormally.
+Nonqualified transactions are being rolled back. Estimated rollback completion: 0%.
+Nonqualified transactions are being rolled back. Estimated rollback completion: 100%.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__210_1(IAsyncResult result)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Hotelo.Infrastructure.Services.BackupService.RestoreBackupAsync(String backupFile) in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 80
+   at Hotelo.Infrastructure.Services.BackupService.RestoreBackupAsync(String backupFile) in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 83
+   at Hotelo.Infrastructure.Services.BackupService.RestoreBackupAsync(String backupFile) in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 83
+ClientConnectionId:bb60da3a-8def-4165-a92c-4bacd1641f67
+Error Number:3102,State:1,Class:16
+2026-06-15 02:07:09.103 +02:00 [INF] REQ GET /hangfire [Anonyme]
+2026-06-15 02:07:09.165 +02:00 [INF] REQ GET /hangfire/css18140315346241 [Anonyme]
+2026-06-15 02:07:09.165 +02:00 [INF] REQ GET /hangfire/css-dark181401600123562 [Anonyme]
+2026-06-15 02:07:09.183 +02:00 [INF] REQ GET /hangfire/js18140267350420 [Anonyme]
+2026-06-15 02:07:09.349 +02:00 [INF] REQ GET /hangfire/fonts/glyphicons-halflings-regular/woff2 [Anonyme]
+2026-06-15 02:07:12.103 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:07:15.092 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:07:18.091 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:07:21.097 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:07:24.319 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:07:27.100 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:07:30.103 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:07:33.093 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:07:36.100 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:07:39.095 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:07:42.098 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:07:45.097 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:07:48.870 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:07:52.097 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:07:55.109 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:07:58.097 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:08:01.099 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:08:04.098 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:08:07.097 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:08:09.503 +02:00 [INF] REQ GET /FrontOffice [Anonyme]
+2026-06-15 02:08:09.610 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:08:09.643 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-15 02:08:10.108 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:08:11.518 +02:00 [INF] REQ GET /FrontOffice/Home/Details/3 [Anonyme]
+2026-06-15 02:08:13.095 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:08:16.077 +02:00 [INF] REQ POST /FrontOffice/Home/UpdateStatus [Anonyme]
+2026-06-15 02:08:16.088 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:08:16.452 +02:00 [INF] REQ GET /FrontOffice [Anonyme]
+2026-06-15 02:08:16.587 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:08:16.642 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-15 02:08:18.829 +02:00 [INF] REQ GET /FrontOffice/Home/Details/2 [Anonyme]
+2026-06-15 02:08:19.092 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:08:22.105 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:08:24.822 +02:00 [INF] REQ POST /FrontOffice/Home/UpdateStatus [Anonyme]
+2026-06-15 02:08:24.858 +02:00 [INF] REQ GET /FrontOffice [Anonyme]
+2026-06-15 02:08:24.932 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:08:24.964 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-15 02:08:25.095 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:08:28.097 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:08:28.584 +02:00 [INF] REQ GET /FrontOffice/Home/Details/4 [Anonyme]
+2026-06-15 02:08:30.552 +02:00 [INF] REQ POST /FrontOffice/Home/UpdateStatus [Anonyme]
+2026-06-15 02:08:30.626 +02:00 [INF] REQ GET /FrontOffice [Anonyme]
+2026-06-15 02:08:30.696 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:08:30.728 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-15 02:08:31.107 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:08:34.091 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:08:37.101 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:08:40.116 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:08:43.105 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:08:45.084 +02:00 [INF] 1 servers were removed due to timeout
+2026-06-15 02:08:46.096 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:08:49.093 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:08:49.764 +02:00 [INF] REQ GET /FrontOffice/Home/Details/17 [Anonyme]
+2026-06-15 02:08:52.105 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:08:55.093 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:08:58.106 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:08:58.267 +02:00 [INF] REQ GET /Dashboard [Anonyme]
+2026-06-15 02:08:58.353 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:08:58.447 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-15 02:09:01.095 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:09:04.095 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:09:04.713 +02:00 [INF] REQ POST /Account/Logout [Anonyme]
+2026-06-15 02:09:04.739 +02:00 [INF] REQ GET /Account/Login [Anonyme]
+2026-06-15 02:09:04.810 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:09:06.902 +02:00 [INF] REQ POST /Account/Login [Anonyme]
+2026-06-15 02:09:07.105 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:09:07.114 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-15 02:09:07.117 +02:00 [WRN] Antiforgery validation failed with message 'The provided antiforgery token was meant for a different claims-based user than the current user.'.
+2026-06-15 02:09:07.130 +02:00 [INF] REQ GET /Dashboard [Anonyme]
+2026-06-15 02:09:07.222 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:09:07.318 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-15 02:09:13.116 +02:00 [INF] REQ GET /Admin/Access [Anonyme]
+2026-06-15 02:09:13.216 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:09:13.284 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-15 02:09:31.733 +02:00 [INF] REQ GET /Commercial [Anonyme]
+2026-06-15 02:09:31.812 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:09:31.839 +02:00 [INF] REQ GET /api/v1/commercial/dashboard [Anonyme]
+2026-06-15 02:09:31.851 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-15 02:09:46.354 +02:00 [INF] REQ GET /Reservation/Packages [Anonyme]
+2026-06-15 02:09:46.428 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:09:46.430 +02:00 [INF] REQ GET /api/v1/packages [Anonyme]
+2026-06-15 02:09:46.457 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-15 02:10:08.131 +02:00 [INF] REQ GET /hangfire [Anonyme]
+2026-06-15 02:10:08.223 +02:00 [INF] REQ GET /hangfire/css-dark181401600123562 [Anonyme]
+2026-06-15 02:10:08.223 +02:00 [INF] REQ GET /hangfire/css18140315346241 [Anonyme]
+2026-06-15 02:10:08.252 +02:00 [INF] REQ GET /hangfire/js18140267350420 [Anonyme]
+2026-06-15 02:10:08.452 +02:00 [INF] REQ GET /hangfire/fonts/glyphicons-halflings-regular/woff2 [Anonyme]
+2026-06-15 02:10:11.112 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:10:14.107 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:10:17.103 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:10:20.100 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:10:23.089 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:10:26.100 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:10:29.109 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:10:32.094 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:10:35.101 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:10:38.101 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:10:41.099 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:10:44.095 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:10:47.094 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:10:50.092 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:10:51.935 +02:00 [INF] REQ POST /api/v1/packages [Anonyme]
+2026-06-15 02:10:52.141 +02:00 [INF] REQ GET /api/v1/packages [Anonyme]
+2026-06-15 02:10:53.099 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:10:56.096 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:10:59.096 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:11:01.955 +02:00 [INF] REQ GET /Reservation [Anonyme]
+2026-06-15 02:11:02.086 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:11:02.100 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:11:02.142 +02:00 [INF] REQ GET /api/v1/reservations [Anonyme]
+2026-06-15 02:11:02.161 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-15 02:11:02.173 +02:00 [INF] REQ GET /api/v1/reservations/arrivals/today [Anonyme]
+2026-06-15 02:11:02.190 +02:00 [INF] REQ GET /api/v1/reservations/departures/today [Anonyme]
+2026-06-15 02:11:05.105 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:11:08.108 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:11:11.089 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:11:12.575 +02:00 [INF] REQ GET /Reservation/Packages [Anonyme]
+2026-06-15 02:11:12.648 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:11:12.649 +02:00 [INF] REQ GET /api/v1/packages [Anonyme]
+2026-06-15 02:11:12.672 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-15 02:11:14.099 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:11:17.098 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:11:20.095 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:11:23.090 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:11:26.093 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:11:29.098 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:11:32.098 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:11:35.099 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:11:38.108 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:11:41.101 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:11:44.090 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:11:47.091 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:11:50.090 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:11:52.732 +02:00 [INF] REQ GET /Admin/Access [Anonyme]
+2026-06-15 02:11:52.882 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:11:52.946 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-15 02:11:53.094 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:11:55.850 +02:00 [INF] REQ GET /Admin [Anonyme]
+2026-06-15 02:11:55.923 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-15 02:11:55.925 +02:00 [INF] REQ GET /api/v1/users/dashboard [Anonyme]
+2026-06-15 02:11:55.953 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-15 02:11:56.103 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:11:59.107 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-15 02:12:06.370 +02:00 [WRN] Stopping the server due to DomainUnload or ProcessExit event...
+2026-06-15 02:12:06.377 +02:00 [INF] Server astra:2272:536dfcdf caught stopping signal...
+2026-06-15 02:12:06.383 +02:00 [INF] Server astra:2272:536dfcdf caught stopped signal...
+2026-06-15 02:12:06.391 +02:00 [WRN] Server astra:2272:536dfcdf caught shutdown signal...
+2026-06-15 02:12:06.392 +02:00 [INF] Server astra:2272:536dfcdf All dispatchers stopped
+2026-06-15 02:12:06.467 +02:00 [INF] Server astra:2272:536dfcdf successfully reported itself as stopped in 57,538 ms
+2026-06-15 02:12:06.472 +02:00 [INF] Server astra:2272:536dfcdf has been stopped in total 89,5235 ms

@@ -1,0 +1,228 @@
+2026-06-14 13:39:49.383 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-14 13:39:50.992 +02:00 [INF] Start installing Hangfire SQL objects...
+2026-06-14 13:39:51.435 +02:00 [INF] Hangfire SQL objects installed.
+2026-06-14 13:39:52.140 +02:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: ASTRA\SQLEXPRESS@hoteloDB'
+2026-06-14 13:39:52.146 +02:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-06-14 13:39:52.152 +02:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-06-14 13:39:52.214 +02:00 [INF] Server astra:9204:3466c9bd successfully announced in 26,2765 ms
+2026-06-14 13:39:52.225 +02:00 [INF] Server astra:9204:3466c9bd is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-06-14 13:39:52.303 +02:00 [INF] Server astra:9204:3466c9bd all the dispatchers started
+2026-06-14 13:39:52.774 +02:00 [ERR] Erreur lors du backup
+Microsoft.Data.SqlClient.SqlException (0x80131904): BACKUP DATABASE WITH COMPRESSION is not supported on Express Edition (64-bit).
+BACKUP DATABASE is terminating abnormally.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__210_1(IAsyncResult result)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Hotelo.Infrastructure.Services.BackupService.CreateBackupAsync() in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 38
+   at Hotelo.Infrastructure.Services.BackupService.CreateBackupAsync() in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 41
+   at Hotelo.Infrastructure.Services.BackupService.CreateBackupAsync() in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 41
+ClientConnectionId:bd4de8ec-32e3-4242-9694-238848a555f1
+Error Number:1844,State:1,Class:16
+2026-06-14 13:39:52.854 +02:00 [ERR] Erreur backup automatique
+Microsoft.Data.SqlClient.SqlException (0x80131904): BACKUP DATABASE WITH COMPRESSION is not supported on Express Edition (64-bit).
+BACKUP DATABASE is terminating abnormally.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__210_1(IAsyncResult result)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Hotelo.Infrastructure.Services.BackupService.CreateBackupAsync() in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 38
+   at Hotelo.Infrastructure.Services.BackupService.CreateBackupAsync() in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 41
+   at Hotelo.Infrastructure.Services.BackupService.CreateBackupAsync() in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 41
+   at Hotelo.Web.Jobs.BackupJob.ExecuteAsync() in C:\Projects\Hotelo\Hotelo.Web\Jobs\BackupJob.cs:line 20
+ClientConnectionId:bd4de8ec-32e3-4242-9694-238848a555f1
+Error Number:1844,State:1,Class:16
+2026-06-14 13:40:04.474 +02:00 [INF] REQ GET /Admin/Backup [Anonyme]
+2026-06-14 13:40:04.488 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-14 13:40:04.600 +02:00 [INF] REQ GET /Account/Login [Anonyme]
+2026-06-14 13:40:04.951 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-14 13:40:05.091 +02:00 [INF] REQ GET /favicon.ico [Anonyme]
+2026-06-14 13:40:06.922 +02:00 [INF] REQ POST /Account/Login [Anonyme]
+2026-06-14 13:40:07.382 +02:00 [INF] REQ GET /Admin/Backup [Anonyme]
+2026-06-14 13:40:07.575 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-14 13:40:07.701 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-14 13:40:11.900 +02:00 [INF] REQ POST /api/v1/backup/create [Anonyme]
+2026-06-14 13:40:11.928 +02:00 [ERR] Erreur lors du backup
+Microsoft.Data.SqlClient.SqlException (0x80131904): BACKUP DATABASE WITH COMPRESSION is not supported on Express Edition (64-bit).
+BACKUP DATABASE is terminating abnormally.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__210_1(IAsyncResult result)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Hotelo.Infrastructure.Services.BackupService.CreateBackupAsync() in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 38
+   at Hotelo.Infrastructure.Services.BackupService.CreateBackupAsync() in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 41
+   at Hotelo.Infrastructure.Services.BackupService.CreateBackupAsync() in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 41
+ClientConnectionId:c1ebbfb8-75ba-44db-9f20-7417bf121cfd
+Error Number:1844,State:1,Class:16
+2026-06-14 13:40:22.752 +02:00 [INF] REQ GET /hangfire [Anonyme]
+2026-06-14 13:40:22.987 +02:00 [INF] REQ GET /hangfire/css181401080257805 [Anonyme]
+2026-06-14 13:40:22.987 +02:00 [INF] REQ GET /hangfire/css-dark181401328230205 [Anonyme]
+2026-06-14 13:40:22.991 +02:00 [INF] REQ GET /hangfire/js181401637856938 [Anonyme]
+2026-06-14 13:40:23.153 +02:00 [INF] REQ GET /hangfire/fonts/glyphicons-halflings-regular/woff2 [Anonyme]
+2026-06-14 13:40:25.579 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:40:27.733 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:40:29.839 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:40:32.529 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:40:33.388 +02:00 [INF] REQ POST /api/v1/backup/create [Anonyme]
+2026-06-14 13:40:33.417 +02:00 [ERR] Erreur lors du backup
+Microsoft.Data.SqlClient.SqlException (0x80131904): BACKUP DATABASE WITH COMPRESSION is not supported on Express Edition (64-bit).
+BACKUP DATABASE is terminating abnormally.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__210_1(IAsyncResult result)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Hotelo.Infrastructure.Services.BackupService.CreateBackupAsync() in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 38
+   at Hotelo.Infrastructure.Services.BackupService.CreateBackupAsync() in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 41
+   at Hotelo.Infrastructure.Services.BackupService.CreateBackupAsync() in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 41
+ClientConnectionId:c1ebbfb8-75ba-44db-9f20-7417bf121cfd
+Error Number:1844,State:1,Class:16
+2026-06-14 13:40:35.529 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:40:38.530 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:40:41.531 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:40:44.529 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:40:47.526 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:40:50.532 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:40:53.522 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:40:56.535 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:40:59.527 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:41:02.524 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:41:05.525 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:41:08.523 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:41:11.525 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:41:14.521 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:41:17.522 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:41:20.529 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:41:23.521 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:41:25.521 +02:00 [INF] REQ POST /api/v1/backup/create [Anonyme]
+2026-06-14 13:41:25.544 +02:00 [ERR] Erreur lors du backup
+Microsoft.Data.SqlClient.SqlException (0x80131904): BACKUP DATABASE WITH COMPRESSION is not supported on Express Edition (64-bit).
+BACKUP DATABASE is terminating abnormally.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__210_1(IAsyncResult result)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Hotelo.Infrastructure.Services.BackupService.CreateBackupAsync() in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 38
+   at Hotelo.Infrastructure.Services.BackupService.CreateBackupAsync() in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 41
+   at Hotelo.Infrastructure.Services.BackupService.CreateBackupAsync() in C:\Projects\Hotelo\Hotelo.Infrastructure\Services\BackupService.cs:line 41
+ClientConnectionId:c1ebbfb8-75ba-44db-9f20-7417bf121cfd
+Error Number:1844,State:1,Class:16
+2026-06-14 13:41:26.534 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:41:29.529 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:41:32.532 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:41:35.539 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:41:38.531 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:41:41.522 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:41:44.525 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:41:47.532 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:41:50.522 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:41:53.529 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:41:56.522 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:41:59.522 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:42:02.520 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:42:05.528 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:42:08.528 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:42:11.526 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:42:14.523 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:42:17.524 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:42:20.523 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:42:23.522 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:42:26.534 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:42:29.529 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:42:32.518 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:42:34.390 +02:00 [INF] Server astra:9204:3466c9bd caught stopping signal...
+2026-06-14 13:42:34.398 +02:00 [INF] Server astra:9204:3466c9bd All dispatchers stopped
+2026-06-14 13:42:34.406 +02:00 [INF] Server astra:9204:3466c9bd successfully reported itself as stopped in 4,1732 ms
+2026-06-14 13:42:34.408 +02:00 [INF] Server astra:9204:3466c9bd has been stopped in total 12,2261 ms
+2026-06-14 13:42:52.094 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-14 13:42:54.571 +02:00 [INF] Start installing Hangfire SQL objects...
+2026-06-14 13:42:54.952 +02:00 [INF] Hangfire SQL objects installed.
+2026-06-14 13:42:55.708 +02:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: ASTRA\SQLEXPRESS@hoteloDB'
+2026-06-14 13:42:55.710 +02:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-06-14 13:42:55.713 +02:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-06-14 13:42:55.764 +02:00 [INF] Server astra:12592:b7489a4a successfully announced in 19,617 ms
+2026-06-14 13:42:55.772 +02:00 [INF] Server astra:12592:b7489a4a is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-06-14 13:42:55.821 +02:00 [INF] Server astra:12592:b7489a4a all the dispatchers started
+2026-06-14 13:43:24.418 +02:00 [INF] REQ GET /Admin/Backup [Anonyme]
+2026-06-14 13:43:24.429 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-14 13:43:24.760 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-14 13:43:24.822 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-14 13:43:28.014 +02:00 [INF] REQ GET /Admin/Backup [Anonyme]
+2026-06-14 13:43:28.169 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-14 13:43:28.199 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-14 13:43:30.874 +02:00 [INF] REQ POST /api/v1/backup/create [Anonyme]
+2026-06-14 13:43:31.044 +02:00 [INF] Backup cree : hoteloDB_backup_20260614_134330.bak
+2026-06-14 13:43:33.128 +02:00 [INF] REQ GET /Admin/Backup [Anonyme]
+2026-06-14 13:43:33.234 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-14 13:43:33.262 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-14 13:43:37.536 +02:00 [INF] REQ GET /hangfire [Anonyme]
+2026-06-14 13:43:37.841 +02:00 [INF] REQ GET /hangfire/css181401480592807 [Anonyme]
+2026-06-14 13:43:37.842 +02:00 [INF] REQ GET /hangfire/css-dark181402066780093 [Anonyme]
+2026-06-14 13:43:37.861 +02:00 [INF] REQ GET /hangfire/js181401668252974 [Anonyme]
+2026-06-14 13:43:38.460 +02:00 [INF] REQ GET /hangfire/fonts/glyphicons-halflings-regular/woff2 [Anonyme]
+2026-06-14 13:43:40.529 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:43:43.520 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:43:45.747 +02:00 [INF] REQ GET /hangfire [Anonyme]
+2026-06-14 13:43:45.805 +02:00 [INF] REQ GET /hangfire/css181401480592807 [Anonyme]
+2026-06-14 13:43:45.805 +02:00 [INF] REQ GET /hangfire/js181401668252974 [Anonyme]
+2026-06-14 13:43:45.805 +02:00 [INF] REQ GET /hangfire/css-dark181402066780093 [Anonyme]
+2026-06-14 13:43:45.916 +02:00 [INF] REQ GET /hangfire/fonts/glyphicons-halflings-regular/woff2 [Anonyme]
+2026-06-14 13:43:46.526 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:43:48.041 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:43:49.518 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:43:50.150 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:43:52.193 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:43:52.531 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:43:54.247 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:43:54.344 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-14 13:43:54.368 +02:00 [INF] REQ GET /Dashboard [Anonyme]
+2026-06-14 13:43:55.528 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:43:56.005 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-14 13:43:56.250 +02:00 [INF] REQ GET /hubs/notifications [Anonyme]
+2026-06-14 13:44:00.208 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:44:02.526 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:44:05.538 +02:00 [INF] REQ POST /hangfire/stats [Anonyme]
+2026-06-14 13:58:28.517 +02:00 [WRN] Stopping the server due to DomainUnload or ProcessExit event...
+2026-06-14 13:58:28.521 +02:00 [INF] Server astra:12592:b7489a4a caught stopping signal...
+2026-06-14 13:58:28.526 +02:00 [INF] Server astra:12592:b7489a4a caught stopped signal...
+2026-06-14 13:58:28.528 +02:00 [WRN] Server astra:12592:b7489a4a caught shutdown signal...
+2026-06-14 13:58:28.532 +02:00 [WRN] Server astra:12592:b7489a4a stopped non-gracefully due to ServerJobCancellationWatcher. Outstanding work on those dispatchers could be aborted, and there can be delays in background processing. This server instance will be incorrectly shown as active for a while. To avoid non-graceful shutdowns, investigate what prevents from stopping gracefully and add CancellationToken support for those methods.
+2026-06-14 13:58:28.563 +02:00 [INF] Server astra:12592:b7489a4a successfully reported itself as stopped in 21,1993 ms
+2026-06-14 13:58:28.569 +02:00 [INF] Server astra:12592:b7489a4a has been stopped in total 42,9733 ms

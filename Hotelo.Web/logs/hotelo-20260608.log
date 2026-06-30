@@ -1,0 +1,56 @@
+2026-06-08 01:50:17.620 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-08 01:51:02.168 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-08 01:51:02.178 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-08 01:51:02.278 +02:00 [INF] REQ GET /Account/Login [Anonyme]
+2026-06-08 01:51:02.545 +02:00 [INF] REQ GET /lib/jquery/dist/jquery.min.js [Anonyme]
+2026-06-08 01:51:02.545 +02:00 [INF] REQ GET /css/site.css [Anonyme]
+2026-06-08 01:51:02.547 +02:00 [INF] REQ GET /lib/bootstrap/dist/css/bootstrap.min.css [Anonyme]
+2026-06-08 01:51:02.551 +02:00 [INF] REQ GET /lib/bootstrap/dist/js/bootstrap.bundle.min.js [Anonyme]
+2026-06-08 01:51:04.819 +02:00 [INF] REQ POST /Account/Login [Anonyme]
+2026-06-08 01:51:05.802 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-08 01:51:05.835 +02:00 [INF] REQ GET /Dashboard [Anonyme]
+2026-06-08 01:52:22.342 +02:00 [INF] REQ GET /api/v1/dashboard [Anonyme]
+2026-06-08 02:01:02.809 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-08 02:06:19.837 +02:00 [INF] REQ GET /api/v1/housekeeping/dashboard [Anonyme]
+2026-06-08 02:06:19.863 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-08 14:01:38.258 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-08 14:03:46.357 +02:00 [INF] REQ GET /api/v1/hr/dashboard [Anonyme]
+2026-06-08 14:03:46.366 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-08 14:03:46.438 +02:00 [INF] REQ GET /Account/Login [Anonyme]
+2026-06-08 14:03:46.732 +02:00 [INF] REQ GET /lib/bootstrap/dist/css/bootstrap.min.css [Anonyme]
+2026-06-08 14:03:46.732 +02:00 [INF] REQ GET /lib/bootstrap/dist/js/bootstrap.bundle.min.js [Anonyme]
+2026-06-08 14:03:46.732 +02:00 [INF] REQ GET /lib/jquery/dist/jquery.min.js [Anonyme]
+2026-06-08 14:03:46.735 +02:00 [INF] REQ GET /css/site.css [Anonyme]
+2026-06-08 14:03:48.450 +02:00 [INF] REQ POST /Account/Login [Anonyme]
+2026-06-08 14:03:48.847 +02:00 [INF] REQ GET /api/v1/hr/dashboard [Anonyme]
+2026-06-08 14:04:49.317 +02:00 [INF] REQ GET /api/v1/hr/employees [Anonyme]
+2026-06-08 14:05:59.001 +02:00 [INF] REQ GET /api/v1/hr/departments [Anonyme]
+2026-06-08 14:11:22.741 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-08 14:17:05.416 +02:00 [INF] REQ GET /FrontOffice [Anonyme]
+2026-06-08 14:17:05.424 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-08 14:17:22.394 +02:00 [INF] REQ GET /Reservation [Anonyme]
+2026-06-08 14:17:22.624 +02:00 [INF] REQ GET /api/v1/reservations [Anonyme]
+2026-06-08 14:17:22.945 +02:00 [INF] REQ GET /api/v1/reservations/arrivals/today [Anonyme]
+2026-06-08 14:17:23.117 +02:00 [INF] REQ GET /api/v1/reservations/departures/today [Anonyme]
+2026-06-08 14:17:28.090 +02:00 [INF] REQ GET /api/v1/reservations/5 [Anonyme]
+2026-06-08 14:17:36.201 +02:00 [INF] REQ GET /Finances [Anonyme]
+2026-06-08 14:17:36.403 +02:00 [INF] REQ GET /api/v1/invoices/dashboard [Anonyme]
+2026-06-08 14:17:36.618 +02:00 [INF] REQ GET /api/v1/invoices [Anonyme]
+2026-06-08 14:17:46.377 +02:00 [INF] REQ GET /Housekeeping [Anonyme]
+2026-06-08 14:17:46.575 +02:00 [INF] REQ GET /api/v1/housekeeping/dashboard [Anonyme]
+2026-06-08 14:18:00.984 +02:00 [INF] REQ GET /HR [Anonyme]
+2026-06-08 14:18:01.058 +02:00 [INF] REQ GET /api/v1/hr/dashboard [Anonyme]
+2026-06-08 14:18:14.322 +02:00 [INF] REQ GET /Commercial [Anonyme]
+2026-06-08 14:18:16.901 +02:00 [INF] REQ GET /Technique [Anonyme]
+2026-06-08 14:18:18.253 +02:00 [INF] REQ GET /BellDesk [Anonyme]
+2026-06-08 21:43:38.328 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-08 21:43:38.765 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-08 21:43:52.380 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-08 21:43:59.948 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-08 21:44:18.025 +02:00 [INF] REQ GET /Commercial [Anonyme]
+2026-06-08 21:44:18.039 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-08 21:44:18.155 +02:00 [INF] REQ GET /Account/Login [Anonyme]
+2026-06-08 21:44:20.425 +02:00 [INF] REQ POST /Account/Login [Anonyme]
+2026-06-08 21:44:20.854 +02:00 [INF] REQ GET /Commercial [Anonyme]
+2026-06-08 21:44:20.979 +02:00 [INF] REQ GET /api/v1/commercial/dashboard [Anonyme]
+2026-06-08 21:44:43.283 +02:00 [INF] REQ GET /api/v1/commercial/dashboard [Anonyme]

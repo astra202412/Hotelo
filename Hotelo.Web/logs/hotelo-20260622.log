@@ -1,0 +1,73 @@
+2026-06-22 14:16:16.871 +02:00 [WRN] Entity 'Reservation' has a global query filter defined and is the required end of a relationship with the entity 'Invoice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-22 14:16:19.680 +02:00 [INF] Start installing Hangfire SQL objects...
+2026-06-22 14:16:19.989 +02:00 [INF] Hangfire SQL objects installed.
+2026-06-22 14:16:21.194 +02:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: ASTRA\SQLEXPRESS@hoteloDB'
+2026-06-22 14:16:21.197 +02:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-06-22 14:16:21.200 +02:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-06-22 14:16:21.281 +02:00 [INF] Server astra:15084:edf5ee60 successfully announced in 50,7958 ms
+2026-06-22 14:16:21.289 +02:00 [INF] Server astra:15084:edf5ee60 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-06-22 14:16:21.310 +02:00 [INF] 1 servers were removed due to timeout
+2026-06-22 14:16:21.419 +02:00 [INF] Server astra:15084:edf5ee60 all the dispatchers started
+2026-06-22 14:16:21.960 +02:00 [INF] Backup cree : hoteloDB_backup_20260622_141621.bak
+2026-06-22 14:16:21.962 +02:00 [INF] Backup automatique reussi : hoteloDB_backup_20260622_141621.bak
+2026-06-22 14:16:23.646 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-22 14:16:23.789 +02:00 [INF] REQ GET /Account/Login [Anonyme]
+2026-06-22 14:16:24.173 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-22 14:16:27.197 +02:00 [INF] REQ POST /Account/Login [Anonyme]
+2026-06-22 14:16:27.545 +02:00 [INF] REQ GET / [Anonyme]
+2026-06-22 14:16:27.618 +02:00 [INF] REQ GET /Dashboard [Anonyme]
+2026-06-22 14:16:28.444 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-22 14:16:28.853 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-22 14:16:34.822 +02:00 [INF] REQ GET /Admin/Departments [Anonyme]
+2026-06-22 14:16:35.022 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-22 14:16:35.081 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-22 14:16:43.743 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-22 14:16:49.960 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-22 14:16:55.206 +02:00 [INF] REQ GET /Admin/Access [Anonyme]
+2026-06-22 14:16:55.321 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-22 14:16:55.392 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-22 14:16:57.899 +02:00 [INF] REQ GET /Admin/UserAccess [Anonyme]
+2026-06-22 14:16:58.102 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-22 14:16:58.151 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-22 14:19:14.370 +02:00 [INF] REQ GET /HR [Anonyme]
+2026-06-22 14:19:14.480 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-22 14:19:14.483 +02:00 [INF] REQ GET /api/v1/hr/dashboard [Anonyme]
+2026-06-22 14:19:14.532 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-22 14:19:35.253 +02:00 [INF] REQ GET /Admin/Access [Anonyme]
+2026-06-22 14:19:35.347 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-22 14:19:35.395 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-22 14:19:41.601 +02:00 [INF] REQ GET /Admin/UserAccess [Anonyme]
+2026-06-22 14:19:41.707 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-22 14:19:41.760 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-22 14:20:14.308 +02:00 [INF] REQ GET /Admin/Departments [Anonyme]
+2026-06-22 14:20:14.432 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-22 14:20:14.487 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-22 14:20:21.339 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-22 14:20:21.510 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-22 14:20:22.867 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-22 14:20:23.074 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-22 14:20:24.418 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-22 14:20:24.658 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-22 14:20:29.656 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-22 14:20:29.695 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-22 14:20:31.802 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-22 14:20:32.042 +02:00 [INF] REQ GET /Admin/Departments/Functions [Anonyme]
+2026-06-22 14:51:54.314 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-22 14:51:54.564 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-22 14:52:17.633 +02:00 [INF] 1 servers were removed due to timeout
+2026-06-22 14:52:17.924 +02:00 [WRN] Server astra:15084:edf5ee60 was considered dead by other servers, restarting...
+2026-06-22 14:52:17.928 +02:00 [INF] Server astra:15084:edf5ee60 caught restart signal...
+2026-06-22 14:52:17.985 +02:00 [WRN] Server astra:15084:edf5ee60 stopped non-gracefully due to ServerWatchdog, SqlServerHeartbeatProcess, Worker, RecurringJobScheduler. Outstanding work on those dispatchers could be aborted, and there can be delays in background processing. This server instance will be incorrectly shown as active for a while. To avoid non-graceful shutdowns, investigate what prevents from stopping gracefully and add CancellationToken support for those methods.
+2026-06-22 14:52:18.041 +02:00 [INF] Server astra:15084:edf5ee60 successfully reported itself as stopped in 16,8272 ms
+2026-06-22 14:52:18.045 +02:00 [INF] Server astra:15084:edf5ee60 has been stopped in total 38,9483 ms
+2026-06-22 14:52:18.049 +02:00 [INF] Server astra:15084:6711499a successfully announced in 0,9173 ms
+2026-06-22 14:52:18.050 +02:00 [INF] Server astra:15084:6711499a is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-06-22 14:52:18.332 +02:00 [INF] Server astra:15084:6711499a all the dispatchers started
+2026-06-22 16:06:56.359 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-22 16:06:56.444 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
+2026-06-22 16:13:32.502 +02:00 [INF] REQ POST /hubs/notifications/negotiate [Anonyme]
+2026-06-22 16:13:32.517 +02:00 [INF] REQ CONNECT /hubs/notifications [Anonyme]
