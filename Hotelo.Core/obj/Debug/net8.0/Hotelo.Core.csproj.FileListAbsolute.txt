@@ -1,0 +1,15 @@
+C:\Projects\Hotelo\Hotelo.Core\obj\Debug\net8.0\Hotelo.Core.csproj.AssemblyReference.cache
+C:\Projects\Hotelo\Hotelo.Core\obj\Debug\net8.0\Hotelo.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\Hotelo\Hotelo.Core\obj\Debug\net8.0\Hotelo.Core.AssemblyInfoInputs.cache
+C:\Projects\Hotelo\Hotelo.Core\obj\Debug\net8.0\Hotelo.Core.AssemblyInfo.cs
+C:\Projects\Hotelo\Hotelo.Core\obj\Debug\net8.0\Hotelo.Core.csproj.CoreCompileInputs.cache
+C:\Projects\Hotelo\Hotelo.Core\bin\Debug\net8.0\Hotelo.Core.deps.json
+C:\Projects\Hotelo\Hotelo.Core\bin\Debug\net8.0\Hotelo.Core.dll
+C:\Projects\Hotelo\Hotelo.Core\bin\Debug\net8.0\Hotelo.Core.pdb
+C:\Projects\Hotelo\Hotelo.Core\bin\Debug\net8.0\Hotelo.Common.dll
+C:\Projects\Hotelo\Hotelo.Core\bin\Debug\net8.0\Hotelo.Common.pdb
+C:\Projects\Hotelo\Hotelo.Core\obj\Debug\net8.0\Hotelo.C.080520BA.Up2Date
+C:\Projects\Hotelo\Hotelo.Core\obj\Debug\net8.0\Hotelo.Core.dll
+C:\Projects\Hotelo\Hotelo.Core\obj\Debug\net8.0\refint\Hotelo.Core.dll
+C:\Projects\Hotelo\Hotelo.Core\obj\Debug\net8.0\Hotelo.Core.pdb
+C:\Projects\Hotelo\Hotelo.Core\obj\Debug\net8.0\ref\Hotelo.Core.dll
