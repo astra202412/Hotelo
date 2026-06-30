@@ -1,0 +1,279 @@
+﻿@model Hotelo.Core.DTOs.Reports.DirectionReportDto
+@using System.Text.Json
+@{
+    ViewData["Title"] = "Rapports Direction";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var monthlyLabels  = JsonSerializer.Serialize(Model.MonthlyRevenue.Select(m => m.Month));
+    var monthlyRevData = JsonSerializer.Serialize(Model.MonthlyRevenue.Select(m => m.Revenue));
+    var monthlyStays   = JsonSerializer.Serialize(Model.MonthlyRevenue.Select(m => m.Stays));
+    var typeLabels     = JsonSerializer.Serialize(Model.OccupancyByType.Select(t => t.RoomType));
+    var typeOccData    = JsonSerializer.Serialize(Model.OccupancyByType.Select(t => t.OccupancyRate));
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h5 class="fw-bold mb-0">
+        <i class="bi bi-graph-up text-primary me-2"></i>Rapports Direction
+    </h5>
+    <form class="d-flex gap-2 align-items-center">
+        <select name="month" class="form-select form-select-sm" style="width:140px">
+            @for (int i = 1; i <= 12; i++) {
+                <option value="@i" selected="@(i == ViewBag.Month)">
+                    @(new DateTime(2000, i, 1).ToString("MMMM"))
+                </option>
+            }
+        </select>
+        <select name="year" class="form-select form-select-sm" style="width:100px">
+            @for (int y = DateTime.Today.Year; y >= DateTime.Today.Year - 3; y--) {
+                <option value="@y" selected="@(y == ViewBag.Year)">@y</option>
+            }
+        </select>
+        <button type="submit" class="btn btn-dark btn-sm">Actualiser</button>
+    </form>
+</div>
+
+<!-- KPIs Hôteliers -->
+<div class="row g-3 mb-4">
+    <div class="col-6 col-md-3">
+        <div class="card border-0 shadow-sm text-center py-3"
+             style="border-left:4px solid #2196F3!important;">
+            <div class="fs-2 fw-bold text-primary">@Model.OccupancyRate%</div>
+            <div class="small text-muted">Taux d Occupation</div>
+            <div class="small @(Model.OccupancyVariation >= 0 ? "text-success" : "text-danger")">
+                @(Model.OccupancyVariation >= 0 ? "+" : "")@Model.OccupancyVariation% vs mois prec.
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card border-0 shadow-sm text-center py-3"
+             style="border-left:4px solid #4CAF50!important;">
+            <div class="fs-2 fw-bold text-success">@Model.RevPAR.ToString("N0")</div>
+            <div class="small text-muted">RevPAR (DZD)</div>
+            <div class="small text-muted">Revenue Per Available Room</div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card border-0 shadow-sm text-center py-3"
+             style="border-left:4px solid #FF9800!important;">
+            <div class="fs-2 fw-bold text-warning">@Model.ADR.ToString("N0")</div>
+            <div class="small text-muted">ADR (DZD)</div>
+            <div class="small text-muted">Average Daily Rate</div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card border-0 shadow-sm text-center py-3"
+             style="border-left:4px solid #C9A84C!important;">
+            <div class="fs-2 fw-bold" style="color:#C9A84C">@Model.TotalRevenue.ToString("N0")</div>
+            <div class="small text-muted">Revenu Total (DZD)</div>
+            <div class="small @(Model.RevenueVariation >= 0 ? "text-success" : "text-danger")">
+                @(Model.RevenueVariation >= 0 ? "+" : "")@Model.RevenueVariation% vs mois prec.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- KPIs secondaires -->
+<div class="row g-3 mb-4">
+    <div class="col-6 col-md-2">
+        <div class="card border-0 shadow-sm text-center py-2">
+            <div class="fs-4 fw-bold text-dark">@Model.TotalReservations</div>
+            <small class="text-muted">Reservations</small>
+        </div>
+    </div>
+    <div class="col-6 col-md-2">
+        <div class="card border-0 shadow-sm text-center py-2">
+            <div class="fs-4 fw-bold text-success">@Model.CheckedInCount</div>
+            <small class="text-muted">Sejours</small>
+        </div>
+    </div>
+    <div class="col-6 col-md-2">
+        <div class="card border-0 shadow-sm text-center py-2">
+            <div class="fs-4 fw-bold text-danger">@Model.CancellationRate%</div>
+            <small class="text-muted">Taux Annulation</small>
+        </div>
+    </div>
+    <div class="col-6 col-md-2">
+        <div class="card border-0 shadow-sm text-center py-2">
+            <div class="fs-4 fw-bold text-primary">@Model.AverageStayDays j</div>
+            <small class="text-muted">Duree Moyenne</small>
+        </div>
+    </div>
+    <div class="col-6 col-md-2">
+        <div class="card border-0 shadow-sm text-center py-2">
+            <div class="fs-4 fw-bold text-info">@Model.RevenueYear.ToString("N0")</div>
+            <small class="text-muted">CA Annuel DZD</small>
+        </div>
+    </div>
+    <div class="col-6 col-md-2">
+        <div class="card border-0 shadow-sm text-center py-2">
+            <div class="fs-4 fw-bold text-secondary">@Model.TotalEmployees</div>
+            <small class="text-muted">Employes</small>
+        </div>
+    </div>
+</div>
+
+<!-- Graphiques -->
+<div class="row g-3 mb-4">
+    <!-- Revenus 12 mois -->
+    <div class="col-md-8">
+        <div class="card border-0 shadow-sm">
+            <div class="card-header bg-white fw-semibold border-0 pt-3">
+                Revenus & Sejours — 12 derniers mois
+            </div>
+            <div class="card-body">
+                <canvas id="revenueChart" height="100"></canvas>
+            </div>
+        </div>
+    </div>
+    <!-- Occupation par type -->
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm">
+            <div class="card-header bg-white fw-semibold border-0 pt-3">
+                Occupation par Type de Chambre
+            </div>
+            <div class="card-body">
+                <canvas id="typeChart" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-3 mb-4">
+    <!-- Top Clients -->
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm">
+            <div class="card-header bg-white fw-semibold border-0 pt-3">
+                <i class="bi bi-trophy me-2 text-warning"></i>Top 5 Clients
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-hover mb-0">
+                    <thead class="table-light">
+                        <tr><th>#</th><th>Client</th><th>Sejours</th><th>Total Depense</th><th>VIP</th></tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < Model.TopGuests.Count; i++)
+                        {
+                            var g = Model.TopGuests[i];
+                            <tr>
+                                <td><span class="badge bg-warning text-dark">@(i + 1)</span></td>
+                                <td><strong>@g.GuestName</strong></td>
+                                <td class="text-center">@g.Stays</td>
+                                <td>@g.TotalSpent.ToString("N0") DZD</td>
+                                <td>
+                                    <span class="badge" style="background:@(g.VIPLevel == "Gold" ? "#FFD700" :
+                                        g.VIPLevel == "Platinum" ? "#E5E4E2" :
+                                        g.VIPLevel == "Silver" ? "#C0C0C0" : "#9E9E9E");
+                                        color:#333">
+                                        @g.VIPLevel
+                                    </span>
+                                </td>
+                            </tr>
+                        }
+                        @if (!Model.TopGuests.Any())
+                        {
+                            <tr><td colspan="5" class="text-center text-muted py-3">Aucune donnee</td></tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Occupation par type tableau -->
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm">
+            <div class="card-header bg-white fw-semibold border-0 pt-3">
+                <i class="bi bi-building me-2"></i>Performance par Type de Chambre
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-hover mb-0">
+                    <thead class="table-light">
+                        <tr><th>Type</th><th>Total</th><th>Occupees</th><th>Taux</th></tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var t in Model.OccupancyByType)
+                        {
+                            <tr>
+                                <td><strong>@t.RoomType</strong></td>
+                                <td class="text-center">@t.Total</td>
+                                <td class="text-center">@t.Occupied</td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <div class="progress flex-grow-1" style="height:8px">
+                                            <div class="progress-bar bg-primary"
+                                                 style="width:@t.OccupancyRate%"></div>
+                                        </div>
+                                        <small>@t.OccupancyRate%</small>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script>
+// Graphique Revenus 12 mois
+new Chart(document.getElementById('revenueChart'), {
+    type: 'bar',
+    data: {
+        labels: @Html.Raw(monthlyLabels),
+        datasets: [
+            {
+                label: 'Revenus DZD',
+                data: @Html.Raw(monthlyRevData),
+                backgroundColor: 'rgba(30,58,95,0.7)',
+                borderColor: '#1E3A5F',
+                borderWidth: 1,
+                borderRadius: 4,
+                yAxisID: 'y'
+            },
+            {
+                label: 'Nb Sejours',
+                data: @Html.Raw(monthlyStays),
+                type: 'line',
+                borderColor: '#C9A84C',
+                backgroundColor: 'rgba(201,168,76,0.1)',
+                borderWidth: 2,
+                pointRadius: 4,
+                yAxisID: 'y1'
+            }
+        ]
+    },
+    options: {
+        responsive: true,
+        interaction: { mode: 'index', intersect: false },
+        plugins: { legend: { position: 'top' } },
+        scales: {
+            y:  { beginAtZero: true, position: 'left',  ticks: { callback: v => v.toLocaleString() } },
+            y1: { beginAtZero: true, position: 'right', grid: { drawOnChartArea: false } }
+        }
+    }
+});
+
+// Graphique Occupation par type
+new Chart(document.getElementById('typeChart'), {
+    type: 'bar',
+    data: {
+        labels: @Html.Raw(typeLabels),
+        datasets: [{
+            label: 'Taux Occupation %',
+            data: @Html.Raw(typeOccData),
+            backgroundColor: ['#2196F3','#4CAF50','#FF9800','#F44336','#9C27B0'],
+            borderRadius: 4
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: {
+            y: { beginAtZero: true, max: 100, ticks: { callback: v => v + '%' } }
+        }
+    }
+});
+</script>
+}

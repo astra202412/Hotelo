@@ -1,0 +1,239 @@
+﻿@model Hotelo.Core.DTOs.Dashboard.GlobalDashboardDto
+@using System.Text.Json
+@{
+    ViewData["Title"] = "Dashboard — HOTELO";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var revenueLabels  = JsonSerializer.Serialize(Model.RevenueLast7Days.Select(r => r.Day));
+    var revenueData    = JsonSerializer.Serialize(Model.RevenueLast7Days.Select(r => r.Revenue));
+    var floorLabels    = JsonSerializer.Serialize(Model.OccupancyByFloor.Select(f => f.Floor));
+    var floorData      = JsonSerializer.Serialize(Model.OccupancyByFloor.Select(f => f.Rate));
+    var statusLabels   = JsonSerializer.Serialize(Model.RoomStatusChart.Select(s => s.Label));
+    var statusData     = JsonSerializer.Serialize(Model.RoomStatusChart.Select(s => s.Count));
+    var statusColors   = JsonSerializer.Serialize(Model.RoomStatusChart.Select(s => s.Color));
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h4 class="fw-bold mb-0">
+        <span class="text-warning">&#9632;</span> Dashboard Global — HOTELO
+    </h4>
+    <small class="text-muted">Mis a jour : @DateTime.Now.ToString("dd/MM/yyyy HH:mm")</small>
+</div>
+
+<!-- KPIs Ligne 1 — Chambres -->
+<div class="row g-3 mb-3">
+    <div class="col-6 col-md-3">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-body text-center py-3">
+                <div class="fs-2 fw-bold text-dark">@Model.TotalRooms</div>
+                <div class="small text-muted">Total Chambres</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card border-0 shadow-sm h-100" style="border-left:4px solid #F44336!important;">
+            <div class="card-body text-center py-3">
+                <div class="fs-2 fw-bold text-danger">@Model.OccupiedRooms</div>
+                <div class="small text-muted">Occupees</div>
+                <div class="small fw-bold text-danger">@Model.OccupancyRate%</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card border-0 shadow-sm h-100" style="border-left:4px solid #4CAF50!important;">
+            <div class="card-body text-center py-3">
+                <div class="fs-2 fw-bold text-success">@Model.FreeRooms</div>
+                <div class="small text-muted">Libres</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card border-0 shadow-sm h-100" style="border-left:4px solid #9E9E9E!important;">
+            <div class="card-body text-center py-3">
+                <div class="fs-2 fw-bold text-secondary">@Model.MaintenanceRooms</div>
+                <div class="small text-muted">Maintenance</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- KPIs Ligne 2 — Reservations & Finances -->
+<div class="row g-3 mb-4">
+    <div class="col-6 col-md-3">
+        <div class="card border-0 shadow-sm h-100" style="border-left:4px solid #2196F3!important;">
+            <div class="card-body text-center py-3">
+                <div class="fs-2 fw-bold text-primary">@Model.TodayArrivals</div>
+                <div class="small text-muted">Arrivees Aujourd hui</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card border-0 shadow-sm h-100" style="border-left:4px solid #FF9800!important;">
+            <div class="card-body text-center py-3">
+                <div class="fs-2 fw-bold" style="color:#FF9800">@Model.TodayDepartures</div>
+                <div class="small text-muted">Departs Aujourd hui</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card border-0 shadow-sm h-100" style="border-left:4px solid #4CAF50!important;">
+            <div class="card-body text-center py-3">
+                <div class="fs-2 fw-bold text-success">@Model.RevenueToday.ToString("N0") DZD</div>
+                <div class="small text-muted">Revenu Aujourd hui</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card border-0 shadow-sm h-100" style="border-left:4px solid #C9A84C!important;">
+            <div class="card-body text-center py-3">
+                <div class="fs-2 fw-bold" style="color:#C9A84C">@Model.RevenueMonth.ToString("N0") DZD</div>
+                <div class="small text-muted">Revenu Ce Mois</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Graphiques -->
+<div class="row g-3 mb-4">
+    <!-- Revenus 7 jours -->
+    <div class="col-md-8">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-header bg-white fw-bold border-0 pt-3">
+                Revenus — 7 derniers jours (DZD)
+            </div>
+            <div class="card-body">
+                <canvas id="revenueChart" height="120"></canvas>
+            </div>
+        </div>
+    </div>
+    <!-- Statuts Chambres -->
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-header bg-white fw-bold border-0 pt-3">
+                Repartition Chambres
+            </div>
+            <div class="card-body d-flex align-items-center justify-content-center">
+                <canvas id="statusChart" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Occupation par Etage -->
+<div class="row g-3 mb-4">
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm">
+            <div class="card-header bg-white fw-bold border-0 pt-3">
+                Taux d Occupation par Etage (%)
+            </div>
+            <div class="card-body">
+                <canvas id="floorChart" height="140"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mouvements du jour -->
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm">
+            <div class="card-header bg-white fw-bold border-0 pt-3">
+                Mouvements du Jour
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-sm mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Client</th>
+                            <th>Chambre</th>
+                            <th>Statut</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var m in Model.TodayArrivalsList)
+                        {
+                            <tr>
+                                <td class="small">@m.GuestName</td>
+                                <td class="small">@m.RoomNumber — @m.RoomType</td>
+                                <td><span class="badge" style="background:@m.StatusColor">@m.Status</span></td>
+                            </tr>
+                        }
+                        @foreach (var m in Model.TodayDeparturesList)
+                        {
+                            <tr>
+                                <td class="small">@m.GuestName</td>
+                                <td class="small">@m.RoomNumber — @m.RoomType</td>
+                                <td><span class="badge" style="background:@m.StatusColor">@m.Status</span></td>
+                            </tr>
+                        }
+                        @if (!Model.TodayArrivalsList.Any() && !Model.TodayDeparturesList.Any())
+                        {
+                            <tr><td colspan="3" class="text-center text-muted small py-3">Aucun mouvement aujourd hui</td></tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script>
+// Graphique Revenus
+new Chart(document.getElementById('revenueChart'), {
+    type: 'bar',
+    data: {
+        labels: @Html.Raw(revenueLabels),
+        datasets: [{
+            label: 'Revenus DZD',
+            data: @Html.Raw(revenueData),
+            backgroundColor: 'rgba(46, 117, 182, 0.7)',
+            borderColor: '#1E3A5F',
+            borderWidth: 1,
+            borderRadius: 4
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true, ticks: { callback: v => v.toLocaleString() + ' DZD' } } }
+    }
+});
+
+// Graphique Statuts Chambres (Donut)
+new Chart(document.getElementById('statusChart'), {
+    type: 'doughnut',
+    data: {
+        labels: @Html.Raw(statusLabels),
+        datasets: [{
+            data: @Html.Raw(statusData),
+            backgroundColor: @Html.Raw(statusColors),
+            borderWidth: 2
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: { position: 'bottom', labels: { font: { size: 11 } } }
+        }
+    }
+});
+
+// Graphique Occupation par Etage
+new Chart(document.getElementById('floorChart'), {
+    type: 'bar',
+    data: {
+        labels: @Html.Raw(floorLabels),
+        datasets: [{
+            label: 'Taux occupation %',
+            data: @Html.Raw(floorData),
+            backgroundColor: ['#2196F3','#4CAF50','#FF9800','#F44336'],
+            borderRadius: 4
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true, max: 100, ticks: { callback: v => v + '%' } } }
+    }
+});
+</script>
+}

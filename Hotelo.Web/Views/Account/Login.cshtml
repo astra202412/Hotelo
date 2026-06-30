@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Connexion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-4">
+        <div class="card shadow">
+            <div class="card-header bg-dark text-warning text-center py-3">
+                <h4 class="mb-0 fw-bold">HOTELO</h4>
+                <small class="text-light">Hotel Management System</small>
+            </div>
+            <div class="card-body p-4">
+                @if (ViewData["Error"] != null)
+                {
+                    <div class="alert alert-danger">@ViewData["Error"]</div>
+                }
+                <form method="post" asp-action="Login">
+                    <input type="hidden" name="returnUrl" value="@ViewData["ReturnUrl"]" />
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Email</label>
+                        <input type="email" name="email" class="form-control"
+                               placeholder="admin@hotelo.local" required />
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold">Mot de passe</label>
+                        <input type="password" name="password" class="form-control" required />
+                    </div>
+                    <button type="submit" class="btn btn-dark w-100 fw-bold">
+                        Se connecter
+                    </button>
+                </form>
+            </div>
+            <div class="card-footer text-center text-muted small py-2">
+                v1.0.0 &copy; @DateTime.Now.Year
+            </div>
+        </div>
+    </div>
+</div>
