@@ -1,0 +1,327 @@
+﻿@model IEnumerable<Hotelo.Core.DTOs.HR.DepartmentDto>
+@{
+    ViewData["Title"] = "Departements & Fonctions";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var functions = ViewBag.Functions as IEnumerable<Hotelo.Core.DTOs.Admin.JobFunctionDto>
+                    ?? Enumerable.Empty<Hotelo.Core.DTOs.Admin.JobFunctionDto>();
+}
+
+<div class="container-fluid px-4">
+
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4 class="mb-0"><i class="bi bi-building me-2 text-primary"></i>Departements &amp; Fonctions</h4>
+        <button class="btn btn-primary" onclick="openDeptModal()">
+            <i class="bi bi-plus-lg me-1"></i>Nouveau Departement
+        </button>
+    </div>
+
+    <div class="row g-3">
+
+        <!-- COLONNE GAUCHE : Departements -->
+        <div class="col-md-5">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                    <span><i class="bi bi-building me-1"></i>Departements (@Model.Count())</span>
+                    <span class="badge bg-white text-primary">@Model.Count(d => d.IsActive) actifs</span>
+                </div>
+                <div class="card-body p-0">
+                    <div class="list-group list-group-flush" id="deptList">
+                        @foreach (var dept in Model.OrderBy(d => d.Name))
+                        {
+                            <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center dept-item @(!dept.IsActive ? "text-muted" : "")"
+                                 id="dept-@dept.Id"
+                                 onclick="selectDept(@dept.Id, '@dept.Name')"
+                                 style="cursor:pointer">
+                                <div>
+                                    <i class="bi bi-building me-2 text-primary"></i>
+                                    <strong>@dept.Name</strong>
+                                    @if (!string.IsNullOrEmpty(dept.Description))
+                                    {
+                                        <small class="text-muted d-block ms-4">@dept.Description</small>
+                                    }
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <span class="badge bg-secondary rounded-pill">@dept.EmployeeCount emp.</span>
+                                    @if (!dept.IsActive)
+                                    {
+                                        <span class="badge bg-danger">Inactif</span>
+                                    }
+                                    <div class="btn-group btn-group-sm" onclick="event.stopPropagation()">
+                                        <button class="btn btn-outline-primary btn-sm"
+                                                onclick="editDept(@dept.Id)" title="Modifier">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="btn btn-outline-danger btn-sm"
+                                                onclick="deleteDept(@dept.Id, '@dept.Name')" title="Desactiver">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COLONNE DROITE : Fonctions du departement selectionne -->
+        <div class="col-md-7">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
+                    <span><i class="bi bi-person-badge me-1"></i>Fonctions / Postes
+                        <span id="selectedDeptName" class="ms-2 fw-normal opacity-75"></span>
+                    </span>
+                    <button class="btn btn-sm btn-light text-success" id="btnAddFunction"
+                            onclick="openFunctionModal()" style="display:none">
+                        <i class="bi bi-plus-lg me-1"></i>Nouveau Poste
+                    </button>
+                </div>
+                <div class="card-body" id="functionsPanel">
+                    <div class="text-center text-muted py-5">
+                        <i class="bi bi-arrow-left-circle fs-3 d-block mb-2"></i>
+                        Selectionnez un departement pour voir ses postes
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- â”€â”€ Modal Departement â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+<div class="modal fade" id="deptModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="deptModalTitle">
+                    <i class="bi bi-building me-2"></i>Nouveau Departement
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="deptId" value="0" />
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Nom <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="deptName" placeholder="Ex: Reception" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Description</label>
+                    <textarea class="form-control" id="deptDesc" rows="2"
+                              placeholder="Description optionnelle..."></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                <button class="btn btn-primary" onclick="saveDept()">
+                    <i class="bi bi-floppy me-1"></i>Enregistrer
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- â”€â”€ Modal Confirmation Suppression â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+<div class="modal fade" id="confirmModal" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h6 class="modal-title"><i class="bi bi-exclamation-triangle me-1"></i>Confirmation</h6>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="confirmMsg">Confirmer la suppression ?</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Annuler</button>
+                <button class="btn btn-danger btn-sm" id="confirmBtn">Supprimer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- â”€â”€ Modal Fonction â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+<div class="modal fade" id="functionModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title">
+                    <i class="bi bi-person-badge me-2"></i>Nouveau Poste / Fonction
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="funcDeptId" value="0" />
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Departement</label>
+                    <input type="text" class="form-control" id="funcDeptName" readonly />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Intitule du poste <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="funcName"
+                           placeholder="Ex: Receptionniste de nuit" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Description</label>
+                    <textarea class="form-control" id="funcDesc" rows="2"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                <button class="btn btn-success" onclick="saveFunction()">
+                    <i class="bi bi-floppy me-1"></i>Enregistrer
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+<script>
+let currentDeptId   = 0;
+let currentDeptName = '';
+const deptModal     = new bootstrap.Modal(document.getElementById('deptModal'));
+const funcModal     = new bootstrap.Modal(document.getElementById('functionModal'));
+const confirmModal  = new bootstrap.Modal(document.getElementById('confirmModal'));
+
+// â”€â”€ Departements â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+function openDeptModal(id = 0) {
+    document.getElementById('deptId').value   = id;
+    document.getElementById('deptName').value = '';
+    document.getElementById('deptDesc').value = '';
+    document.getElementById('deptModalTitle').innerHTML =
+        '<i class="bi bi-building me-2"></i>' + (id === 0 ? 'Nouveau Departement' : 'Modifier Departement');
+    deptModal.show();
+}
+
+async function editDept(id) {
+    const r = await fetch('/Admin/Departments/GetById/' + id);
+    const j = await r.json();
+    if (!j.success) return;
+    document.getElementById('deptId').value   = j.data.id;
+    document.getElementById('deptName').value = j.data.name;
+    document.getElementById('deptDesc').value = j.data.description ?? '';
+    document.getElementById('deptModalTitle').innerHTML =
+        '<i class="bi bi-pencil me-2"></i>Modifier : ' + j.data.name;
+    deptModal.show();
+}
+
+async function saveDept() {
+    const id   = parseInt(document.getElementById('deptId').value);
+    const name = document.getElementById('deptName').value.trim();
+    const desc = document.getElementById('deptDesc').value.trim();
+    if (!name) { alert('Le nom est obligatoire'); return; }
+
+    const url = id === 0 ? '/Admin/Departments/Create' : '/Admin/Departments/Update/' + id;
+    const r   = await fetch(url, {
+        method  : 'POST',
+        headers : { 'Content-Type': 'application/json' },
+        body    : JSON.stringify({ name, description: desc })
+    });
+    const j = await r.json();
+    if (j.success) { deptModal.hide(); showToast('Departement enregistre', 'success'); setTimeout(() => location.reload(), 800); }
+    else showToast(j.message ?? 'Erreur', 'danger');
+}
+
+function deleteDept(id, name) {
+    document.getElementById('confirmMsg').textContent = 'Desactiver le departement "' + name + '" ?';
+    document.getElementById('confirmBtn').onclick = async () => {
+        const r = await fetch('/Admin/Departments/Delete/' + id, { method: 'POST' });
+        const j = await r.json();
+        confirmModal.hide();
+        if (j.success) { showToast('Departement desactive', 'warning'); setTimeout(() => location.reload(), 800); }
+        else showToast(j.message ?? 'Erreur', 'danger');
+    };
+    confirmModal.show();
+}
+
+// â”€â”€ Selection departement -> affichage fonctions â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+async function selectDept(id, name) {
+    currentDeptId   = id;
+    currentDeptName = name;
+    document.querySelectorAll('.dept-item').forEach(el => el.classList.remove('active'));
+    const el = document.getElementById('dept-' + id);
+    if (el) el.classList.add('active');
+    document.getElementById('selectedDeptName').textContent = 'â€” ' + name;
+    document.getElementById('btnAddFunction').style.display = '';
+    await loadFunctions(id);
+}
+
+async function loadFunctions(deptId) {
+    const panel = document.getElementById('functionsPanel');
+    panel.innerHTML = '<div class="text-center py-3"><div class="spinner-border spinner-border-sm text-success"></div></div>';
+    const r = await fetch('/Admin/Departments/Functions?departmentId=' + deptId);
+    const funcs = await r.json();
+    if (funcs.length === 0) {
+        panel.innerHTML = '<div class="text-center text-muted py-4"><i class="bi bi-inbox fs-3 d-block mb-2"></i>Aucun poste defini pour ce departement</div>';
+        return;
+    }
+    let html = '<div class="list-group list-group-flush">';
+    funcs.forEach(f => {
+        html += `
+        <div class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+                <i class="bi bi-person-badge me-2 text-success"></i>
+                <strong>${f.name}</strong>
+                ${f.description ? '<small class="text-muted d-block ms-4">' + f.description + '</small>' : ''}
+                <small class="text-muted ms-4"><i class="bi bi-people me-1"></i>${f.usersCount} utilisateur(s)</small>
+            </div>
+            <button class="btn btn-outline-danger btn-sm"
+                    onclick="deleteFunction(${f.id}, '${f.name.replace(/'/g, "\\'")}')"
+                    title="Supprimer ce poste">
+                <i class="bi bi-trash"></i>
+            </button>
+        </div>`;
+    });
+    html += '</div>';
+    panel.innerHTML = html;
+}
+
+// â”€â”€ Fonctions â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+function openFunctionModal() {
+    if (!currentDeptId) return;
+    document.getElementById('funcDeptId').value   = currentDeptId;
+    document.getElementById('funcDeptName').value = currentDeptName;
+    document.getElementById('funcName').value     = '';
+    document.getElementById('funcDesc').value     = '';
+    funcModal.show();
+}
+
+async function saveFunction() {
+    const deptId = parseInt(document.getElementById('funcDeptId').value);
+    const name   = document.getElementById('funcName').value.trim();
+    const desc   = document.getElementById('funcDesc').value.trim();
+    if (!name) { alert('Le nom du poste est obligatoire'); return; }
+    const r = await fetch('/Admin/Departments/CreateFunction', {
+        method  : 'POST',
+        headers : { 'Content-Type': 'application/json' },
+        body    : JSON.stringify({ name, description: desc, departmentId: deptId })
+    });
+    const j = await r.json();
+    if (j.success) { funcModal.hide(); showToast('Poste cree', 'success'); await loadFunctions(deptId); }
+    else showToast(j.message ?? 'Erreur', 'danger');
+}
+
+async function deleteFunction(id, name) {
+    document.getElementById('confirmMsg').textContent = 'Supprimer le poste "' + name + '" ?';
+    document.getElementById('confirmBtn').onclick = async () => {
+        const r = await fetch('/Admin/Departments/DeleteFunction/' + id, { method: 'POST' });
+        const j = await r.json();
+        confirmModal.hide();
+        if (j.success) { showToast('Poste supprime', 'warning'); await loadFunctions(currentDeptId); }
+        else showToast(j.message ?? 'Erreur', 'danger');
+    };
+    confirmModal.show();
+}
+
+function showToast(msg, type) {
+    const t = document.createElement('div');
+    t.className = 'toast align-items-center text-bg-' + type + ' border-0 show position-fixed bottom-0 end-0 m-3';
+    t.style.zIndex = 9999;
+    t.innerHTML = '<div class="d-flex"><div class="toast-body">' + msg +
+        '</div><button type="button" class="btn-close btn-close-white me-2 m-auto" onclick="this.closest(\'.toast\').remove()"></button></div>';
+    document.body.appendChild(t);
+    setTimeout(() => t.remove(), 3000);
+}
+</script>
+}

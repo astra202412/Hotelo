@@ -1,0 +1,157 @@
+﻿@model List<string>
+@{
+    ViewData["Title"] = "Backup & Restauration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h5 class="fw-bold mb-0">
+        <i class="bi bi-database-fill-gear text-warning me-2"></i>Backup & Restauration
+    </h5>
+    <button class="btn btn-dark btn-sm" onclick="createBackup()">
+        <i class="bi bi-download"></i> Creer un Backup
+    </button>
+</div>
+
+<div id="statusAlert" class="d-none mb-3"></div>
+
+<div class="row g-3">
+    <div class="col-md-8">
+        <div class="card shadow-sm">
+            <div class="card-header bg-white fw-semibold py-3">
+                <i class="bi bi-archive me-2"></i>Fichiers de Sauvegarde
+                <span class="badge bg-secondary ms-2">@Model.Count fichier(s)</span>
+            </div>
+            <div class="card-body p-0">
+                @if (!Model.Any())
+                {
+                    <div class="text-center text-muted py-5">
+                        <i class="bi bi-database-x fs-1"></i>
+                        <p class="mt-2">Aucun backup disponible</p>
+                        <button class="btn btn-dark btn-sm" onclick="createBackup()">
+                            Creer le premier backup
+                        </button>
+                    </div>
+                }
+                else
+                {
+                    <table class="table table-hover mb-0">
+                        <thead class="table-light">
+                            <tr><th>Fichier</th><th>Date</th><th>Actions</th></tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var file in Model)
+                            {
+                                var parts = file.Replace("hoteloDB_backup_","").Replace(".bak","").Split('_');
+                                var dateStr = parts.Length >= 2
+                                    ? $"{parts[0].Substring(6,2)}/{parts[0].Substring(4,2)}/{parts[0].Substring(0,4)} {parts[1].Substring(0,2)}:{parts[1].Substring(2,2)}"
+                                    : "-";
+                                <tr>
+                                    <td>
+                                        <i class="bi bi-file-earmark-zip text-warning me-2"></i>
+                                        <span class="font-monospace small">@file</span>
+                                    </td>
+                                    <td><small class="text-muted">@dateStr</small></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-danger"
+                                                onclick="restoreBackup('@file')"
+                                                title="Restaurer ce backup">
+                                            <i class="bi bi-arrow-counterclockwise"></i> Restaurer
+                                        </button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow-sm border-warning">
+            <div class="card-header bg-warning fw-semibold py-3">
+                <i class="bi bi-clock-history me-2"></i>Backup Automatique
+            </div>
+            <div class="card-body">
+                <p class="small text-muted mb-3">
+                    Le backup automatique est configure via Hangfire
+                    et s execute quotidiennement a 02h00.
+                </p>
+                <div class="d-flex align-items-center gap-2 mb-2">
+                    <span class="badge bg-success">Actif</span>
+                    <small>Tous les jours a 02:00</small>
+                </div>
+                <div class="d-flex align-items-center gap-2 mb-2">
+                    <span class="badge bg-info">Retention</span>
+                    <small>30 derniers backups</small>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                    <span class="badge bg-secondary">Chemin</span>
+                    <small class="font-monospace">C:\Projects\Hotelo\Backups</small>
+                </div>
+                <hr>
+                <a href="/hangfire" target="_blank" class="btn btn-outline-dark btn-sm w-100">
+                    <i class="bi bi-gear"></i> Dashboard Hangfire
+                </a>
+            </div>
+        </div>
+
+        <div class="card shadow-sm mt-3 border-danger">
+            <div class="card-header bg-danger text-white fw-semibold py-3">
+                <i class="bi bi-exclamation-triangle me-2"></i>Attention
+            </div>
+            <div class="card-body">
+                <small class="text-muted">
+                    La restauration remplace toutes les donnees actuelles
+                    par celles du backup selectionne.
+                    Cette action est <strong>irreversible</strong>.
+                </small>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+<script>
+async function createBackup() {
+    const btn = document.querySelector('button[onclick="createBackup()"]');
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner-border spinner-border-sm"></span> En cours...';
+
+    try {
+        const r = await fetch('/api/v1/backup/create', { method: 'POST' });
+        const d = await r.json();
+        showAlert(d.success ? 'success' : 'danger',
+                  d.success ? 'Backup cree : ' + d.data.file : d.errors[0]);
+        if (d.success) setTimeout(() => location.reload(), 2000);
+    } catch {
+        showAlert('danger', 'Erreur lors de la creation du backup');
+    }
+    btn.disabled = false;
+    btn.innerHTML = '<i class="bi bi-download"></i> Creer un Backup';
+}
+
+async function restoreBackup(file) {
+    if (!confirm('ATTENTION : Restaurer ' + file + ' ?\nToutes les donnees actuelles seront remplacees.'))
+        return;
+
+    const r = await fetch('/api/v1/backup/restore', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(file)
+    });
+    const d = await r.json();
+    showAlert(d.success ? 'success' : 'danger',
+              d.success ? 'Restauration reussie' : d.errors[0]);
+}
+
+function showAlert(type, msg) {
+    const div = document.getElementById('statusAlert');
+    div.className = `alert alert-${type}`;
+    div.textContent = msg;
+    div.classList.remove('d-none');
+    setTimeout(() => div.classList.add('d-none'), 5000);
+}
+</script>
+}

@@ -1,0 +1,259 @@
+﻿@{
+    ViewData["Title"] = "Housekeeping";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h5 class="fw-bold mb-0"><i class="bi bi-stars text-warning me-2"></i>Housekeeping & Maintenance</h5>
+    <button class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#newTaskModal">
+        <i class="bi bi-plus-lg"></i> Nouvelle Tache
+    </button>
+</div>
+
+<!-- KPIs -->
+<div class="row g-3 mb-4">
+    <div class="col-6 col-md-2">
+        <div class="card shadow-sm text-center py-3">
+            <div class="fs-3 fw-bold text-dark" id="kpiTotal">-</div>
+            <small class="text-muted">Total Taches</small>
+        </div>
+    </div>
+    <div class="col-6 col-md-2">
+        <div class="card shadow-sm text-center py-3">
+            <div class="fs-3 fw-bold text-warning" id="kpiPending">-</div>
+            <small class="text-muted">En Attente</small>
+        </div>
+    </div>
+    <div class="col-6 col-md-2">
+        <div class="card shadow-sm text-center py-3">
+            <div class="fs-3 fw-bold text-primary" id="kpiInProgress">-</div>
+            <small class="text-muted">En Cours</small>
+        </div>
+    </div>
+    <div class="col-6 col-md-2">
+        <div class="card shadow-sm text-center py-3">
+            <div class="fs-3 fw-bold text-success" id="kpiDone">-</div>
+            <small class="text-muted">Terminees</small>
+        </div>
+    </div>
+    <div class="col-6 col-md-2">
+        <div class="card shadow-sm text-center py-3">
+            <div class="fs-3 fw-bold text-danger" id="kpiMaint">-</div>
+            <small class="text-muted">Maintenance</small>
+        </div>
+    </div>
+    <div class="col-6 col-md-2">
+        <div class="card shadow-sm text-center py-3">
+            <div class="fs-3 fw-bold" style="color:#FF5722" id="kpiUrgent">-</div>
+            <small class="text-muted">Urgentes</small>
+        </div>
+    </div>
+</div>
+
+<div class="row g-3">
+    <!-- Taches Nettoyage -->
+    <div class="col-md-7">
+        <div class="card shadow-sm">
+            <div class="card-header bg-white fw-semibold py-3">
+                <i class="bi bi-clipboard-check me-2"></i>Taches de Nettoyage
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0">
+                        <thead class="table-light">
+                            <tr><th>Chambre</th><th>Etage</th><th>Priorite</th><th>Statut</th><th>Actions</th></tr>
+                        </thead>
+                        <tbody id="tasksBody">
+                            <tr><td colspan="5" class="text-center py-3">
+                                <div class="spinner-border spinner-border-sm"></div>
+                            </td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Maintenance -->
+    <div class="col-md-5">
+        <div class="card shadow-sm">
+            <div class="card-header bg-white fw-semibold py-3 d-flex justify-content-between">
+                <span><i class="bi bi-tools me-2"></i>Maintenance</span>
+                <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#newMaintModal">
+                    <i class="bi bi-plus"></i>
+                </button>
+            </div>
+            <div class="card-body p-0">
+                <div id="maintList" class="p-2">
+                    <div class="text-center py-3"><div class="spinner-border spinner-border-sm"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Nouvelle Tache -->
+<div class="modal fade" id="newTaskModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+                <h6 class="modal-title">Nouvelle Tache de Nettoyage</h6>
+                <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">ID Chambre</label>
+                    <input type="number" id="taskRoomId" class="form-control" placeholder="Ex: 2" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Priorite</label>
+                    <select id="taskPriority" class="form-select">
+                        <option value="Normal">Normal</option>
+                        <option value="Haute">Haute</option>
+                        <option value="Urgent">Urgent</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Notes</label>
+                    <textarea id="taskNotes" class="form-control" rows="2"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-dark" onclick="createTask()">Creer</button>
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Nouvelle Maintenance -->
+<div class="modal fade" id="newMaintModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h6 class="modal-title">Nouvelle Demande Maintenance</h6>
+                <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">ID Chambre</label>
+                    <input type="number" id="maintRoomId" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Description</label>
+                    <textarea id="maintDesc" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Priorite</label>
+                    <select id="maintPriority" class="form-select">
+                        <option value="Normal">Normal</option>
+                        <option value="Haute">Haute</option>
+                        <option value="Urgent">Urgent</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger" onclick="createMaint()">Soumettre</button>
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+<script>
+async function loadData() {
+    const dash = await fetch('/api/v1/housekeeping/dashboard');
+    const d = (await dash.json()).data;
+    document.getElementById('kpiTotal').textContent      = d.totalTasks;
+    document.getElementById('kpiPending').textContent    = d.pendingTasks;
+    document.getElementById('kpiInProgress').textContent = d.inProgressTasks;
+    document.getElementById('kpiDone').textContent       = d.completedTasks;
+    document.getElementById('kpiMaint').textContent      = d.openMaintenance;
+    document.getElementById('kpiUrgent').textContent     = d.urgentTasks;
+
+    // Tasks
+    const tbody = document.getElementById('tasksBody');
+    if (!d.tasksList.length) {
+        tbody.innerHTML = '<tr><td colspan="5" class="text-center text-muted py-3">Aucune tache</td></tr>';
+    } else {
+        tbody.innerHTML = d.tasksList.map(t => `
+            <tr>
+                <td><strong>${t.roomNumber}</strong></td>
+                <td><small>${t.floor}</small></td>
+                <td><span class="badge" style="background:${t.priorityColor}">${t.priority}</span></td>
+                <td><span class="badge bg-secondary">${t.status}</span></td>
+                <td>
+                    ${t.status === 'EnAttente' ? `<button class="btn btn-xs btn-sm btn-outline-primary" onclick="startTask(${t.id})"><i class="bi bi-play"></i></button>` : ''}
+                    ${t.status === 'EnCours'   ? `<button class="btn btn-xs btn-sm btn-success" onclick="completeTask(${t.id})"><i class="bi bi-check"></i></button>` : ''}
+                </td>
+            </tr>`).join('');
+    }
+
+    // Maintenance
+    const maintDiv = document.getElementById('maintList');
+    if (!d.maintenanceList.length) {
+        maintDiv.innerHTML = '<p class="text-center text-muted py-3">Aucune demande</p>';
+    } else {
+        maintDiv.innerHTML = d.maintenanceList.map(m => `
+            <div class="border rounded p-2 mb-2">
+                <div class="d-flex justify-content-between">
+                    <strong>Ch. ${m.roomNumber}</strong>
+                    <span class="badge" style="background:${m.priorityColor}">${m.priority}</span>
+                </div>
+                <small class="text-muted">${m.description}</small>
+                <div class="mt-1">
+                    <span class="badge" style="background:${m.statusColor}">${m.status}</span>
+                    ${m.status !== 'Ferme' ? `<button class="btn btn-xs btn-sm btn-outline-success ms-2" onclick="closeMaint(${m.id})">Fermer</button>` : ''}
+                </div>
+            </div>`).join('');
+    }
+}
+
+async function startTask(id) {
+    await fetch('/api/v1/housekeeping/tasks/' + id + '/start', { method: 'POST' });
+    loadData();
+}
+async function completeTask(id) {
+    await fetch('/api/v1/housekeeping/tasks/' + id + '/complete', { method: 'POST' });
+    loadData();
+}
+async function closeMaint(id) {
+    await fetch('/api/v1/housekeeping/maintenance/' + id + '/close', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: '"Travaux termines"'
+    });
+    loadData();
+}
+async function createTask() {
+    const dto = {
+        roomId: parseInt(document.getElementById('taskRoomId').value),
+        priority: document.getElementById('taskPriority').value,
+        notes: document.getElementById('taskNotes').value
+    };
+    await fetch('/api/v1/housekeeping/tasks', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify(dto)
+    });
+    bootstrap.Modal.getInstance(document.getElementById('newTaskModal')).hide();
+    loadData();
+}
+async function createMaint() {
+    const dto = {
+        roomId: parseInt(document.getElementById('maintRoomId').value),
+        description: document.getElementById('maintDesc').value,
+        priority: document.getElementById('maintPriority').value
+    };
+    await fetch('/api/v1/housekeeping/maintenance', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify(dto)
+    });
+    bootstrap.Modal.getInstance(document.getElementById('newMaintModal')).hide();
+    loadData();
+}
+loadData();
+</script>
+}

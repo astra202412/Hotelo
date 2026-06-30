@@ -1,0 +1,268 @@
+﻿@{
+    ViewData["Title"] = "Commercial";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h5 class="fw-bold mb-0"><i class="bi bi-graph-up-arrow text-success me-2"></i>Commercial — Entreprises & Contrats</h5>
+    <button class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#newCompanyModal">
+        <i class="bi bi-plus-lg"></i> Nouvelle Entreprise
+    </button>
+</div>
+
+<!-- KPIs -->
+<div class="row g-3 mb-4">
+    <div class="col-6 col-md-3">
+        <div class="card shadow-sm text-center py-3">
+            <div class="fs-3 fw-bold text-dark" id="kpiCompanies">-</div>
+            <small class="text-muted">Entreprises</small>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card shadow-sm text-center py-3">
+            <div class="fs-3 fw-bold text-success" id="kpiActive">-</div>
+            <small class="text-muted">Contrats Actifs</small>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card shadow-sm text-center py-3">
+            <div class="fs-3 fw-bold text-danger" id="kpiExpired">-</div>
+            <small class="text-muted">Contrats Expires</small>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card shadow-sm text-center py-3">
+            <div class="fs-3 fw-bold text-warning" id="kpiDiscount">-</div>
+            <small class="text-muted">Remise Moyenne</small>
+        </div>
+    </div>
+</div>
+
+<div class="row g-3">
+    <!-- Entreprises -->
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-header bg-white fw-semibold py-3">
+                <i class="bi bi-building me-2"></i>Entreprises & Agences
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0">
+                        <thead class="table-light">
+                            <tr><th>Nom</th><th>Type</th><th>Contact</th><th>Remise</th></tr>
+                        </thead>
+                        <tbody id="companiesBody">
+                            <tr><td colspan="4" class="text-center py-3">
+                                <div class="spinner-border spinner-border-sm"></div>
+                            </td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contrats -->
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-header bg-white fw-semibold py-3 d-flex justify-content-between">
+                <span><i class="bi bi-file-earmark-text me-2"></i>Contrats</span>
+                <button class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#newContractModal">
+                    <i class="bi bi-plus"></i> Contrat
+                </button>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0">
+                        <thead class="table-light">
+                            <tr><th>Ref</th><th>Entreprise</th><th>Tarif</th><th>Fin</th><th>Statut</th></tr>
+                        </thead>
+                        <tbody id="contractsBody">
+                            <tr><td colspan="5" class="text-center py-3">
+                                <div class="spinner-border spinner-border-sm"></div>
+                            </td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Entreprise -->
+<div class="modal fade" id="newCompanyModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+                <h6 class="modal-title">Nouvelle Entreprise</h6>
+                <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row g-3">
+                    <div class="col-8">
+                        <label class="form-label">Nom</label>
+                        <input type="text" id="cName" class="form-control" />
+                    </div>
+                    <div class="col-4">
+                        <label class="form-label">Type</label>
+                        <select id="cType" class="form-select">
+                            <option>Entreprise</option>
+                            <option>Agence</option>
+                            <option>Ambassade</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label">Telephone</label>
+                        <input type="text" id="cPhone" class="form-control" />
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label">Email</label>
+                        <input type="email" id="cEmail" class="form-control" />
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label">Contact</label>
+                        <input type="text" id="cContact" class="form-control" />
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label">Remise %</label>
+                        <input type="number" id="cDiscount" class="form-control" value="0" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-dark" onclick="createCompany()">Creer</button>
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Contrat -->
+<div class="modal fade" id="newContractModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+                <h6 class="modal-title">Nouveau Contrat</h6>
+                <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row g-3">
+                    <div class="col-12">
+                        <label class="form-label">Entreprise</label>
+                        <select id="ctCompany" class="form-select"></select>
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label">Date debut</label>
+                        <input type="date" id="ctStart" class="form-control" />
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label">Date fin</label>
+                        <input type="date" id="ctEnd" class="form-control" />
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label">Tarif chambre (DZD)</label>
+                        <input type="number" id="ctRate" class="form-control" />
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label">Remise %</label>
+                        <input type="number" id="ctDiscount" class="form-control" value="0" />
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Quota chambres</label>
+                        <input type="number" id="ctQuota" class="form-control" value="1" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-dark" onclick="createContract()">Creer</button>
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+<script>
+var companies = [];
+
+async function loadData() {
+    const dash = await fetch('/api/v1/commercial/dashboard');
+    const d = (await dash.json()).data;
+    document.getElementById('kpiCompanies').textContent = d.totalCompanies;
+    document.getElementById('kpiActive').textContent    = d.activeContracts;
+    document.getElementById('kpiExpired').textContent   = d.expiredContracts;
+    document.getElementById('kpiDiscount').textContent  = d.averageDiscount + '%';
+
+    companies = d.companies;
+
+    // Entreprises
+    const tbody = document.getElementById('companiesBody');
+    if (!d.companies.length) {
+        tbody.innerHTML = '<tr><td colspan="4" class="text-center text-muted py-3">Aucune entreprise</td></tr>';
+    } else {
+        tbody.innerHTML = d.companies.map(c => `
+            <tr>
+                <td><strong>${c.name}</strong></td>
+                <td><span class="badge bg-secondary">${c.type}</span></td>
+                <td><small>${c.contactPerson || c.phone || '-'}</small></td>
+                <td><span class="badge bg-warning text-dark">${c.discountRate}%</span></td>
+            </tr>`).join('');
+    }
+
+    // Contrats
+    const ctbody = document.getElementById('contractsBody');
+    if (!d.contracts.length) {
+        ctbody.innerHTML = '<tr><td colspan="5" class="text-center text-muted py-3">Aucun contrat</td></tr>';
+    } else {
+        ctbody.innerHTML = d.contracts.map(c => `
+            <tr>
+                <td><small class="font-monospace">${c.reference}</small></td>
+                <td><small>${c.companyName}</small></td>
+                <td>${c.roomRate.toLocaleString()} DZD</td>
+                <td><small>${new Date(c.endDate).toLocaleDateString('fr-FR')}</small></td>
+                <td><span class="badge" style="background:${c.isExpired ? '#F44336' : '#4CAF50'}">
+                    ${c.isExpired ? 'Expire' : 'Actif'}
+                </span></td>
+            </tr>`).join('');
+    }
+
+    // Populate select
+    const sel = document.getElementById('ctCompany');
+    sel.innerHTML = companies.map(c => `<option value="${c.id}">${c.name}</option>`).join('');
+}
+
+async function createCompany() {
+    const dto = {
+        name: document.getElementById('cName').value,
+        type: document.getElementById('cType').value,
+        phone: document.getElementById('cPhone').value,
+        email: document.getElementById('cEmail').value,
+        contactPerson: document.getElementById('cContact').value,
+        discountRate: parseFloat(document.getElementById('cDiscount').value)
+    };
+    await fetch('/api/v1/commercial/companies', {
+        method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(dto)
+    });
+    bootstrap.Modal.getInstance(document.getElementById('newCompanyModal')).hide();
+    loadData();
+}
+
+async function createContract() {
+    const dto = {
+        companyId: parseInt(document.getElementById('ctCompany').value),
+        startDate: document.getElementById('ctStart').value,
+        endDate: document.getElementById('ctEnd').value,
+        roomRate: parseFloat(document.getElementById('ctRate').value),
+        discountRate: parseFloat(document.getElementById('ctDiscount').value),
+        roomsQuota: parseInt(document.getElementById('ctQuota').value)
+    };
+    await fetch('/api/v1/commercial/contracts', {
+        method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(dto)
+    });
+    bootstrap.Modal.getInstance(document.getElementById('newContractModal')).hide();
+    loadData();
+}
+
+loadData();
+</script>
+}

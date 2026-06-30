@@ -1,0 +1,110 @@
+﻿@{
+    ViewData["Title"] = "Ressources Humaines";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h5 class="fw-bold mb-0"><i class="bi bi-people-fill text-info me-2"></i>Ressources Humaines</h5>
+</div>
+
+<!-- KPIs -->
+<div class="row g-3 mb-4">
+    <div class="col-6 col-md-3">
+        <div class="card shadow-sm text-center py-3">
+            <div class="fs-3 fw-bold text-dark" id="kpiTotal">-</div>
+            <small class="text-muted">Total Employes</small>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card shadow-sm text-center py-3">
+            <div class="fs-3 fw-bold text-success" id="kpiActive">-</div>
+            <small class="text-muted">Actifs</small>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card shadow-sm text-center py-3">
+            <div class="fs-3 fw-bold text-primary" id="kpiDepts">-</div>
+            <small class="text-muted">Departements</small>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card shadow-sm text-center py-3">
+            <div class="fs-3 fw-bold text-warning" id="kpiSalary">-</div>
+            <small class="text-muted">Salaire Moyen</small>
+        </div>
+    </div>
+</div>
+
+<div class="row g-3">
+    <!-- Employes -->
+    <div class="col-md-8">
+        <div class="card shadow-sm">
+            <div class="card-header bg-white fw-semibold py-3">
+                <i class="bi bi-person-badge me-2"></i>Employes
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0">
+                        <thead class="table-light">
+                            <tr><th>Nom</th><th>Departement</th><th>Contrat</th><th>Salaire</th><th>Anciennete</th></tr>
+                        </thead>
+                        <tbody id="empBody">
+                            <tr><td colspan="5" class="text-center py-4">
+                                <div class="spinner-border spinner-border-sm"></div>
+                            </td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Departements -->
+    <div class="col-md-4">
+        <div class="card shadow-sm">
+            <div class="card-header bg-white fw-semibold py-3">
+                <i class="bi bi-diagram-3 me-2"></i>Departements
+            </div>
+            <div class="list-group list-group-flush" id="deptList">
+                <div class="text-center py-3"><div class="spinner-border spinner-border-sm"></div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+<script>
+async function loadData() {
+    const dash = await fetch('/api/v1/hr/dashboard');
+    const d = (await dash.json()).data;
+
+    document.getElementById('kpiTotal').textContent  = d.totalEmployees;
+    document.getElementById('kpiActive').textContent = d.activeEmployees;
+    document.getElementById('kpiDepts').textContent  = d.totalDepartments;
+    document.getElementById('kpiSalary').textContent = d.averageSalary.toLocaleString() + ' DZD';
+
+    // Employes
+    const tbody = document.getElementById('empBody');
+    tbody.innerHTML = d.employees.map(e => `
+        <tr>
+            <td><strong>${e.fullName}</strong></td>
+            <td><span class="badge bg-light text-dark border">${e.departmentName}</span></td>
+            <td><span class="badge ${e.contractType === 'CDI' ? 'bg-success' : 'bg-warning text-dark'}">${e.contractType}</span></td>
+            <td>${e.baseSalary.toLocaleString()} DZD</td>
+            <td>${e.yearsOfService} ans</td>
+        </tr>`).join('');
+
+    // Departements
+    const deptDiv = document.getElementById('deptList');
+    deptDiv.innerHTML = d.departments.map(dep => `
+        <div class="list-group-item d-flex justify-content-between align-items-center py-2">
+            <div>
+                <div class="fw-semibold small">${dep.name}</div>
+                <small class="text-muted">${dep.description || ''}</small>
+            </div>
+            <span class="badge bg-primary rounded-pill">${dep.employeeCount}</span>
+        </div>`).join('');
+}
+loadData();
+</script>
+}

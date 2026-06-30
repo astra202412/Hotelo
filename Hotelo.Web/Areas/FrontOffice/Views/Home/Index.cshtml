@@ -1,0 +1,166 @@
+﻿@model Hotelo.Core.DTOs.Room.FloorPlanDto
+@{
+    ViewData["Title"] = "Plan des Chambres";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h4 class="fw-bold mb-0">
+        <span class="text-warning">&#9632;</span> Plan des Chambres — FrontOffice
+    </h4>
+    <div>
+        <a asp-action="Dashboard" class="btn btn-outline-primary btn-sm me-2">Dashboard</a>
+        <a asp-action="List"      class="btn btn-outline-secondary btn-sm me-2">Liste</a>
+        <a asp-action="Create"    class="btn btn-dark btn-sm">+ Chambre</a>
+    </div>
+</div>
+
+<!-- Légende statuts -->
+<div class="d-flex flex-wrap gap-2 mb-3">
+    <span class="badge px-3 py-2" style="background:#4CAF50">Libre</span>
+    <span class="badge px-3 py-2" style="background:#F44336">Occupee</span>
+    <span class="badge px-3 py-2" style="background:#FFC107;color:#333">A Nettoyer</span>
+    <span class="badge px-3 py-2" style="background:#FF9800">En Nettoyage</span>
+    <span class="badge px-3 py-2" style="background:#9E9E9E">Maintenance</span>
+    <span class="badge px-3 py-2" style="background:#1A237E">Bloquee</span>
+    <span class="badge px-3 py-2" style="background:#2196F3">Reservee</span>
+</div>
+
+<!-- KPIs rapides -->
+<div class="row g-2 mb-4">
+    <div class="col-6 col-md-3">
+        <div class="card text-center border-0 shadow-sm">
+            <div class="card-body py-2">
+                <div class="fs-4 fw-bold text-dark">@Model.TotalRooms</div>
+                <small class="text-muted">Total Chambres</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card text-center border-0 shadow-sm">
+            <div class="card-body py-2">
+                <div class="fs-4 fw-bold text-danger">@Model.OccupiedRooms</div>
+                <small class="text-muted">Occupees</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card text-center border-0 shadow-sm">
+            <div class="card-body py-2">
+                <div class="fs-4 fw-bold text-success">@(Model.TotalRooms - Model.OccupiedRooms)</div>
+                <small class="text-muted">Disponibles</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card text-center border-0 shadow-sm">
+            <div class="card-body py-2">
+                <div class="fs-4 fw-bold text-primary">@Model.OccupancyRate%</div>
+                <small class="text-muted">Taux Occupation</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Plan par étage -->
+@foreach (var floor in Model.Floors)
+{
+    <div class="card mb-3 shadow-sm">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center py-2">
+            <span class="fw-bold">@floor.Name</span>
+            <small>@floor.Rooms.Count chambre(s)</small>
+        </div>
+        <div class="card-body">
+            <div class="d-flex flex-wrap gap-2">
+                @foreach (var room in floor.Rooms)
+                {
+                    <div class="room-card text-white text-center shadow-sm"
+                         style="background:@room.StatusColor; width:90px; border-radius:8px; cursor:pointer; padding:10px 6px;"
+                         onclick="showRoomModal(@room.Id)"
+                         title="@room.RoomType — @room.StatusLabel">
+                        <div class="fw-bold fs-6">@room.RoomNumber</div>
+                        <small style="font-size:10px;">@room.RoomType</small>
+                        <div style="font-size:9px;opacity:0.9;">@room.StatusLabel</div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}
+
+<!-- Modal détails chambre -->
+<div class="modal fade" id="roomModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+                <h5 class="modal-title">Chambre <span id="modalRoomNumber"></span></h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <div class="text-center"><div class="spinner-border text-primary"></div></div>
+            </div>
+            <div class="modal-footer">
+                <div class="me-auto" id="modalStatusBtns"></div>
+                <a id="modalEditBtn" href="#" class="btn btn-outline-dark btn-sm">Modifier</a>
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+<script>
+var currentRoomId = null;
+
+function showRoomModal(id) {
+    currentRoomId = id;
+    var modal = new bootstrap.Modal(document.getElementById('roomModal'));
+    document.getElementById('modalBody').innerHTML = '<div class="text-center"><div class="spinner-border text-primary"></div></div>';
+    document.getElementById('modalStatusBtns').innerHTML = '';
+    modal.show();
+
+    fetch('/FrontOffice/Home/Details/' + id)
+        .then(r => r.json())
+        .then(room => {
+            document.getElementById('modalRoomNumber').textContent = room.roomNumber;
+            document.getElementById('modalEditBtn').href = '/FrontOffice/Home/Edit/' + id;
+            document.getElementById('modalBody').innerHTML =
+                '<table class="table table-sm">' +
+                '<tr><th>Type</th><td>' + room.roomType + '</td></tr>' +
+                '<tr><th>Etage</th><td>' + room.floor + '</td></tr>' +
+                '<tr><th>Statut</th><td><span class="badge" style="background:' + room.statusColor + '">' + room.statusLabel + '</span></td></tr>' +
+                '<tr><th>Prix / nuit</th><td>' + room.basePrice.toLocaleString() + ' DZD</td></tr>' +
+                '<tr><th>Capacite</th><td>' + room.maxOccupancy + ' pers.</td></tr>' +
+                (room.notes ? '<tr><th>Notes</th><td>' + room.notes + '</td></tr>' : '') +
+                '</table>';
+
+            var statuses = [
+                {val:1,label:'Libre',       color:'#4CAF50'},
+                {val:2,label:'Occupee',     color:'#F44336'},
+                {val:3,label:'A Nettoyer',  color:'#FFC107'},
+                {val:4,label:'En Nettoyage',color:'#FF9800'},
+                {val:5,label:'Maintenance', color:'#9E9E9E'},
+                {val:6,label:'Bloquee',     color:'#1A237E'},
+                {val:7,label:'Reservee',    color:'#2196F3'}
+            ];
+            var btns = '<small class="me-1 text-muted">Changer statut:</small>';
+            statuses.forEach(s => {
+                if (s.val !== room.status) {
+                    btns += '<button class="btn btn-sm me-1 text-white" style="background:' + s.color + ';font-size:10px;" onclick="updateStatus(' + s.val + ')">' + s.label + '</button>';
+                }
+            });
+            document.getElementById('modalStatusBtns').innerHTML = btns;
+        });
+}
+
+function updateStatus(status) {
+    fetch('/FrontOffice/Home/UpdateStatus', {
+        method: 'POST',
+        headers: {'Content-Type':'application/x-www-form-urlencoded'},
+        body: 'id=' + currentRoomId + '&status=' + status
+    })
+    .then(r => r.json())
+    .then(() => { location.reload(); });
+}
+</script>
+}

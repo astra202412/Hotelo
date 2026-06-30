@@ -1,0 +1,235 @@
+﻿@{
+    ViewData["Title"] = "Bell Desk";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h5 class="fw-bold mb-0"><i class="bi bi-bell-fill text-warning me-2"></i>Bell Desk & Concierge</h5>
+    <div>
+        <button class="btn btn-dark btn-sm me-2" data-bs-toggle="modal" data-bs-target="#luggageModal">
+            <i class="bi bi-luggage"></i> Bagage
+        </button>
+        <button class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#serviceModal">
+            <i class="bi bi-plus"></i> Service
+        </button>
+    </div>
+</div>
+
+<!-- KPIs -->
+<div class="row g-3 mb-4">
+    <div class="col-6 col-md-3">
+        <div class="card shadow-sm text-center py-3">
+            <div class="fs-3 fw-bold text-primary" id="kpiLuggage">-</div>
+            <small class="text-muted">Bagages Aujourd hui</small>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card shadow-sm text-center py-3">
+            <div class="fs-3 fw-bold text-warning" id="kpiPendingL">-</div>
+            <small class="text-muted">Bagages En Attente</small>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card shadow-sm text-center py-3">
+            <div class="fs-3 fw-bold text-danger" id="kpiPendingS">-</div>
+            <small class="text-muted">Services En Attente</small>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card shadow-sm text-center py-3">
+            <div class="fs-3 fw-bold text-success" id="kpiDone">-</div>
+            <small class="text-muted">Completes Aujourd hui</small>
+        </div>
+    </div>
+</div>
+
+<div class="row g-3">
+    <!-- Bagages -->
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-header bg-white fw-semibold py-3">
+                <i class="bi bi-luggage me-2"></i>Gestion Bagages
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-hover mb-0">
+                    <thead class="table-light">
+                        <tr><th>Client</th><th>Chambre</th><th>Sacs</th><th>Type</th><th>Statut</th><th></th></tr>
+                    </thead>
+                    <tbody id="luggageBody">
+                        <tr><td colspan="6" class="text-center py-3"><div class="spinner-border spinner-border-sm"></div></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services -->
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-header bg-white fw-semibold py-3">
+                <i class="bi bi-stars me-2"></i>Services Clients
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-hover mb-0">
+                    <thead class="table-light">
+                        <tr><th>Client</th><th>Service</th><th>Description</th><th>Statut</th><th></th></tr>
+                    </thead>
+                    <tbody id="servicesBody">
+                        <tr><td colspan="5" class="text-center py-3"><div class="spinner-border spinner-border-sm"></div></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Bagage -->
+<div class="modal fade" id="luggageModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+                <h6 class="modal-title">Enregistrer un Bagage</h6>
+                <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row g-3">
+                    <div class="col-6"><label class="form-label">Nom Client</label>
+                        <input type="text" id="lGuest" class="form-control" /></div>
+                    <div class="col-6"><label class="form-label">Chambre</label>
+                        <input type="text" id="lRoom" class="form-control" /></div>
+                    <div class="col-6"><label class="form-label">Nb Sacs</label>
+                        <input type="number" id="lBags" class="form-control" value="1" /></div>
+                    <div class="col-6"><label class="form-label">Type</label>
+                        <select id="lType" class="form-select">
+                            <option>Arrivee</option>
+                            <option>Depart</option>
+                            <option>Stockage</option>
+                        </select>
+                    </div>
+                    <div class="col-12"><label class="form-label">Notes</label>
+                        <textarea id="lNotes" class="form-control" rows="2"></textarea></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-dark" onclick="createLuggage()">Enregistrer</button>
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Service -->
+<div class="modal fade" id="serviceModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+                <h6 class="modal-title">Nouveau Service Client</h6>
+                <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row g-3">
+                    <div class="col-6"><label class="form-label">Nom Client</label>
+                        <input type="text" id="sGuest" class="form-control" /></div>
+                    <div class="col-6"><label class="form-label">Chambre</label>
+                        <input type="text" id="sRoom" class="form-control" /></div>
+                    <div class="col-6"><label class="form-label">Type Service</label>
+                        <select id="sType" class="form-select">
+                            <option>Taxi</option>
+                            <option>Reveil</option>
+                            <option>Livraison</option>
+                            <option>Reservation Restaurant</option>
+                            <option>Autre</option>
+                        </select>
+                    </div>
+                    <div class="col-6"><label class="form-label">Heure Prevue</label>
+                        <input type="datetime-local" id="sScheduled" class="form-control" /></div>
+                    <div class="col-12"><label class="form-label">Description</label>
+                        <textarea id="sDesc" class="form-control" rows="2"></textarea></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-dark" onclick="createService()">Creer</button>
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+<script>
+async function loadData() {
+    const dash = await fetch('/api/v1/belldesk/dashboard');
+    const d = (await dash.json()).data;
+
+    document.getElementById('kpiLuggage').textContent  = d.totalLuggageToday;
+    document.getElementById('kpiPendingL').textContent = d.pendingLuggage;
+    document.getElementById('kpiPendingS').textContent = d.pendingServices;
+    document.getElementById('kpiDone').textContent     = d.completedToday;
+
+    // Bagages
+    const lb = document.getElementById('luggageBody');
+    lb.innerHTML = d.luggages.length ? d.luggages.map(l => `
+        <tr>
+            <td><small>${l.guestName}</small></td>
+            <td>${l.roomNumber}</td>
+            <td class="text-center">${l.bagsCount}</td>
+            <td><span class="badge" style="background:${l.typeColor}">${l.type}</span></td>
+            <td><span class="badge" style="background:${l.statusColor}">${l.status}</span></td>
+            <td>${l.status === 'EnAttente' ? `<button class="btn btn-xs btn-sm btn-success" onclick="handleLuggage(${l.id})"><i class="bi bi-check"></i></button>` : ''}</td>
+        </tr>`).join('')
+        : '<tr><td colspan="6" class="text-center text-muted py-3">Aucun bagage</td></tr>';
+
+    // Services
+    const sb = document.getElementById('servicesBody');
+    sb.innerHTML = d.services.length ? d.services.map(s => `
+        <tr>
+            <td><small>${s.guestName}<br><span class="text-muted">${s.roomNumber}</span></small></td>
+            <td><span class="badge bg-dark">${s.serviceType}</span></td>
+            <td><small>${s.description}</small></td>
+            <td><span class="badge" style="background:${s.statusColor}">${s.status}</span></td>
+            <td>${s.status === 'EnAttente' ? `<button class="btn btn-xs btn-sm btn-success" onclick="completeService(${s.id})"><i class="bi bi-check"></i></button>` : ''}</td>
+        </tr>`).join('')
+        : '<tr><td colspan="5" class="text-center text-muted py-3">Aucun service</td></tr>';
+}
+
+async function handleLuggage(id) {
+    await fetch('/api/v1/belldesk/luggage/' + id + '/handle', { method: 'POST' });
+    loadData();
+}
+async function completeService(id) {
+    await fetch('/api/v1/belldesk/services/' + id + '/complete', { method: 'POST' });
+    loadData();
+}
+async function createLuggage() {
+    const dto = {
+        reservationId: 1,
+        guestName: document.getElementById('lGuest').value,
+        roomNumber: document.getElementById('lRoom').value,
+        bagsCount: parseInt(document.getElementById('lBags').value),
+        type: document.getElementById('lType').value,
+        notes: document.getElementById('lNotes').value
+    };
+    await fetch('/api/v1/belldesk/luggage', {
+        method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(dto)
+    });
+    bootstrap.Modal.getInstance(document.getElementById('luggageModal')).hide();
+    loadData();
+}
+async function createService() {
+    const dto = {
+        reservationId: 1,
+        guestName: document.getElementById('sGuest').value,
+        roomNumber: document.getElementById('sRoom').value,
+        serviceType: document.getElementById('sType').value,
+        description: document.getElementById('sDesc').value,
+        scheduledAt: document.getElementById('sScheduled').value || null
+    };
+    await fetch('/api/v1/belldesk/services', {
+        method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(dto)
+    });
+    bootstrap.Modal.getInstance(document.getElementById('serviceModal')).hide();
+    loadData();
+}
+loadData();
+</script>
+}

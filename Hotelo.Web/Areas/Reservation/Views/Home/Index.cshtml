@@ -1,0 +1,195 @@
+﻿@{
+    ViewData["Title"] = "Reservations";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h5 class="fw-bold mb-0"><i class="bi bi-calendar-check text-primary me-2"></i>Gestion des Reservations</h5>
+    <a href="/api/v1/export/reservations/excel" class="btn btn-success btn-sm me-2">
+        <i class="bi bi-file-earmark-excel"></i> Export Excel
+    </a>
+    <button class="btn btn-dark btn-sm" onclick="showCreateModal()">
+        <i class="bi bi-plus-lg"></i> Nouvelle Reservation
+    </button>
+</div>
+
+<!-- KPIs -->
+<div class="row g-3 mb-4" id="kpiRow">
+    <div class="col-6 col-md-3">
+        <div class="card shadow-sm text-center py-3">
+            <div class="fs-3 fw-bold text-primary" id="kpiTotal">-</div>
+            <small class="text-muted">Total</small>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card shadow-sm text-center py-3">
+            <div class="fs-3 fw-bold text-success" id="kpiCheckedIn">-</div>
+            <small class="text-muted">En Sejour</small>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card shadow-sm text-center py-3">
+            <div class="fs-3 fw-bold text-warning" id="kpiArrivals">-</div>
+            <small class="text-muted">Arrivees Aujourd hui</small>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card shadow-sm text-center py-3">
+            <div class="fs-3 fw-bold text-danger" id="kpiDepartures">-</div>
+            <small class="text-muted">Departs Aujourd hui</small>
+        </div>
+    </div>
+</div>
+
+<!-- Tableau -->
+<div class="card shadow-sm">
+    <div class="card-header bg-white d-flex justify-content-between align-items-center py-3">
+        <span class="fw-semibold">Liste des Reservations</span>
+        <input type="text" class="form-control form-control-sm w-auto"
+               placeholder="Rechercher..." onkeyup="filterTable(this.value)">
+    </div>
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table table-hover mb-0" id="resTable">
+                <thead class="table-light">
+                    <tr>
+                        <th>Code</th>
+                        <th>Client</th>
+                        <th>Chambre</th>
+                        <th>Arrivee</th>
+                        <th>Depart</th>
+                        <th>Nuits</th>
+                        <th>Total</th>
+                        <th>Statut</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="resBody">
+                    <tr><td colspan="9" class="text-center py-4">
+                        <div class="spinner-border spinner-border-sm text-primary"></div> Chargement...
+                    </td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Detail/Actions -->
+<div class="modal fade" id="resModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+                <h6 class="modal-title">Detail Reservation</h6>
+                <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="resModalBody"></div>
+            <div class="modal-footer" id="resModalFooter"></div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+<script>
+var reservations = [];
+
+async function loadReservations() {
+    const r = await fetch('/api/v1/reservations');
+    const data = await r.json();
+    reservations = data.data || [];
+
+    // KPIs
+    document.getElementById('kpiTotal').textContent = reservations.length;
+    document.getElementById('kpiCheckedIn').textContent = reservations.filter(r => r.status === 3).length;
+
+    const ar = await fetch('/api/v1/reservations/arrivals/today');
+    const arData = await ar.json();
+    document.getElementById('kpiArrivals').textContent = (arData.data || []).length;
+
+    const dep = await fetch('/api/v1/reservations/departures/today');
+    const depData = await dep.json();
+    document.getElementById('kpiDepartures').textContent = (depData.data || []).length;
+
+    renderTable(reservations);
+}
+
+function renderTable(list) {
+    const tbody = document.getElementById('resBody');
+    if (!list.length) {
+        tbody.innerHTML = '<tr><td colspan="9" class="text-center text-muted py-4">Aucune reservation</td></tr>';
+        return;
+    }
+    tbody.innerHTML = list.map(r => `
+        <tr>
+            <td><small class="font-monospace">${r.confirmationCode}</small></td>
+            <td>${r.guestName}</td>
+            <td><strong>${r.roomNumber}</strong> <small class="text-muted">${r.roomType}</small></td>
+            <td>${new Date(r.checkIn).toLocaleDateString('fr-FR')}</td>
+            <td>${new Date(r.checkOut).toLocaleDateString('fr-FR')}</td>
+            <td class="text-center">${r.nights}</td>
+            <td>${r.totalAmount.toLocaleString()} DZD</td>
+            <td><span class="badge" style="background:${r.statusColor}">${r.statusLabel}</span></td>
+            <td>
+                <button class="btn btn-xs btn-outline-secondary btn-sm" onclick="showDetail(${r.id})">
+                    <i class="bi bi-eye"></i>
+                </button>
+            </td>
+        </tr>
+    `).join('');
+}
+
+function filterTable(term) {
+    const filtered = reservations.filter(r =>
+        r.guestName.toLowerCase().includes(term.toLowerCase()) ||
+        r.roomNumber.includes(term) ||
+        r.confirmationCode.includes(term)
+    );
+    renderTable(filtered);
+}
+
+async function showDetail(id) {
+    const r = await fetch('/api/v1/reservations/' + id);
+    const data = await r.json();
+    const res = data.data;
+    const modal = new bootstrap.Modal(document.getElementById('resModal'));
+
+    document.getElementById('resModalBody').innerHTML = `
+        <table class="table table-sm">
+            <tr><th>Client</th><td>${res.guestName}</td></tr>
+            <tr><th>Telephone</th><td>${res.guestPhone || '-'}</td></tr>
+            <tr><th>Chambre</th><td>${res.roomNumber} — ${res.roomType}</td></tr>
+            <tr><th>Arrivee</th><td>${new Date(res.checkIn).toLocaleDateString('fr-FR')}</td></tr>
+            <tr><th>Depart</th><td>${new Date(res.checkOut).toLocaleDateString('fr-FR')}</td></tr>
+            <tr><th>Nuits</th><td>${res.nights}</td></tr>
+            <tr><th>Statut</th><td><span class="badge" style="background:${res.statusColor}">${res.statusLabel}</span></td></tr>
+            <tr><th>Total</th><td><strong>${res.totalAmount.toLocaleString()} DZD</strong></td></tr>
+            <tr><th>Demandes</th><td>${res.specialRequests || '-'}</td></tr>
+        </table>`;
+
+    let btns = '<button class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Fermer</button>';
+    if (res.status === 2) btns = `<button class="btn btn-success btn-sm me-2" onclick="doAction(${res.id},'checkin')"><i class="bi bi-door-open"></i> Check-In</button>` + btns;
+    if (res.status === 3) btns = `<button class="btn btn-warning btn-sm me-2" onclick="doAction(${res.id},'checkout')"><i class="bi bi-door-closed"></i> Check-Out</button>` + btns;
+    if (res.status <= 2) btns = `<button class="btn btn-danger btn-sm me-2" onclick="doAction(${res.id},'cancel')"><i class="bi bi-x-circle"></i> Annuler</button>` + btns;
+    document.getElementById('resModalFooter').innerHTML = btns;
+    modal.show();
+}
+
+async function doAction(id, action) {
+    let url = '/api/v1/reservations/' + id + '/' + action;
+    let body = action === 'cancel' ? '"Annulation client"' : null;
+    await fetch(url, {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: body
+    });
+    bootstrap.Modal.getInstance(document.getElementById('resModal')).hide();
+    loadReservations();
+}
+
+function showCreateModal() {
+    alert('Formulaire de creation — a implementer avec les donnees guests/rooms');
+}
+
+loadReservations();
+</script>
+}
+

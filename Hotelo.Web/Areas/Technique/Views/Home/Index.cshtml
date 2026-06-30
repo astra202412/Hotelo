@@ -1,0 +1,193 @@
+﻿@{
+    ViewData["Title"] = "Technique";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h5 class="fw-bold mb-0"><i class="bi bi-tools text-secondary me-2"></i>Service Technique</h5>
+    <button class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#newTechModal">
+        <i class="bi bi-plus-lg"></i> Nouvelle Intervention
+    </button>
+</div>
+
+<!-- KPIs -->
+<div class="row g-3 mb-4">
+    <div class="col-6 col-md-3">
+        <div class="card shadow-sm text-center py-3">
+            <div class="fs-3 fw-bold text-danger" id="kpiOpen">-</div>
+            <small class="text-muted">Ouvertes</small>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card shadow-sm text-center py-3">
+            <div class="fs-3 fw-bold text-warning" id="kpiProgress">-</div>
+            <small class="text-muted">En Cours</small>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card shadow-sm text-center py-3">
+            <div class="fs-3 fw-bold text-success" id="kpiClosed">-</div>
+            <small class="text-muted">Fermees ce Mois</small>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card shadow-sm text-center py-3">
+            <div class="fs-3 fw-bold text-primary" id="kpiCost">-</div>
+            <small class="text-muted">Cout Mois (DZD)</small>
+        </div>
+    </div>
+</div>
+
+<!-- Liste Interventions -->
+<div class="card shadow-sm">
+    <div class="card-header bg-white fw-semibold py-3">
+        <i class="bi bi-wrench-adjustable me-2"></i>Interventions Techniques
+    </div>
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table table-hover mb-0">
+                <thead class="table-light">
+                    <tr><th>Titre</th><th>Categorie</th><th>Priorite</th><th>Chambre</th><th>Statut</th><th>Cout</th><th>Actions</th></tr>
+                </thead>
+                <tbody id="techBody">
+                    <tr><td colspan="7" class="text-center py-4">
+                        <div class="spinner-border spinner-border-sm"></div>
+                    </td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Nouvelle Intervention -->
+<div class="modal fade" id="newTechModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+                <h6 class="modal-title">Nouvelle Intervention Technique</h6>
+                <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row g-3">
+                    <div class="col-8"><label class="form-label">Titre</label>
+                        <input type="text" id="tTitle" class="form-control" /></div>
+                    <div class="col-4"><label class="form-label">Chambre ID</label>
+                        <input type="number" id="tRoom" class="form-control" /></div>
+                    <div class="col-6"><label class="form-label">Categorie</label>
+                        <select id="tCategory" class="form-select">
+                            <option>General</option>
+                            <option>Electricite</option>
+                            <option>Plomberie</option>
+                            <option>Climatisation</option>
+                        </select>
+                    </div>
+                    <div class="col-6"><label class="form-label">Priorite</label>
+                        <select id="tPriority" class="form-select">
+                            <option>Normal</option>
+                            <option>Haute</option>
+                            <option>Urgent</option>
+                        </select>
+                    </div>
+                    <div class="col-12"><label class="form-label">Description</label>
+                        <textarea id="tDesc" class="form-control" rows="3"></textarea></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-dark" onclick="createTech()">Creer</button>
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Fermeture -->
+<div class="modal fade" id="closeModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h6 class="modal-title">Fermer Intervention</h6>
+                <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="closeId" />
+                <div class="mb-3"><label class="form-label">Resolution</label>
+                    <textarea id="closeResolution" class="form-control" rows="3"></textarea></div>
+                <div class="mb-3"><label class="form-label">Cout (DZD)</label>
+                    <input type="number" id="closeCost" class="form-control" value="0" /></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" onclick="closeTech()">Fermer</button>
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+<script>
+async function loadData() {
+    const dash = await fetch('/api/v1/technique/dashboard');
+    const d = (await dash.json()).data;
+    document.getElementById('kpiOpen').textContent     = d.totalOpen;
+    document.getElementById('kpiProgress').textContent = d.inProgress;
+    document.getElementById('kpiClosed').textContent   = d.closedThisMonth;
+    document.getElementById('kpiCost').textContent     = d.totalCostMonth.toLocaleString();
+
+    const tbody = document.getElementById('techBody');
+    tbody.innerHTML = d.interventions.length ? d.interventions.map(t => `
+        <tr>
+            <td><strong>${t.title}</strong><br><small class="text-muted">${t.description.substring(0,40)}...</small></td>
+            <td><span class="badge" style="background:${t.categoryColor}">${t.category}</span></td>
+            <td><span class="badge" style="background:${t.priorityColor}">${t.priority}</span></td>
+            <td>${t.roomId}</td>
+            <td><span class="badge" style="background:${t.statusColor}">${t.status}</span></td>
+            <td>${t.cost.toLocaleString()} DZD</td>
+            <td>
+                ${t.status === 'Ouvert'  ? `<button class="btn btn-xs btn-sm btn-outline-warning" onclick="startTech(${t.id})"><i class="bi bi-play"></i></button>` : ''}
+                ${t.status !== 'Ferme'  ? `<button class="btn btn-xs btn-sm btn-success ms-1" onclick="openClose(${t.id})"><i class="bi bi-check"></i></button>` : ''}
+            </td>
+        </tr>`).join('')
+        : '<tr><td colspan="7" class="text-center text-muted py-4">Aucune intervention</td></tr>';
+}
+
+async function createTech() {
+    const dto = {
+        roomId: parseInt(document.getElementById('tRoom').value) || 1,
+        title: document.getElementById('tTitle').value,
+        description: document.getElementById('tDesc').value,
+        category: document.getElementById('tCategory').value,
+        priority: document.getElementById('tPriority').value
+    };
+    await fetch('/api/v1/technique', {
+        method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(dto)
+    });
+    bootstrap.Modal.getInstance(document.getElementById('newTechModal')).hide();
+    loadData();
+}
+
+async function startTech(id) {
+    await fetch('/api/v1/technique/' + id + '/start', { method: 'POST' });
+    loadData();
+}
+
+function openClose(id) {
+    document.getElementById('closeId').value = id;
+    new bootstrap.Modal(document.getElementById('closeModal')).show();
+}
+
+async function closeTech() {
+    const id = document.getElementById('closeId').value;
+    const dto = {
+        resolution: document.getElementById('closeResolution').value,
+        cost: parseFloat(document.getElementById('closeCost').value) || 0
+    };
+    await fetch('/api/v1/technique/' + id + '/close', {
+        method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(dto)
+    });
+    bootstrap.Modal.getInstance(document.getElementById('closeModal')).hide();
+    loadData();
+}
+
+loadData();
+</script>
+}
