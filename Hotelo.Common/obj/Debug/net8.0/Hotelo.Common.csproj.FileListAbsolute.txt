@@ -1,0 +1,12 @@
+C:\Projects\Hotelo\Hotelo.Common\bin\Debug\net8.0\Hotelo.Common.deps.json
+C:\Projects\Hotelo\Hotelo.Common\bin\Debug\net8.0\Hotelo.Common.dll
+C:\Projects\Hotelo\Hotelo.Common\bin\Debug\net8.0\Hotelo.Common.pdb
+C:\Projects\Hotelo\Hotelo.Common\obj\Debug\net8.0\Hotelo.Common.csproj.AssemblyReference.cache
+C:\Projects\Hotelo\Hotelo.Common\obj\Debug\net8.0\Hotelo.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\Hotelo\Hotelo.Common\obj\Debug\net8.0\Hotelo.Common.AssemblyInfoInputs.cache
+C:\Projects\Hotelo\Hotelo.Common\obj\Debug\net8.0\Hotelo.Common.AssemblyInfo.cs
+C:\Projects\Hotelo\Hotelo.Common\obj\Debug\net8.0\Hotelo.Common.csproj.CoreCompileInputs.cache
+C:\Projects\Hotelo\Hotelo.Common\obj\Debug\net8.0\Hotelo.Common.dll
+C:\Projects\Hotelo\Hotelo.Common\obj\Debug\net8.0\refint\Hotelo.Common.dll
+C:\Projects\Hotelo\Hotelo.Common\obj\Debug\net8.0\Hotelo.Common.pdb
+C:\Projects\Hotelo\Hotelo.Common\obj\Debug\net8.0\ref\Hotelo.Common.dll

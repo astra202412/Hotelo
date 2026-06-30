@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "n87HQO3z+EY=",
+  "success": true,
+  "projectFilePath": "C:\\Projects\\Hotelo\\Hotelo.Common\\Hotelo.Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\HomePC\\.nuget\\packages\\fluentvalidation\\11.9.2\\fluentvalidation.11.9.2.nupkg.sha512"
+  ],
+  "logs": []
+}
